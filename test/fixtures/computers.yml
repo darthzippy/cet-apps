@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  control: MyString
+  serial: MyString
+  model: MyString
+  manufacturer: MyString
+  purchase_date: 2008-10-27 11:35:10
+  purchase_price: 1
+  purchase_acct: MyString
+  status: 
+  cstatus: 
+  memory: 1
+  hard_drive: 1
+
+two:
+  control: MyString
+  serial: MyString
+  model: MyString
+  manufacturer: MyString
+  purchase_date: 2008-10-27 11:35:10
+  purchase_price: 1
+  purchase_acct: MyString
+  status: 
+  cstatus: 
+  memory: 1
+  hard_drive: 1

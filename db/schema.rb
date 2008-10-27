@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080905173226) do
+ActiveRecord::Schema.define(:version => 20081027155755) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -22,10 +22,43 @@ ActiveRecord::Schema.define(:version => 20080905173226) do
   end
 
   create_table "checkouts", :force => true do |t|
-    t.integer  "user_id",    :limit => 11
-    t.integer  "hub_id",     :limit => 11
+    t.integer  "user_id"
+    t.integer  "hub_id"
     t.datetime "checkout"
     t.datetime "checkin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "computers", :force => true do |t|
+    t.string   "control"
+    t.string   "serial"
+    t.string   "model"
+    t.string   "manufacturer"
+    t.datetime "purchase_date"
+    t.integer  "purchase_price"
+    t.string   "purchase_acct"
+    t.string   "status"
+    t.string   "cstatus"
+    t.integer  "memory"
+    t.integer  "hard_drive"
+    t.string   "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "departments", :force => true do |t|
+    t.string   "name"
+    t.string   "maintenance_account"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hardware_assignments", :force => true do |t|
+    t.integer  "computer_id"
+    t.integer  "user_id"
+    t.integer  "department_id"
+    t.boolean  "primary_computer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,8 +70,8 @@ ActiveRecord::Schema.define(:version => 20080905173226) do
   end
 
   create_table "licenses", :force => true do |t|
-    t.integer  "user_id",     :limit => 11
-    t.integer  "software_id", :limit => 11
+    t.integer  "user_id"
+    t.integer  "software_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "updated_by"
@@ -57,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20080905173226) do
     t.string   "last"
     t.string   "role"
     t.string   "building"
-    t.integer  "room",       :limit => 11
+    t.integer  "room"
     t.string   "email"
     t.string   "phone"
     t.string   "barcode"
@@ -65,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20080905173226) do
     t.string   "active"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "gordon_id",  :limit => 11
+    t.integer  "gordon_id"
     t.string   "on_campus"
   end
 

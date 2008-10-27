@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :hardware_assignments
+
+  map.resources :departments
+
+  map.resources :computers
+
   
 
 

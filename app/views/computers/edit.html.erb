@@ -1,0 +1,56 @@
+<h1>Editing computer</h1>
+
+<% form_for(@computer) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :control %><br />
+    <%= f.text_field :control %>
+  </p>
+  <p>
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </p>
+  <p>
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label :manufacturer %><br />
+    <%= f.text_field :manufacturer %>
+  </p>
+  <p>
+    <%= f.label :purchase_date %><br />
+    <%= f.datetime_select :purchase_date %>
+  </p>
+  <p>
+    <%= f.label :purchase_price %><br />
+    <%= f.text_field :purchase_price %>
+  </p>
+  <p>
+    <%= f.label :purchase_acct %><br />
+    <%= f.text_field :purchase_acct %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :cstatus %><br />
+    <%= f.text_field :cstatus %>
+  </p>
+  <p>
+    <%= f.label :memory %><br />
+    <%= f.text_field :memory %>
+  </p>
+  <p>
+    <%= f.label :hard_drive %><br />
+    <%= f.text_field :hard_drive %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @computer %> |
+<%= link_to 'Back', computers_path %>

@@ -1,0 +1,40 @@
+<h1>Listing computers</h1>
+
+<table>
+  <tr>
+    <th>Control</th>
+    <th>Serial</th>
+    <th>Model</th>
+    <th>Manufacturer</th>
+    <th>Purchase date</th>
+    <th>Purchase price</th>
+    <th>Purchase acct</th>
+    <th>Status</th>
+    <th>Cstatus</th>
+    <th>Memory</th>
+    <th>Hard drive</th>
+  </tr>
+
+<% for computer in @computers %>
+  <tr>
+    <td><%=h computer.control %></td>
+    <td><%=h computer.serial %></td>
+    <td><%=h computer.model %></td>
+    <td><%=h computer.manufacturer %></td>
+    <td><%=h computer.purchase_date %></td>
+    <td><%=h computer.purchase_price %></td>
+    <td><%=h computer.purchase_acct %></td>
+    <td><%=h computer.status %></td>
+    <td><%=h computer.cstatus %></td>
+    <td><%=h computer.memory %></td>
+    <td><%=h computer.hard_drive %></td>
+    <td><%= link_to 'Show', computer %></td>
+    <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
+    <td><%= link_to 'Destroy', computer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New computer', new_computer_path %>

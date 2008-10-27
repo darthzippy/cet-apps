@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @department.name %>
+</p>
+
+<p>
+  <b>Maintenance account:</b>
+  <%=h @department.maintenance_account %>
+</p>
+
+
+<%= link_to 'Edit', edit_department_path(@department) %> |
+<%= link_to 'Back', departments_path %>
