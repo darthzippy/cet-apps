@@ -48,6 +48,24 @@
     <%= f.text_field :hard_drive %>
   </p>
   <p>
+	<% for hardware_assignment in @computer.hardware_assignments %>
+	  <% fields_for "computer[hardware_assignment_attributes][]", hardware_assignment do |hardware_assignment_form| %>
+	    <p>
+	      <label>DEPARTMENTS</label>
+	      <%= hardware_assignment_form.collection_select :department_id, Department.all, :id, :name %>
+	    </p>
+	    <p>
+	      <label>USERS</label>
+		  <%= hardware_assignment_form.collection_select :user_id, Department.dept_name('cet').first.users, :id, :last %>
+	    </p>
+	    <p>
+	      <label>PRIMARY COMPUTER</label>
+		  <%= hardware_assignment_form.select :primary_computer, [["Yes",true],["No",false]] %>
+	    </p>
+	  <% end %>
+	<% end %>
+  <p>
+  <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>

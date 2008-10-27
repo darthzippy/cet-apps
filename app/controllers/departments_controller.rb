@@ -7,7 +7,7 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.xml
   def index
-    @departments = Department.find(:all)
+    @departments = Department.search(params[:search], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

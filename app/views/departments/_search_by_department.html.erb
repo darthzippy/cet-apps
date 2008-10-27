@@ -1,0 +1,8 @@
+<div id="search_form">
+	Search by department	
+	<% form_tag departments_path, :method => 'get' do %>
+	  <%= text_field_tag :search, params[:search] %>
+	  <%= submit_tag "Search" %>
+	<% end %>
+	<%= link_to 'clear', departments_path %>	
+</div>

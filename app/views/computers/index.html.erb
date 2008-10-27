@@ -1,6 +1,12 @@
+<div id="paginate">
+<%= will_paginate @computers %>	
+</div>
+
+<%= render :partial => 'search_by_control' %>
+
 <h1>Listing computers</h1>
 
-<table>
+<table cellspacing="0">
   <tr>
     <th>Control</th>
     <th>Serial</th>

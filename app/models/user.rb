@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   has_many :checkouts
   has_many :hubs, :through => :checkouts
   
+  has_many :hardware_assignments
+  has_many :computers, :through => :hardware_assignments
+  has_many :departments, :through => :hardware_assignments
+  
   named_scope :freshmen, :conditions => { :role => "undergraduate-freshman" }
   named_scope :sophomores, :conditions => { :role => "undergraduate-sohpomore" }
   named_scope :juniors, :conditions => { :role => "undergraduate-junior" }

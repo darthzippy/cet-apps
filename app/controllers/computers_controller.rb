@@ -7,7 +7,7 @@ class ComputersController < ApplicationController
   # GET /computers
   # GET /computers.xml
   def index
-    @computers = Computer.find(:all)
+    @computers = Computer.search(params[:search], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -30,6 +30,7 @@ class ComputersController < ApplicationController
   # GET /computers/new.xml
   def new
     @computer = Computer.new
+    @computer.hardware_assignments.build
 
     respond_to do |format|
       format.html # new.html.erb

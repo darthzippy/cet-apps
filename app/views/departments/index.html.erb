@@ -1,6 +1,12 @@
+<div id="paginate">
+<%= will_paginate @departments %>	
+</div>
+
+<%= render :partial => 'search_by_department' %>
+
 <h1>Listing departments</h1>
 
-<table>
+<table cellspacing="0">
   <tr>
     <th>Name</th>
     <th>Maintenance account</th>
