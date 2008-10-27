@@ -1,0 +1,11 @@
+<table cellspacing="0">
+<% for license in licenses %>
+  <tr id="<%= dom_id(license) %>">
+	<td>
+	  <%= license.software.name %>	
+	</td>
+	<td class="added_on">Added on: <%= license.created_at %> by <%= license.updated_by %></td>
+	<td><%= link_to_remote(image_tag("trash.gif"), :url => user_license_url(user, license), :confirm => 'Are you sure?', :method => :delete ) %></td>
+  </tr>
+<% end %>
+</table>

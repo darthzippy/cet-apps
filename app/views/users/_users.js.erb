@@ -1,0 +1,9 @@
+<ul class="users">
+<% for user in @users do -%>
+  <li class="user">
+	<div class="fullname">
+	  <%=h user.first %> <%=h user.last %>	
+	</div>
+  </li>
+<% end -%>
+</ul>

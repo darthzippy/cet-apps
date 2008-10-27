@@ -1,0 +1,8 @@
+<div id="search_by_id_form">
+	Search by ID	
+	<% form_tag users_path, :method => 'get' do %>
+	  <%= text_field_tag :search_by_id, params[:search_by_id] %>
+	  <%= submit_tag "Search" %>
+	<% end %>
+	<%= link_to 'clear', users_path %>	
+</div>

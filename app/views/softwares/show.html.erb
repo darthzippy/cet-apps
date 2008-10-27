@@ -1,0 +1,14 @@
+<p>
+  <b>Name:</b>
+  <%=h @software.name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @software.software_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_software_path(@software) %> |
+<%= link_to 'Back', softwares_path %>
+

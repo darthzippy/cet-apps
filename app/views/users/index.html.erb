@@ -1,0 +1,24 @@
+<div id="paginate">
+<%= will_paginate @users %>	
+</div>
+
+<%= render :partial => 'search' %>
+
+<table cellspacing="0">
+  <tr>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Active</th>
+	<th>License</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%= link_to user.fullname, user, :class => "fullname" %></td>
+    <td><%=h user.role %></td>
+    <td><%=h user.active %></td>
+	<td><%=h user.licenses.last.software.name unless user.licenses.last.nil? %></td>
+  </tr>
+<% end %>
+</table>
+

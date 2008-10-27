@@ -1,0 +1,4 @@
+host: 199.97.45.204
+port: 389
+domain: gordon.edu
+dn: ou=gordon college,dc=gordon,dc=edu

@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first: MyString
+  middle: MyString
+  last: MyString
+  role: MyString
+  building: MyString
+  room: 1
+  email: MyString
+  phone: MyString
+  barcode: MyString
+  department: MyString
+  active: MyString
+
+two:
+  first: MyString
+  middle: MyString
+  last: MyString
+  role: MyString
+  building: MyString
+  room: 1
+  email: MyString
+  phone: MyString
+  barcode: MyString
+  department: MyString
+  active: MyString

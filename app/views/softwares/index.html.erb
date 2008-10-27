@@ -1,0 +1,79 @@
+<h1>Software</h1>
+
+<table cellspacing="0">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+
+<% for software in @softwares %>
+  <tr>
+    <td><%=h software.name %></td>
+    <td><%=h software.software_type %></td>
+    <td><%= link_to 'Show', software %></td>
+    <td><%= link_to 'Edit', edit_software_path(software) %></td>
+    <td><%= link_to 'Destroy', software, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New software', new_software_path %>
+
+<h2>Stats</h2>
+
+<h3>Software Sales This Semester (Fall 2008)</h3>
+
+<p>Total Software Sales: <%= @licenses.recent.count %></p>
+
+<table cellspacing="0">
+	<tr>
+		<th>Office 2007 (Windows)</th>
+		<th>Office 2008 (Mac)</th>
+		<th>Windows XP</th>
+		<th>Windows Vista</th>
+		<th>Mac OSX Leopard</th>
+		<th>Mac OSX Tiger</th>
+	</tr>
+	<tr>
+		<td><%= @licenses.recent.win_office2007_sales.count %></td>
+		<td><%= @licenses.recent.mac_office2008_sales.count %></td>
+		<td><%= @licenses.recent.win_xp_sales.count %></td>
+		<td><%= @licenses.recent.win_vista_sales.count %></td>
+		<td><%= @licenses.recent.mac_leopard_sales.count %></td>
+		<td><%= @licenses.recent.mac_tiger_sales.count %></td>
+	</tr>
+</table>
+
+<%= image_tag Gchart.pie_3d(:title => 'Office Sales - Mac vs. PC', :size => '500x200',:data => [@licenses.recent.win_office2007_sales.count, @licenses.recent.mac_office2008_sales.count], :labels => ["Office 2007 (Windows)", "Office 2008 (Mac)"]) %>
+
+<%= image_tag Gchart.pie_3d(:title => 'OS Sales - Mac vs. PC', :size => '500x200',:data => [@licenses.recent.win_xp_sales.count, @licenses.recent.win_vista_sales.count, @licenses.recent.mac_leopard_sales.count, @licenses.recent.mac_tiger_sales.count], :labels => ["XP", "Vista", "Leopard", "Tiger"]) %>
+
+<h3>Software Sales - All-Time</h3>
+
+<p>Total Software Sales: <%= @licenses.count %></p>
+
+<table cellspacing="0">
+	<tr>
+		<th>Office 2007 (Windows)</th>
+		<th>Office 2008 (Mac)</th>
+		<th>Windows XP</th>
+		<th>Windows Vista</th>
+		<th>Mac OSX Leopard</th>
+	</tr>
+	<tr>
+		<td><%= @licenses.win_office2007_sales.count %></td>
+		<td><%= @licenses.mac_office2008_sales.count %></td>
+		<td><%= @licenses.win_xp_sales.count %></td>
+		<td><%= @licenses.win_vista_sales.count %></td>
+		<td><%= @licenses.mac_leopard_sales.count %></td>
+	</tr>
+</table>
+
+<%= image_tag Gchart.pie_3d(:title => 'Office Sales - Mac vs. PC', :size => '500x200',:data => [@licenses.win_office2007_sales.count, @licenses.mac_office2008_sales.count], :labels => ["Office 2007 (Windows)", "Office 2008 (Mac)"]) %>
+
+<%= image_tag Gchart.pie_3d(:title => 'OS Sales - Mac vs. PC', :size => '500x200',:data => [@licenses.win_xp_sales.count, @licenses.win_vista_sales.count, @licenses.mac_leopard_sales.count, @licenses.mac_tiger_sales.count], :labels => ["XP", "Vista", "Leopard", "Tiger"]) %>

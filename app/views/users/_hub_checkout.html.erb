@@ -1,0 +1,17 @@
+  	<% form_for [@user, @checkout] do |f|  -%>
+	  <p>
+	    <%= f.label :hub_number %>
+	    <%= f.collection_select :hub_id, Hub.find(:all), :id, :hub_number %>		
+	  </p>
+	  <p>
+		<%= f.label :checkout_date %>
+	  	<%= f.date_select :checkout, :order => [:month, :day, :year]%>
+	  </p>
+	  <p>
+	  	<%= f.submit "Add Hub" %>
+	  </p>
+	<% end -%>
+	<%= link_to_function("Cancel", nil) do |page|
+		page[:hub_checkout].blind_up
+	  end %>
+	

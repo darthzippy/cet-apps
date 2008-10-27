@@ -1,0 +1,3 @@
+page[:licenses].replace_html :partial => 'licenses/licenses',
+                     :locals  => {:licenses => @user.licenses,
+                                  :user     => @user}
