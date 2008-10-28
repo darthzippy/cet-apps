@@ -17,7 +17,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: cet_apps_test_development
+  database: cet_apps_development
   username: root
   password:
   socket: /tmp/mysql.sock
@@ -28,7 +28,7 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: cet_apps_test_test
+  database: cet_apps_test
   username: root
   password:
   socket: /tmp/mysql.sock
@@ -36,7 +36,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: cet_apps_test_production
+  database: cet_apps_production
   username: root
   password: 
   socket: /tmp/mysql.sock

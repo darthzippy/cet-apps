@@ -56,7 +56,7 @@
 	    </p>
 	    <p>
 	      <label>USERS</label>
-		  <%= hardware_assignment_form.collection_select :user_id, Department.dept_name('cet').first.users, :id, :last %>
+		  <%= hardware_assignment_form.collection_select :user_id, Department.dept_name('cet').first.users, :id, :fullname %>
 	    </p>
 	    <p>
 	      <label>PRIMARY COMPUTER</label>

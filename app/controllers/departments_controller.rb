@@ -19,6 +19,7 @@ class DepartmentsController < ApplicationController
   # GET /departments/1.xml
   def show
     @department = Department.find(params[:id])
+    @users = @department.controller
 
     respond_to do |format|
       format.html # show.html.erb

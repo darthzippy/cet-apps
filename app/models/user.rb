@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   named_scope :juniors, :conditions => { :role => "undergraduate-junior" }
   named_scope :seniors, :conditions => { :role => "undergraduate-senior" }
   
+  named_scope :controller, :conditions => { :department => "Controller's Office"}
+  
   def fullname
     "#{last}, #{first} #{middle}"
   end

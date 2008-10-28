@@ -7,6 +7,7 @@ class Department < ActiveRecord::Base
   named_scope :dept_name, lambda { |dept_name|
      { :conditions => { :name => dept_name } }
   }
+  named_scope :controllers_office, :joins => :users, :conditions => { 'users.department = ?' => "Controller's Office" }
   
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
