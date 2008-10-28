@@ -1,4 +1,4 @@
-set :application, "apps"
+set :application, "apps-test"
 
 set :repository,  "svn+ssh://eric@172.16.13.156/Users/Shared/svnrepo/#{application}"
 set :deploy_to,   "/Library/WebServer/#{application}"
