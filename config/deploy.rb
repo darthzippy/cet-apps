@@ -25,7 +25,7 @@ role :web, "cetserv.gordon.edu"
 role :db,  "cetserv.gordon.edu", :primary => true
 
 set :mongrel_cmd, "/usr/bin/mongrel_rails_persist"
-set :mongrel_ports, 5000..5003
+set :mongrel_ports, 4000..4003
 
 set :user, "eric"
 set :group, "admin"
