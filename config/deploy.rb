@@ -1,10 +1,15 @@
 set :application, "apps-test"
 
-set :repository,  "svn+ssh://eric@172.16.13.156/Users/Shared/svnrepo/#{application}"
+# If you aren't using Subversion to manage your source code, specify
+# your SCM below:
+set :scm, :git
+set :scm_command, "/usr/local/bin/git"
+set :repository,  "git://github.com/darthzippy/cet-apps.git"
+set :branch, "master"
 set :deploy_to,   "/Library/WebServer/#{application}"
-set :deploy_via,  :export
+set :deploy_via,  :remote_cache
 
-set :scm_username, "eric"
+set :scm_username, "darthzippy"
 set :scm_password, "Hermione1"
 
 ssh_options[:forward_agent] = true
@@ -13,16 +18,14 @@ ssh_options[:forward_agent] = true
 # via the :deploy_to variable:
 # set :deploy_to, "/var/www/#{application}"
 
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
 
-role :app, "172.16.13.156"
-role :web, "172.16.13.156"
-role :db,  "172.16.13.156", :primary => true
+
+role :app, "cetserv.gordon.edu"
+role :web, "cetserv.gordon.edu"
+role :db,  "cetserv.gordon.edu", :primary => true
 
 set :mongrel_cmd, "/usr/bin/mongrel_rails_persist"
-set :mongrel_ports, 4000..4003
+set :mongrel_ports, 5000..5003
 
 set :user, "eric"
 set :group, "admin"
