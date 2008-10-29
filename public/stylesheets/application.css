@@ -172,6 +172,20 @@ table {
 	color: #777;
 	font-size: 1em;
 }
+
+/*==COMPUTERS===*/
+
+#computer_show_purchase_info {
+	border: 1px solid #999;
+	padding: 20px;
+	margin: 20px;
+}
+
+#computer_show_user_info {
+	border: 1px solid #999;
+	padding: 20px;
+	margin: 20px;
+}
 /*==========*/
 
 

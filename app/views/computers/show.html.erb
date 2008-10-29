@@ -18,21 +18,33 @@
   <%=h @computer.manufacturer %>
 </p>
 
-<p>
-  <b>Purchase date:</b>
-  <%=h @computer.purchase_date %>
-</p>
+<div id="computer_show_purchase_info">
+	<p>
+	  <b>Purchase date:</b>
+	  <%=h @computer.purchase_date.to_s(:long) %>
+	</p>
 
-<p>
-  <b>Purchase price:</b>
-  <%=h @computer.purchase_price %>
-</p>
+	<p>
+	  <b>Purchase price:</b>
+	  <%=h number_to_currency(@computer.purchase_price) %>
+	</p>
 
-<p>
-  <b>Purchase acct:</b>
-  <%=h @computer.purchase_acct %>
-</p>
+	<p>
+	  <b>Purchase acct:</b>
+	  <%=h @computer.purchase_acct %>
+	</p>	
+</div>
 
+<div id="computer_show_user_info">
+	<p>
+	  <b>Department:</b>
+	  <%=h @computer.department.name unless @computer.department.nil? %>
+	</p>
+	<p>
+	  <b>User:</b>
+	  <%=h @computer.user.fullname unless @computer.user.nil? %>
+	</p>
+</div>
 <p>
   <b>Status:</b>
   <%=h @computer.status %>

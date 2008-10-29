@@ -1,4 +1,4 @@
-set :application, "apps-test"
+set :application, "apps"
 
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:

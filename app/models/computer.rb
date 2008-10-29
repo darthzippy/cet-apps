@@ -11,8 +11,8 @@ class Computer < ActiveRecord::Base
   validates_presence_of :purchse_acct, :on => :create, :message => "can't be blank"
   
   has_many :hardware_assignments
-  has_one :user, :through => :hardware_assignment
-  has_one :department, :through => :hardware_assignment
+  has_one :user, :through => :hardware_assignments
+  has_one :department, :through => :hardware_assignments
   
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
