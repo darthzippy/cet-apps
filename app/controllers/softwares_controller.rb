@@ -1,6 +1,6 @@
 class SoftwaresController < ApplicationController
   
-  require 'gchart'
+  require "gchart"
   
   layout 'application'
     
