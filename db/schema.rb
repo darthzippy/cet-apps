@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081027155755) do
+ActiveRecord::Schema.define(:version => 20081104195103) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20081027155755) do
     t.string   "serial"
     t.string   "model"
     t.string   "manufacturer"
-    t.datetime "purchase_date"
+    t.date     "purchase_date"
     t.integer  "purchase_price"
     t.string   "purchase_acct"
     t.string   "status"
@@ -45,6 +45,36 @@ ActiveRecord::Schema.define(:version => 20081027155755) do
     t.string   "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "legacy_user"
+    t.string   "legacy_department"
+    t.string   "legacy_account"
+    t.integer  "purchase_month"
+    t.integer  "purchase_day"
+    t.integer  "purchase_year"
+    t.integer  "warranty_length"
+    t.integer  "warranty_end"
+    t.text     "comment"
+    t.integer  "charge"
+    t.string   "legacy_userid"
+    t.string   "location"
+    t.integer  "nuend"
+    t.integer  "nuyear"
+    t.integer  "numonth"
+    t.integer  "nuday"
+    t.integer  "endyear"
+    t.integer  "endday"
+    t.integer  "endmonth"
+    t.integer  "nozero"
+    t.string   "legacy_dateupdated"
+    t.string   "legacy_userupdated"
+    t.string   "wishmaketype"
+    t.integer  "repprioroty"
+    t.integer  "busflag"
+    t.string   "puracct_old"
+    t.string   "controlyear"
+    t.string   "codedate"
+    t.string   "legacy_primaryuser"
+    t.string   "lookup"
   end
 
   create_table "departments", :force => true do |t|
