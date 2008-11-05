@@ -32,6 +32,10 @@
 	<p>
 	  <b>Purchase acct:</b>
 	  <%=h @computer.purchase_acct %>
+	</p>
+	<p>
+	  <b>Purchase acct (from vax):</b>
+	  <%=h @computer.legacy_account %>
 	</p>	
 </div>
 
@@ -43,6 +47,15 @@
 	<p>
 	  <b>User:</b>
 	  <%=h @computer.user.fullname unless @computer.user.nil? %>
+	</p>
+	<h3>User info from VAX</h3>
+	<p>
+	  <b>Department:</b>
+	  <%=h @computer.legacy_department %>
+	</p>
+	<p>
+	  <b>User:</b>
+	  <%=h @computer.legacy_user %>
 	</p>
 </div>
 <p>
