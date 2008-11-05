@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081104195103) do
+ActiveRecord::Schema.define(:version => 20081105141125) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -75,6 +75,13 @@ ActiveRecord::Schema.define(:version => 20081104195103) do
     t.string   "codedate"
     t.string   "legacy_primaryuser"
     t.string   "lookup"
+    t.string   "needupgrade"
+    t.string   "legacy_purchase_date"
+    t.string   "override"
+    t.string   "warranty_type"
+    t.string   "os_campagree"
+    t.string   "off_campagree"
+    t.string   "legacy_account_old"
   end
 
   create_table "departments", :force => true do |t|
