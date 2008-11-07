@@ -8,11 +8,12 @@ class Computer < ActiveRecord::Base
   validates_presence_of :model, :on => :create, :message => "can't be blank"
   validates_presence_of :purchase_date, :on => :create, :message => "can't be blank"
   validates_presence_of :purchase_price, :on => :create, :message => "can't be blank"
-  validates_presence_of :purchse_acct, :on => :create, :message => "can't be blank"
   
   has_many :hardware_assignments
   has_one :user, :through => :hardware_assignments
   has_one :department, :through => :hardware_assignments
+  
+  after_update :save_hardware_assignments
   
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
@@ -22,8 +23,20 @@ class Computer < ActiveRecord::Base
   
   def hardware_assignment_attributes=(hardware_assignment_attributes)
     hardware_assignment_attributes.each do |attributes|
-      hardware_assignments.build(attributes)
+      if attributes[:id].blank?
+        hardware_assignments.build(attributes)
+      else
+        hardware_assignment = hardware_assignments.detect { |t| t.id == attributes[:id].to_i }
+        hardware_assignment.attributes = attributes
+      end
     end
   end
+  
+  def save_hardware_assignments
+    hardware_assignments.each do |h|
+      h.save(false)
+    end
+  end
+  
   
 end

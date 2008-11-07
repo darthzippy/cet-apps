@@ -47,6 +47,29 @@
     <%= f.label :hard_drive %><br />
     <%= f.text_field :hard_drive %>
   </p>
+
+  <p>
+	<% for hardware_assignment in @computer.hardware_assignments %>
+	  <% fields_for "computer[hardware_assignment_attributes][]", hardware_assignment do |hardware_assignment_form| %>
+	    <p>
+	      <label>DEPARTMENTS</label>
+	      <%= hardware_assignment_form.collection_select(:department_id, Department.all, :id, :name, {}, {:index => nil}) %>
+	    </p>
+	    <p>
+	      <label>USERS</label>
+		  <%= hardware_assignment_form.collection_select :user_id, User.faculty_staff.ordered('last ASC'), :id, :fullname, {}, {:index => nil}  %>
+	    </p>
+	    <p>
+	      <label>PRIMARY COMPUTER</label>
+		  <%= hardware_assignment_form.select :primary_computer, [["Yes",true],["No",false]], {}, {:index => nil}  %>
+	    </p>
+	    <% unless hardware_assignment.new_record? %>
+	      <%= hardware_assignment_form.hidden_field :id, :index => nil %>
+	    <% end %>
+	  <% end %>
+	<% end %>
+  <p>
+
   <p>
     <%= f.submit "Update" %>
   </p>
