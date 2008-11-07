@@ -195,6 +195,12 @@ span.login_tips {
 	padding: 20px;
 	margin: 20px;
 }
+
+#hardware_assignments {
+	border: 1px solid #999;
+	padding: 20px;
+	margin: 20px;	
+}
 /*==========*/
 
 
