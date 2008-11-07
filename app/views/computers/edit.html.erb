@@ -48,7 +48,6 @@
     <%= f.text_field :hard_drive %>
   </p>
 
-  <p>
 	<% for hardware_assignment in @computer.hardware_assignments %>
 	  <% fields_for "computer[hardware_assignment_attributes][]", hardware_assignment do |hardware_assignment_form| %>
 	    <p>
@@ -68,7 +67,6 @@
 	    <% end %>
 	  <% end %>
 	<% end %>
-  <p>
 
   <p>
     <%= f.submit "Update" %>
