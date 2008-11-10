@@ -16,9 +16,12 @@ class User < ActiveRecord::Base
   named_scope :seniors, :conditions => { :role => "undergraduate-senior" }
   
   named_scope :controller, :conditions => { :department => "Controller's Office"}
-  named_scope :faculty_staff, :conditions => { :role => 'faculty', :role => 'employee'} 
+  named_scope :faculty_staff 
   named_scope :ordered, lambda { |*order|
     { :order => order.flatten.first || 'created_at DESC' }
+  }
+  named_scope :by_department, lambda { |department|
+    { :conditions => { :department => department } }
   }
   
   
