@@ -57,7 +57,7 @@
 	  </p>
 	  <p>
 	    <label>USERS</label>
-	    <%= hardware_assignment_form.collection_select :user_id, User.ordered('last ASC'), :id, :fullname, {}, {:index => nil}  %>
+	    <%= hardware_assignment_form.collection_select :user_id, User.faculty_staff.ordered('last ASC'), :id, :fullname, {}, {:index => nil}  %>
 	  </p>
 	  <p>
 	   <label>PRIMARY COMPUTER</label>

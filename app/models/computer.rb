@@ -13,6 +13,17 @@ class Computer < ActiveRecord::Base
   has_one :user, :through => :hardware_assignments
   has_one :department, :through => :hardware_assignments
   
+  named_scope :computer_type, lambda { |computer_type|
+      { :conditions => { :computer_type => computer_type } }
+    }
+  
+  named_scope :macs, :conditions => ["computer_type LIKE ?", "%mac%"]
+  named_scope :pcs, :conditions => ["computer_type LIKE ?", "%pc%"]
+  named_scope :printers, :conditions => ["computer_type LIKE ?", "%printer%"]
+  
+  named_scope :laptops, :conditions => ["computer_type LIKE ?", "%laptop%"]
+  named_scope :desktops, :conditions => ["computer_type LIKE ?", "%desktop%"]
+  
   after_update :save_hardware_assignments
   
   def self.search(search, page)

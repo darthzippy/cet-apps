@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081105141125) do
+ActiveRecord::Schema.define(:version => 20081110183810) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20081105141125) do
     t.string   "os_campagree"
     t.string   "off_campagree"
     t.string   "legacy_account_old"
+    t.string   "computer_type"
   end
 
   create_table "departments", :force => true do |t|
