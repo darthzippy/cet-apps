@@ -1,0 +1,38 @@
+				<div id="login_box">
+					<h1>Login</h1>
+					<% form_tag do -%>
+					<p><label for="login">Gordon Username <span class="login_tips">(You don't need '@gordon.edu')</span></label><br/>
+					<%= text_field_tag 'login' %></p>
+
+					<p><label for="password">Password</label><br/>
+					<%= password_field_tag 'password' %></p>
+
+					<!-- Uncomment this if you want this functionality
+					<p><label for="remember_me">Remember me:</label>
+					<%= check_box_tag 'remember_me' %></p>
+					-->
+
+					<p><%= submit_tag 'Log in' %></p>
+					<% end -%>
+				</div>	
+
+
+				
+				<div id="apps_icons">
+					<div id="software_icon"class="app_icon">
+						<%= image_tag("software.png") %>
+						<h2>SOFTWARE LICENSING</h2>
+						<p>Track Microsoft and Apple software sales and licensing</p>
+					</div>
+					<div id="hubs_icon"class="app_icon">
+						<%= image_tag("hubs.png") %>
+						<h2>HUBS</h2>
+						<p>Check out network hubs to students</p>
+					</div>
+					<div id="media_releases_icon"class="app_icon">
+						<%= image_tag("media_releases.png") %>
+						<h2>MEDIA RELEASE FORMS (COMING SOON)</h2>
+						<p>Track media release forms</p>
+					</div>
+					
+				</div>

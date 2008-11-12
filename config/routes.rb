@@ -1,13 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :hardware_assignments
-
-  map.resources :departments
-
-  map.resources :computers
-
   
-
-
+  map.resources :hardware_assignments
+  map.resources :departments
+  map.resources :computers
   map.resources :users, :has_many => :licenses
   map.resources :users, :has_many => :checkouts
   map.resources :softwares

@@ -19,18 +19,31 @@
     <%= f.label :manufacturer %><br />
     <%= f.text_field :manufacturer %>
   </p>
+
   <p>
-    <%= f.label :purchase_date %><br />
-    <%= f.date_select :purchase_date %>
+	  <%= f.label :warranty_type %><br />
+	  <%= f.select(:warranty_type, %w{ AppleCare HP\ Accidental Encore }) %>
   </p>
   <p>
-    <%= f.label :purchase_price %><br />
-    <%= f.text_field :purchase_price %>
+	  <%= f.label :warranty_length %><br />
+	  <%= f.select(:warranty_length, %w{ 1 2 3 4 }) %>
   </p>
-  <p>
-    <%= f.label :purchase_acct %><br />
-    <%= f.text_field :purchase_acct %>
-  </p>
+  
+  <div id="computer_new_purchase_info">
+  	  <p>
+	    <%= f.label :purchase_date %><br />
+	    <%= f.date_select :purchase_date %>
+	  </p>
+	  <p>
+	    <%= f.label :purchase_price %><br />
+	    <%= f.text_field :purchase_price %>
+	  </p>
+	  <p>
+	    <%= f.label :purchase_acct %><br />
+	    <%= f.text_field :purchase_acct %>
+	  </p>	
+  </div>
+
   <p>
     <%= f.label :status %><br />
     <%= f.text_field :status %>
@@ -52,14 +65,14 @@
 	  <% fields_for "computer[hardware_assignment_attributes][]", hardware_assignment do |hardware_assignment_form| %>
 	  <p>
 	    <label>DEPARTMENTS</label>
-	    <%= hardware_assignment_form.collection_select(:department_id, Department.all, :id, :name, {}, {:index => nil}) %>
+	    <%= hardware_assignment_form.collection_select(:department_id, Department.all, :id, :name, {:prompt => "Select a Department"}, {:index => nil}) %>
 	  </p>
 	  <p>
 	    <label>USERS</label>
-	    <%= hardware_assignment_form.collection_select :user_id, User.faculty_staff.ordered('last ASC'), :id, :fullname, {}, {:index => nil}  %>
+	    <%= hardware_assignment_form.collection_select(:user_id, User.faculty_staff.ordered('last ASC'), :id, :fullname, {:prompt => "Select a User"}, {:index => nil}) %>
 	  </p>
 	  <p>
-	   <label>PRIMARY COMPUTER</label>
+	    <label>PRIMARY COMPUTER</label>
 	    <%= hardware_assignment_form.select :primary_computer, [["Yes",true],["No",false]], {}, {:index => nil}  %>
 	  </p>
 	    <% unless hardware_assignment.new_record? %>
