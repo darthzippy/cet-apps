@@ -1,87 +1,9 @@
 <h1>Editing computer</h1>
 
-<% form_for(@computer) do |f| %>
-  <%= f.error_messages %>
+<%= error_messages_for :computer %>
 
-  <p>
-    <%= f.label :control %><br />
-    <%= f.text_field :control %>
-  </p>
-  <p>
-    <%= f.label :serial %><br />
-    <%= f.text_field :serial %>
-  </p>
-  <p>
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
-  </p>
-  <p>
-	  <%= f.label :warranty_type %><br />
-	  <%= f.select(:warranty_type, %w{ AppleCare HP\ Accidental Encore }) %>
-  </p>
-  <p>
-	  <%= f.label :warranty_length %><br />
-	  <%= f.select(:warranty_length, [ ['1',1], ['2',2], ['3',3], ['4',4]]) %>
-  </p>
-  
-  <div id="computer_edit_purchase_info">
-  	  <p>
-	    <%= f.label :purchase_date %><br />
-	    <%= f.date_select :purchase_date %>
-	  </p>
-	  <p>
-	    <%= f.label :purchase_price %><br />
-	    $<%= f.text_field :purchase_price %>
-	  </p>
-	  <p>
-	    <%= f.label :purchase_acct %><br />
-	    <%= f.text_field :purchase_acct %>
-	  </p>	
-  </div>
-  <p>
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </p>
-  <p>
-    <%= f.label :cstatus %><br />
-    <%= f.text_field :cstatus %>
-  </p>
-  <p>
-    <%= f.label :memory %><br />
-    <%= f.text_field :memory %>GB
-  </p>
-  <p>
-    <%= f.label :hard_drive %><br />
-    <%= f.text_field :hard_drive %>GB
-  </p>
-
-<div id="hardware_assignments">
-	<% for hardware_assignment in @computer.hardware_assignments %>
-	  <% fields_for "computer[hardware_assignment_attributes][]", hardware_assignment do |hardware_assignment_form| %>
-	  <p>
-	    <label>DEPARTMENTS</label>
-	    <%= hardware_assignment_form.collection_select(:department_id, Department.all, :id, :name, {:prompt => "Select a Department"}, {:index => nil}) %>
-	  </p>
-	  <p>
-	    <label>USERS</label>
-	    <%= hardware_assignment_form.collection_select :user_id, User.faculty_staff.ordered('last ASC'), :id, :fullname, {:prompt => "Select a User"}, {:index => nil}  %>
-	  </p>
-	  <p>
-	   <label>PRIMARY COMPUTER</label>
-	    <%= hardware_assignment_form.select :primary_computer, [["Yes",true],["No",false]], {}, {:index => nil}  %>
-	  </p>
-	    <% unless hardware_assignment.new_record? %>
-	      <%= hardware_assignment_form.hidden_field :id, :index => nil %>
-	    <% end %>
-	  <% end %>
-	<% end %>	
-</div>
-
-
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+<%= render :partial => @computer, 
+  :locals => { :button_name => "Update"} %>
 
 <%= link_to 'Show', @computer %> |
 <%= link_to 'Back', computers_path %>
