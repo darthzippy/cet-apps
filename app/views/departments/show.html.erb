@@ -8,6 +8,29 @@
   <%=h @department.maintenance_account %>
 </p>
 
+<div id="departments_show_users">
+	<h3>Users</h3>
+		<table cellspacing="0">
+		  <tr>
+	  	    <th>Name</th>
+		    <th>Control</th>
+		    <th>Type</th>
+		    <th>Model</th>	
+		  </tr>
 
+		<% for user in @users %>
+		  <tr>
+			<td><%= user.fullname %></td>
+			<td><%= link_to user.hardware_assignments.first.computer.control, computer_path([user.hardware_assignments.first.computer.id]) %></td>
+			<td><%= user.hardware_assignments.first.computer.computer_type %></td>
+			<td><%= user.hardware_assignments.first.computer.model %></td>	  	
+		  </tr>
+	    <% end %>
+	    </table>	
+</div>
+
+
+
+<br \>
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', departments_path %>
