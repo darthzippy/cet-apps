@@ -19,7 +19,7 @@ class DepartmentsController < ApplicationController
   # GET /departments/1.xml
   def show
     @department = Department.find(params[:id])
-    @users = @department.users.all
+    @users = @department.users.ordered('last')
     @computers = @department.computers.all
 
     respond_to do |format|
