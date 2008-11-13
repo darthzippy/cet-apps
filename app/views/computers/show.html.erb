@@ -78,6 +78,23 @@
   <%=h @computer.hard_drive %>
 </p>
 
+<div id="computer_show_comments_list">
+ <%= render :partial => 'comments/comments', :locals => {:comments => @computer.comments, :computer => @computer} %>	
+</div>
 
+<br />
+<%= link_to_function('Add Comment', nil, :id => "add_comment") do |page|
+	  page[:computer_show_comments_add].appear
+ end %>
+
+<div id="computer_show_comments_add">
+	<h3>New Comment</h3>
+	<%= render :partial => @comment = Comment.new, 
+	   :locals => { :button_name => 'Create'}%>	
+</div>
+
+<br />
+<br />
+<%= link_to 'Comments', computer_comments_path(@computer) %>
 <%= link_to 'Edit', edit_computer_path(@computer) %> |
 <%= link_to 'Back', computers_path %>

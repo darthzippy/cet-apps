@@ -53,9 +53,15 @@ class ComputersController < ApplicationController
         flash[:notice] = 'Computer was successfully created.'
         format.html { redirect_to(@computer) }
         format.xml  { render :xml => @computer, :status => :created, :location => @computer }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @computer.errors, :status => :unprocessable_entity }
+        format.js do
+          render :update do |page|
+            page.redirect_to @computer
+          end
+        end
       end
     end
   end

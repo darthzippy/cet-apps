@@ -1,0 +1,4 @@
+page[:computer_show_comments_list].replace_html  :partial => 'comments/comments',
+                                                  :locals  => {:comments => @computer.comments,
+                                                               :computer => @computer}
+page[:computer_show_comments_add].fade

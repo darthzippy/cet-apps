@@ -1,0 +1,8 @@
+<h1>Listing comments</h1>
+
+<%= render :partial => 'comments', @comments %>
+
+<br />
+
+<%= link_to 'New comment', 
+  new_computer_comment_path(@computer) %>

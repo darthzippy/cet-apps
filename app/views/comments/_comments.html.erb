@@ -1,0 +1,6 @@
+<% unless @computer.comments.empty? %>
+  <h3>Comments</h3>
+  <% @computer.comments.each do |comment| %>
+  <p><%= h comment.body %></p>
+  <% end %>
+<% end %>

@@ -11,6 +11,9 @@ Event.addBehavior({
   '#hub_checkout' : function() {
     this.hide();
   },
+  '#computer_show_comments_add' : function() {
+    this.hide();
+  },
   '#os_add:click' : function() {
     $('add_os').toggle();
     return false;
@@ -21,6 +24,10 @@ Event.addBehavior({
   },
   '#hub_checkout_link:click' : function() {
     $('hub_checkout').toggle();
+    return false;
+  },
+  '#add_comment:click' : function() {
+    $('computer_show_comments_add').toggle();
     return false;
   }
 });

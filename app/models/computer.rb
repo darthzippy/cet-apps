@@ -12,6 +12,7 @@ class Computer < ActiveRecord::Base
   has_many :hardware_assignments
   has_one :user, :through => :hardware_assignments
   has_one :department, :through => :hardware_assignments
+  has_many :comments
   
   named_scope :computer_type, lambda { |computer_type|
       { :conditions => { :computer_type => computer_type } }
