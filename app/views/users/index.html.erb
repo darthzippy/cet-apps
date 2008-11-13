@@ -8,7 +8,6 @@
   <tr>
     <th>Name</th>
     <th>Role</th>
-    <th>Active</th>
 	<th>License</th>
   </tr>
 
@@ -16,7 +15,6 @@
   <tr>
     <td><%= link_to user.fullname, user, :class => "fullname" %></td>
     <td><%=h user.role %></td>
-    <td><%=h user.active %></td>
 	<td><%=h user.licenses.last.software.name unless user.licenses.last.nil? %></td>
   </tr>
 <% end %>

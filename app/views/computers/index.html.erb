@@ -13,21 +13,17 @@
     <th>Manufacturer</th>
 	<th>Department</th>
 	<th>User</th>
-	<th>User (from vax)</th>
-	<th colspan=3>Options</th>
+	<th>Options</th>
   </tr>
 
 <% for computer in @computers %>
   <tr>
-    <td><%=h computer.control %></td>
+    <td><%= link_to computer.control, computer %></td>
     <td><%=h computer.model %></td>
     <td><%=h computer.manufacturer %></td>
 	<td><%=h computer.department.name unless computer.department.nil? %></td>
 	<td><%=h computer.user.fullname unless computer.user.nil? %></td>
-	<td><%=h computer.legacy_user  %></td>
-    <td><%= link_to 'Show', computer %></td>
     <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
-    <td><%= link_to 'Destroy', computer, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

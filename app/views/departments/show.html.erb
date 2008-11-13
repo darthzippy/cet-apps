@@ -7,9 +7,6 @@
   <b>Maintenance account:</b>
   <%=h @department.maintenance_account %>
 </p>
-<% for user in @users %>
-	<%= user.fullname %>
-<% end %>
 
 
 <%= link_to 'Edit', edit_department_path(@department) %> |
