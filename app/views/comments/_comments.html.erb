@@ -1,6 +1,9 @@
 <% unless @computer.comments.empty? %>
   <h3>Comments</h3>
   <% @computer.comments.each do |comment| %>
-  <p><%= h comment.body %> <span class="comment_user_info">posted by: <%= h comment.updated_by %> on <%= h comment.updated_or_created %></span> <%= link_to_remote(image_tag("trash.gif"), :url => computer_comment_url(computer, comment), :confirm => 'Are you sure?', :method => :delete ) %></p>
+  <div id="<%= dom_id(comment) %>">
+    <p><%= h comment.body %> <span class="comment_user_info">posted by: <%= h comment.updated_by %> on <%= h comment.updated_or_created %></span> <%= link_to_remote(image_tag("trash.gif"), :url => computer_comment_url(computer, comment), :confirm => 'Are you sure?', :method => :delete ) %></p>  	
+  </div>
+
   <% end %>
 <% end %>

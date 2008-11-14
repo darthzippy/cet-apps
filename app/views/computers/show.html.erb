@@ -1,3 +1,5 @@
+<%= render :partial => 'search_by_control' %>
+<br />
 <p>
   <b>Control:</b>
   <%=h @computer.control %>
@@ -79,7 +81,7 @@
 </p>
 
 <div id="computer_show_comments_list">
- <%= render :partial => 'comments/comments', :locals => {:comments => @computer.comments.ordered('created_at DESC'), :computer => @computer} %>	
+ <%= render :partial => 'comments/comments', :locals => {:comments => @computer.comments, :computer => @computer} %>	
 </div>
 
 <br />
