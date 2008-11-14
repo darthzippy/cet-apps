@@ -204,6 +204,13 @@ span.login_tips {
 	margin: 20px;	
 }
 
+/*==COMMENTS===*/
+
+.comment_user_info {
+	font: 75%;
+	color: #777;
+}
+
 /*==DEPARTMENTS===*/
 
 #departments_show_users {

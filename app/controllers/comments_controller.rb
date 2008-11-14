@@ -44,12 +44,14 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     @comment = @computer.comments.find(params[:id])
+    @comment.updated_by=current_cet_user.display_name
   end
 
   # POST /comments
   # POST /comments.xml
   def create
     @comment = @computer.comments.build(params[:comment])
+    @comment.updated_by=current_cet_user.display_name
 
     respond_to do |format|
       if @comment.save
@@ -93,8 +95,9 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(comments_url) }
+      format.html { redirect_to(computer_comments_url) }
       format.xml  { head :ok }
+      format.js
     end
   end
 end

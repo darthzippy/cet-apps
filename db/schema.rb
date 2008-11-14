@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081113192500) do
+ActiveRecord::Schema.define(:version => 20081114142759) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20081113192500) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "updated_by"
   end
 
   create_table "computers", :force => true do |t|

@@ -25,6 +25,9 @@ class Computer < ActiveRecord::Base
   named_scope :laptops, :conditions => ["computer_type LIKE ?", "%laptop%"]
   named_scope :desktops, :conditions => ["computer_type LIKE ?", "%desktop%"]
   
+  named_scope :ordered, lambda { |*order|
+    { :order => order.flatten.first || 'created_at DESC' }
+  }
   after_update :save_hardware_assignments
   
   def self.search(search, page)
