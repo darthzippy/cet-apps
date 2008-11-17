@@ -17,19 +17,19 @@
         </h1>
 		<div class="content"> 
 	    	<ul class="nav">
-			  <li> 
+			  <li id="computers-nav" class="<%= controller.controller_name %>"> 
 		        <%= link_to 'eq', computers_path %> 
 		      </li>
-			  <li> 
+			  <li id="departments-nav" class="<%= controller.controller_name %>"> 
 		        <%= link_to 'departments', departments_path %> 
 		      </li>
-			  <li class="users"> 
+			  <li id="users-nav"  class="<%= controller.controller_name %>" class="users"> 
 		        <%= link_to 'Users', users_path %> 
 		      </li>
-		 	  <li>
+		 	  <li id="softwares-nav" class="<%= controller.controller_name %>">
 		 	    <%= link_to 'software', softwares_path %>
 		 	  </li>
-	          <li> 
+	          <li id="hubs-nav" class="<%= controller.controller_name %>"> 
 	            <%= link_to 'hubs', hubs_path %>  
 	          </li>
 			  <li>

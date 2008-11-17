@@ -1,14 +1,12 @@
 <% remote_form_for([@computer, @comment]) do |f| %>
   <p>
-    <b>Comment</b><br />
+    <b>NEW COMMENT</b><br />
     <%= f.text_area(:body, options = { "cols" => 40, "rows" => 10 }) %>
   </p>
 
-  <p>
-    <%= f.submit button_name %>
-  </p>
+  <p><%= f.submit button_name %> or <%= link_to_function("Cancel", nil) do |page|
+		page[:computer_show_comments_add].blind_up
+	  end %>
+  </p>	
 <% end %>
 
-<%= link_to_function("Cancel", nil) do |page|
-	page[:computer_show_comments_add].fade
-  end %>

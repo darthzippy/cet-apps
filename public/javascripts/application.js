@@ -14,6 +14,13 @@ Event.addBehavior({
   '#computer_show_comments_add' : function() {
     this.hide();
   },
+  '#computer_show_user_info_vax' : function() {
+    this.hide();
+  },
+  '#computer_show_user_info_vax_link:click' : function() {
+    $('computer_show_user_info_vax').toggle();
+    return false;
+  },
   '#os_add:click' : function() {
     $('add_os').toggle();
     return false;

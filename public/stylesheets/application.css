@@ -180,22 +180,33 @@ span.login_tips {
 	font-size: 1em;
 }
 
+/*==NAV==*/
+#nav li {
+	background-color: #222;
+}
+
+#nav li#computers-nav.computers {
+	background-color: #edf3fe;
+}
 /*==COMPUTERS===*/
 
 #computer_index_search input {
 	font: 200%;
 }
 
-#computer_show_purchase_info, #computer_new_purchase_info, #computer_edit_purchase_info {
+#computer_show_purchase_info, #computer_new_purchase_info, #computer_edit_purchase_info, #computer_show_user_info {
 	border: 1px solid #999;
+	width: 400px;
 	padding: 20px;
 	margin: 20px;
 }
 
-#computer_show_user_info {
-	border: 1px solid #999;
-	padding: 20px;
-	margin: 20px;
+#computer_show_user_info_vax_link {
+}
+
+#computer_show_user_info_vax_link {
+	font-size: 50%;
+	float: right;
 }
 
 #hardware_assignments {
@@ -206,9 +217,38 @@ span.login_tips {
 
 /*==COMMENTS===*/
 
+a#add_comment {
+	float: right;
+}
+
+#computer_show_comments_list {
+	background-color: #F1F1F1;
+	border: 1px solid #999;
+	width: 400px;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+#computer_show_comments_list p.comment {
+	font: 1.4em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	padding: 5px;
+}
+
 .comment_user_info {
-	font: 75%;
-	color: #777;
+	float: right;
+	padding-right: 10px;
+	font-size: 75%;
+	color: #888;
+}
+
+.comment_body {
+	
+}
+
+.comment {
+	border-bottom: 1px solid #999;
+	padding-top: 5px;
+	padding-bottom: 20px;
 }
 
 /*==DEPARTMENTS===*/

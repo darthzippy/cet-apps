@@ -1,9 +1,18 @@
-<% unless @computer.comments.empty? %>
-  <h3>Comments</h3>
-  <% @computer.comments.each do |comment| %>
-  <div id="<%= dom_id(comment) %>">
-    <p><%= h comment.body %> <span class="comment_user_info">posted by: <%= h comment.updated_by %> on <%= h comment.updated_or_created %></span> <%= link_to_remote(image_tag("trash.gif"), :url => computer_comment_url(computer, comment), :confirm => 'Are you sure?', :method => :delete ) %></p>  	
-  </div>
+<%= link_to_function('Add Comment', nil, :id => "add_comment") do |page|
+	  page[:computer_show_comments_add].blind_down
+ end %>
 
+<div id="computer_show_comments_add">
+  <%= render :partial => @comment = Comment.new, :locals => { :button_name => 'Create'}%>	
+</div>
+
+<h3>COMMENTS</h3>
+<% unless @computer.comments.empty? %>
+  <% @computer.comments.each do |comment| %>
+
+  <div id="<%= dom_id(comment) %>" class="comment">
+      <p class="comment_body"><%= h comment.body %> <br />
+	  <span class="comment_user_info">posted by: <%= h comment.updated_by %> on <%= h comment.updated_or_created %> <%= link_to_remote(image_tag("trash.gif"), :url => computer_comment_url(computer, comment), :confirm => 'Are you sure?', :method => :delete ) %></span></p>  	
+  </div>
   <% end %>
 <% end %>
