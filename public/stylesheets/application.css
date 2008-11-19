@@ -182,11 +182,16 @@ span.login_tips {
 
 /*==NAV==*/
 #nav li {
-	background-color: #222;
+	background-color: #888;
 }
 
-#nav li#computers-nav.computers {
-	background-color: #edf3fe;
+div.content ul li a {
+	padding: 5px;
+}
+
+div.content ul li a:hover {
+	color: #333;
+	background: #efefef;
 }
 /*==COMPUTERS===*/
 
@@ -194,17 +199,31 @@ span.login_tips {
 	font: 200%;
 }
 
-#computer_show_purchase_info, #computer_new_purchase_info, #computer_edit_purchase_info, #computer_show_user_info {
+#computer_show_content {
+	padding: 10px;
+	margin: 20px auto;
+	width: 798px;
+}
+#computer_new_purchase_info, #computer_edit_purchase_info {
 	border: 1px solid #999;
 	width: 400px;
 	padding: 20px;
 	margin: 20px;
 }
 
-#computer_show_user_info_vax_link {
+#computer_show_computer_info1, #computer_show_computer_info2, #computer_show_user_info, #computer_show_purchase_info {
+	float:left;
+	display:block;
+	width: 260px;
+	height: 79px;
+	margin: 14px 0 14px 14px;
 }
 
-#computer_show_user_info_vax_link {
+#computer_show_user_info, #computer_show_purchase_info {
+	height: 140px;
+}
+
+#computer_show_user_info a, #computer_show_purchase_info a {
 	font-size: 50%;
 	float: right;
 }
@@ -214,6 +233,7 @@ span.login_tips {
 	padding: 20px;
 	margin: 20px;	
 }
+
 
 /*==COMMENTS===*/
 
@@ -227,6 +247,7 @@ a#add_comment {
 	width: 400px;
 	padding: 20px;
 	margin-top: 10px;
+	clear: both;
 }
 
 #computer_show_comments_list p.comment {
@@ -422,7 +443,6 @@ table td.backtrace {
   font-size: .9em;
 }
  
-#sub-content .content ul li a:hover,
 body.groups .content ul li.errors a,
 body.notices .content ul li.errors a,
 body.projects .content ul li.projects a,
