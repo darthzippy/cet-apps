@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   named_scope :seniors, :conditions => { :role => "undergraduate-senior" }
   
   named_scope :controller, :conditions => { :department => "Controller's Office"}
-  named_scope :faculty_staff, :conditions => [ "role LIKE ? OR ?", "%employee%", "%faculty%" ]
+  named_scope :faculty_staff, :conditions => [ "role LIKE ? OR role LIKE ?", "faculty", "employee" ]
   named_scope :ordered, lambda { |*order|
     { :order => order.flatten.first || 'created_at DESC' }
   }

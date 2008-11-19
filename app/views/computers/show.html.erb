@@ -2,7 +2,7 @@
 <br />
 
 <div id="computer_show_content">
-	<h5>COMPUTER INFO</h5>
+	<h3>COMPUTER INFO</h3>
 	<div id="computer_show_computer_info1">
 
 		<p>
@@ -67,14 +67,14 @@
 		<p>
 		  <%= link_to "Show Purchase Info from VAX", @computer, :id => 'computer_show_purchase_info_vax_link' %>
 		</p>
+		<br />
 		<div id="computer_show_purchase_info_vax">
-			<h3>Purchase Info From VAX</h3>
 			<p>
-			  <b>Purchase date (from vax):</b>
+			  <b>Purchase date:</b>
 			  <%=h @computer.legacy_purchase_date %>
 			</p>
 			<p>
-			  <b>Purchase acct (from vax):</b>
+			  <b>Purchase acct:</b>
 			  <%=h @computer.legacy_account %>
 			</p>	
 		</div>
@@ -93,8 +93,8 @@
 		<p>
 		  <%= link_to "Show User Info from VAX", @computer, :id => 'computer_show_user_info_vax_link' %>
 		</p>
+		<br />
 		<div id="computer_show_user_info_vax">
-			<h3>User Info From VAX</h3>
 			<p>
 			  <b>Department:</b>
 			  <%=h @computer.legacy_department %>
