@@ -186,12 +186,12 @@ span.login_tips {
 }
 
 div.content ul li a {
-	padding: 5px;
+	padding: 10px;
 }
 
 div.content ul li a:hover {
 	color: #333;
-	background: #efefef;
+	background: #999;
 }
 /*==COMPUTERS===*/
 
@@ -797,7 +797,7 @@ body.pages #content li {
   font-size: 1em;
   line-height: 29px;
   text-transform: uppercase;
-  padding: 0 12px;
+  padding: 0 0;
   border-top: 1px solid #e3e3e3;
   border-left: 1px solid #e3e3e3;
   border-right: 1px solid #e3e3e3;
