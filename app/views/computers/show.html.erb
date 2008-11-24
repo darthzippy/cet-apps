@@ -23,10 +23,7 @@
 		<p>
 		  <b>Manufacturer:</b>
 		  <%=h @computer.manufacturer %>
-		</p>	
-	</div>
-
-	<div id="computer_show_computer_info2">
+		</p>
 		<p>
 		  <b>Status:</b>
 		  <%=h @computer.status %>
@@ -35,8 +32,10 @@
 		<p>
 		  <b>Cstatus:</b>
 		  <%=h @computer.cstatus %>
-		</p>
+		</p>	
+	</div>
 
+	<div id="computer_show_computer_info2">
 		<p>
 		  <b>Memory:</b>
 		  <%=h @computer.memory %>
@@ -45,6 +44,19 @@
 		<p>
 		  <b>Hard drive:</b>
 		  <%=h @computer.hard_drive %>
+		</p>
+		
+		<p>
+		  <b>Warranty Type:</b>
+		  <%=h @computer.warranty_type %>
+		</p>
+		<p>
+		  <b>Warranty Length:</b>
+		  <%=h pluralize(@computer.warranty_length, 'year') %>
+		</p>
+		<p>
+		  <b>Warranty Ends:</b>
+		  <%=h @computer.warranty_end_date.to_date %>
 		</p>	
 	</div>
 

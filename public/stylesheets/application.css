@@ -99,24 +99,25 @@ span.login_tips {
 	font: 200% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 }
 
+div#login {
+	float: right;
+	margin-top: -20px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+#login h1 {
+	font-size: 1.8em;
+}
 #logged_in,
 .logout {
-	font-size: 0.8em;
 	color: #777;
 }
 
-.username {
-	font-weight: bold;
-	font: 125% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-}
 
 #login_tips {
 	font-size: 75%;
 	color: #777;
-}
-
-.logout {
-
 }
 
 #apps_icons {
@@ -182,16 +183,11 @@ span.login_tips {
 
 /*==NAV==*/
 div.content li a {
-	background: #888;
+	background: #fff;
 }
-
-body.computers ul.nav li#computers_nav {
-	background-color: #222;
-}
-
 
 div.content ul li a {
-	padding: 8px 10px;
+	padding: 8px 10px 9px 10px;
 }
 
 div.content ul li a:hover {
@@ -301,6 +297,10 @@ body {
 
 #paginate {
 	float: right;
+}
+
+#sub-content {
+	width: 768px;
 }
  
 #sub-content h1 a,

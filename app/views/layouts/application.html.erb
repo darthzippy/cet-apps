@@ -29,18 +29,22 @@
 		 	  <li id="softwares-nav">
 		 	    <%= link_to 'software', softwares_path %>
 		 	  </li>
-	          <li id="hubs-nav" class="<%= controller.controller_name %>"> 
+	          <li id="hubs-nav"> 
 	            <%= link_to 'hubs', hubs_path %>  
-	          </li>
-			  <li>
-				<% if logged_in? %>
-				  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %> | <%= link_to 'logout', :controller => 'session', :action => 'logout' %>
-				<% end %>
-			  </li>   
+	          </li>   
 	    	</ul> 
 	    </div>	
 	</div>
 	<div id="content">
+		<div id="login">
+			<% if logged_in? %>
+			  <h1>
+			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %> | <%= link_to 'logout', :controller => 'session', :action => 'logout' %></h1>
+			<% end %>	
+		</div>
+		<br />
+
+
 	  <p style="color: green"><%= flash[:notice] %></p>
 
 	  <%= yield  %>

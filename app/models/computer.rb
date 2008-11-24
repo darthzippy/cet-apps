@@ -28,6 +28,7 @@ class Computer < ActiveRecord::Base
   named_scope :ordered, lambda { |*order|
     { :order => order.flatten.first || 'created_at DESC' }
   }
+     
   after_update :save_hardware_assignments
   
   def self.search(search, page)
@@ -53,5 +54,8 @@ class Computer < ActiveRecord::Base
     end
   end
   
+  def warranty_end_date
+    purchase_date + (warranty_length*365)
+  end
   
 end
