@@ -54,8 +54,8 @@ class Computer < ActiveRecord::Base
     end
   end
   
-  def warranty_end_date
-    purchase_date + (warranty_length*365)
-  end
+  #def warranty_end_date
+  #  purchase_date + (warranty_length*365)
+  #end
   
 end
