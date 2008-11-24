@@ -181,17 +181,22 @@ span.login_tips {
 }
 
 /*==NAV==*/
-#nav li {
-	background-color: #888;
+div.content li a {
+	background: #888;
 }
 
+body.computers ul.nav li#computers_nav {
+	background-color: #222;
+}
+
+
 div.content ul li a {
-	padding: 10px;
+	padding: 8px 10px;
 }
 
 div.content ul li a:hover {
 	color: #333;
-	background: #999;
+	background: #efefff;
 }
 /*==COMPUTERS===*/
 

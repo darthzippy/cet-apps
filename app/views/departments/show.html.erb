@@ -14,21 +14,21 @@
 	<h3>Users</h3>
 		<table cellspacing="0">
 		  <tr>
-	  	    <th>Name</th>
+	  	  <th>Name</th>
 		    <th>Control</th>
 		    <th>Type</th>
 		    <th>Model</th>	
 		  </tr>
 
-		<% for user in @users %>
+		<% for computer in @department.computers.ordered('purchase_date') %>
 		  <tr>
-			<td><%= user.fullname %></td>
-			<td><%= link_to user.hardware_assignments.first.computer.control, computer_path([user.hardware_assignments.first.computer.id]) %></td>
-			<td><%= user.hardware_assignments.first.computer.computer_type %></td>
-			<td><%= user.hardware_assignments.first.computer.model %></td>	  	
+  			<td><%= computer.hardware_assignments.first.user.fullname unless computer.hardware_assignments.first.user.nil? %></td>
+  			<td><%= link_to computer.control, computer_path([computer.id]) %></td>
+  			<td><%= computer.computer_type %></td>
+  			<td><%= computer.model %></td> 	
 		  </tr>
-	    <% end %>
-	    </table>	
+	  <% end %>
+	  </table>	
 </div>
 
 

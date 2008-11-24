@@ -2,7 +2,7 @@ class ComputersController < ApplicationController
   
   layout 'application'
   
-  before_filter :login_required
+  #before_filter :login_required
   
   # GET /computers
   # GET /computers.xml
@@ -18,7 +18,7 @@ class ComputersController < ApplicationController
   # GET /computers/1
   # GET /computers/1.xml
   def show
-    @computer = Computer.find(params[:id])
+    @computer = Computer.find(params[:id], :include => :comments)
 
     respond_to do |format|
       format.html # show.html.erb

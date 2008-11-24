@@ -2,7 +2,7 @@ class DepartmentsController < ApplicationController
   
   layout 'application'
   
-  before_filter :login_required
+  #before_filter :login_required
   
   # GET /departments
   # GET /departments.xml
@@ -18,9 +18,9 @@ class DepartmentsController < ApplicationController
   # GET /departments/1
   # GET /departments/1.xml
   def show
-    @department = Department.find(params[:id])
-    @users = @department.users.ordered('last')
-    @computers = @department.computers.all
+    @department = Department.find(params[:id], :include => [:computers] )
+    #@users = @department.users.ordered('last')
+    #@computers = @department.computers.all
 
     respond_to do |format|
       format.html # show.html.erb
