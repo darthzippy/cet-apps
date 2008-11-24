@@ -2,7 +2,7 @@ class DepartmentsController < ApplicationController
   
   layout 'application'
   
-  #before_filter :login_required
+  before_filter :login_required
   
   # GET /departments
   # GET /departments.xml

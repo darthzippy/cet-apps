@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   
   layout 'application'
   
-  before_filter :load_computer#, :login_required
+  before_filter :load_computer, :login_required
   
   def load_computer
     @computer = Computer.find(params[:computer_id])
