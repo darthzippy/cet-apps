@@ -18,8 +18,9 @@ class ComputersController < ApplicationController
   # GET /computers/1
   # GET /computers/1.xml
   def show
-    @computer = Computer.find(params[:id], :include => :comments)
-
+    @computer = Computer.find(params[:id])
+    @comments = @computer.comments
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @computer }

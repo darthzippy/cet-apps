@@ -54,8 +54,11 @@ class Computer < ActiveRecord::Base
     end
   end
   
-  #def warranty_end_date
-  #  purchase_date + (warranty_length*365)
-  #end
+  def warranty_end_date
+    if purchase_date.nil?
+    else
+      (purchase_date + (warranty_length*365)).to_formatted_s(:long)
+    end  
+  end
   
 end

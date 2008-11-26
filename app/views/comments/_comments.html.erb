@@ -7,12 +7,9 @@
 </div>
 
 <h3>COMMENTS</h3>
-<% unless @computer.comments.empty? %>
-  <% @computer.comments.each do |comment| %>
-
+<% for comment in @computer.comments.ordered %>
   <div id="<%= dom_id(comment) %>" class="comment">
       <p class="comment_body"><%= h comment.body %> <br />
 	  <span class="comment_user_info">posted by <%= h comment.updated_by %> on <%= h comment.updated_at.to_formatted_s(:long) %> <%= link_to_remote(image_tag("trash.gif"), :url => computer_comment_url(computer, comment), :confirm => 'Are you sure?', :method => :delete ) %></span></p>  	
   </div>
-  <% end %>
 <% end %>
