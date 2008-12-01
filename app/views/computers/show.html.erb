@@ -64,7 +64,7 @@
 	<div id="computer_show_purchase_info">
 		<p>
 		  <b>Purchase date:</b>
-		  <%=h @computer.purchase_date.to_formatted_s(:long) %>
+		  <%=h @computer.purchase_date.to_formatted_s(:long) unless @computer.purchase_date.nil? %>
 		</p>
 
 		<p>
