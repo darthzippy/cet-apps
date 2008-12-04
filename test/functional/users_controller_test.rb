@@ -31,7 +31,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   def test_should_update_user
-    put :update, :id => users(:one).id, :user => { }
+    put :update, :id => users(:one).id, :user => {  }
     assert_redirected_to user_path(assigns(:user))
   end
 

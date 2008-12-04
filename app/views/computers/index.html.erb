@@ -10,6 +10,7 @@
   <tr>
     <th>Control</th>
     <th>Model</th>
+	<th>Serial #</th>
     <th>Manufacturer</th>
 	<th>Department</th>
 	<th>User</th>
@@ -20,6 +21,7 @@
   <tr>
     <td><%= link_to computer.control, computer %></td>
     <td><%=h computer.model %></td>
+	<td><%=h computer.serial %></td>
     <td><%=h computer.manufacturer %></td>
 	<td><%=h computer.department.name unless computer.department.nil? %></td>
 	<td><%=h computer.user.fullname unless computer.user.nil? %></td>
