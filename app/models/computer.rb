@@ -26,15 +26,16 @@ class Computer < ActiveRecord::Base
   named_scope :desktops, :conditions => ["computer_type LIKE ?", "%desktop%"]
   
   named_scope :ordered, lambda { |*order|
-    { :order => order.flatten.first || 'created_at DESC' }
+    { :include => :user, :order => order.flatten.first || 'users.last ASC' }
   }
      
   after_update :save_hardware_assignments
   
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
-             :conditions => ['control like ? OR serial like ?', "%#{search}%", "%#{search}%" ],
-             :order => 'purchase_date'
+             :conditions => ['control like ? OR serial like ?', "%#{search}%", "%#{search}%"],
+             :order => 'purchase_date',
+             :include => {:hardware_assignments => :user}
   end
   
   def hardware_assignment_attributes=(hardware_assignment_attributes)

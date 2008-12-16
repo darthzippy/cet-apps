@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cet_user_id: 1
+  payperiod_id: 1
+  start_time: 2008-12-10 15:58:04
+  end_time: 2008-12-10 15:58:04
+
+two:
+  cet_user_id: 1
+  payperiod_id: 1
+  start_time: 2008-12-10 15:58:04
+  end_time: 2008-12-10 15:58:04

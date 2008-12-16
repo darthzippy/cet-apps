@@ -9,4 +9,5 @@ class Comment < ActiveRecord::Base
   def updated_or_created
     self.updated_at || self.created_at
   end
+  
 end

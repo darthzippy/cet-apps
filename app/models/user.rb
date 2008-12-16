@@ -17,8 +17,9 @@ class User < ActiveRecord::Base
   
   named_scope :controller, :conditions => { :department => "Controller's Office"}
   named_scope :faculty_staff, :conditions => [ "role LIKE ? OR role LIKE ?", "faculty", "employee" ]
+  
   named_scope :ordered, lambda { |*order|
-    { :order => order.flatten.first || 'created_at DESC' }
+    { :order => order.flatten.first || 'last ASC' }
   }
   named_scope :by_department, lambda { |department|
     { :conditions => { :department => department } }
@@ -32,7 +33,8 @@ class User < ActiveRecord::Base
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
              :conditions => ['last like ?', "%#{search}%"],
-             :order => 'last'
+             :order => 'last',
+             :include => {:softwares => :licenses}
   end
   
   def self.search_by_id(search_by_id, page)

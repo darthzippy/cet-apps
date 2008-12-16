@@ -44,14 +44,14 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     @comment = @computer.comments.find(params[:id])
-    @comment.updated_by=current_cet_user.display_name
+    @comment.update_attribute( :updated_by => current_cet_user.display_name )
   end
 
   # POST /comments
   # POST /comments.xml
   def create
     @comment = @computer.comments.build(params[:comment])
-    @comment.updated_by=current_cet_user.display_name
+    @comment.update_attributes( :updated_by => current_cet_user.display_name )
 
     respond_to do |format|
       if @comment.save

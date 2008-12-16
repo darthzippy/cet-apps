@@ -1,7 +1,12 @@
 class LicensesController < ApplicationController
   
-  def create
+  before_filter :setup_user
+  
+  def setup_user
     @user = User.find(params[:user_id])
+  end
+  
+  def create
     @license = @user.licenses.build(params[:license])
     @license.updated_by=current_cet_user.display_name
     
@@ -17,7 +22,6 @@ class LicensesController < ApplicationController
   end
   
   def destroy
-    @user = User.find(params[:user_id])
     @license = @user.licenses.find(params[:id])
     
     @license.destroy

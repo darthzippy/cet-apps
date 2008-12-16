@@ -20,7 +20,7 @@
 		    <th>Model</th>	
 		  </tr>
 
-		<% for computer in @department.computers %>
+		<% for computer in @department.computers.ordered %>
 		  <tr>
   			<td><%= computer.hardware_assignments.first.user.fullname unless computer.hardware_assignments.first.user.nil? %></td>
   			<td><%= link_to computer.control, computer_path([computer.id]) %></td>

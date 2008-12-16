@@ -18,7 +18,7 @@ class DepartmentsController < ApplicationController
   # GET /departments/1
   # GET /departments/1.xml
   def show
-    @department = Department.find(params[:id], :include => [:computers] )
+    @department = Department.find(params[:id], :include => {:computers => :hardware_assignments})
     #@users = @department.users.ordered('last')
     #@computers = @department.computers.all
 
