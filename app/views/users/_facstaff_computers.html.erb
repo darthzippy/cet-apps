@@ -1,0 +1,22 @@
+<div id="facstaff">
+  	<h3>Computers</h3>
+		<table cellspacing="0">
+		  <tr>
+		    <th>Control</th>
+		    <th>Serial</th>
+		    <th>Type</th>
+		    <th>Model</th>
+			<th>Purchase Date</th>	
+		  </tr>
+
+		<% for computer in @user.computers.ordered('purchase_date DESC') %>
+		  <tr>
+  			<td><%= link_to computer.control, computer_path([computer.id]) %></td>
+			<td><%= computer.serial %></td>
+  			<td><%= computer.computer_type %></td>
+  			<td><%= computer.model %></td>
+			<td><%= computer.purchase_date.to_formatted_s(:long) unless computer.purchase_date.nil? %></td> 	
+		  </tr>
+	  <% end %>
+	  </table>
+</div>

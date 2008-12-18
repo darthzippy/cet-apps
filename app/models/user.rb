@@ -30,6 +30,14 @@ class User < ActiveRecord::Base
     "#{last}, #{first} #{middle}"
   end
   
+  def is_facstaff?
+    if self.role == 'faculty'
+      true
+    elsif self.role == 'employee'
+      true
+    end
+  end
+  
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
              :conditions => ['last like ?', "%#{search}%"],
