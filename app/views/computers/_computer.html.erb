@@ -15,11 +15,11 @@
   </p>
   <p>
 	  <%= f.label :warranty_type %><br />
-	  <%= f.select(:warranty_type, %w{ AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Encore Printer\ CPC\ Contract Other-Standard }) %>
+	  <%= f.select(:warranty_type, %w{ None AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Encore Printer\ CPC\ Contract Other-Standard }) %>
   </p>
   <p>
 	  <%= f.label :warranty_length %><br />
-	  <%= f.select(:warranty_length, [ ['1',1], ['2',2], ['3',3], ['4',4]]) %>
+	  <%= f.select(:warranty_length, [ ['none',0],['1',1], ['2',2], ['3',3], ['4',4]]) %>
   </p>
   
   <div id="computer_edit_purchase_info">
