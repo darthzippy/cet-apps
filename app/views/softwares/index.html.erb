@@ -26,7 +26,7 @@
 
 <h2>Stats</h2>
 
-<h3>Software Sales This Semester (Fall 2008)</h3>
+<h3>Software Sales This Semester (Spring 2009)</h3>
 
 <p>Total Software Sales: <%= @licenses.recent.count %></p>
 
@@ -52,6 +52,33 @@
 <%= image_tag Gchart.pie_3d(:title => 'Office Sales - Mac vs. PC', :size => '500x200',:data => [@licenses.recent.win_office2007_sales.count, @licenses.recent.mac_office2008_sales.count], :labels => ["Office 2007 (Windows)", "Office 2008 (Mac)"]) %>
 
 <%= image_tag Gchart.pie_3d(:title => 'OS Sales - Mac vs. PC', :size => '500x200',:data => [@licenses.recent.win_xp_sales.count, @licenses.recent.win_vista_sales.count, @licenses.recent.mac_leopard_sales.count, @licenses.recent.mac_tiger_sales.count], :labels => ["XP", "Vista", "Leopard", "Tiger"]) %>
+
+<h3>Software Sales This Year (2008/09)</h3>
+
+<p>Total Software Sales: <%= @licenses.this_semester.count %></p>
+
+<table cellspacing="0">
+	<tr>
+		<th>Office 2007 (Windows)</th>
+		<th>Office 2008 (Mac)</th>
+		<th>Windows XP</th>
+		<th>Windows Vista</th>
+		<th>Mac OSX Leopard</th>
+		<th>Mac OSX Tiger</th>
+	</tr>
+	<tr>
+		<td><%= @licenses.this_semester.win_office2007_sales.count %></td>
+		<td><%= @licenses.this_semester.mac_office2008_sales.count %></td>
+		<td><%= @licenses.this_semester.win_xp_sales.count %></td>
+		<td><%= @licenses.this_semester.win_vista_sales.count %></td>
+		<td><%= @licenses.this_semester.mac_leopard_sales.count %></td>
+		<td><%= @licenses.this_semester.mac_tiger_sales.count %></td>
+	</tr>
+</table>
+
+<%= image_tag Gchart.pie_3d(:title => 'Office Sales - Mac vs. PC', :size => '500x200',:data => [@licenses.this_semester.win_office2007_sales.count, @licenses.this_semester.mac_office2008_sales.count], :labels => ["Office 2007 (Windows)", "Office 2008 (Mac)"]) %>
+
+<%= image_tag Gchart.pie_3d(:title => 'OS Sales - Mac vs. PC', :size => '500x200',:data => [@licenses.this_semester.win_xp_sales.count, @licenses.this_semester.win_vista_sales.count, @licenses.this_semester.mac_leopard_sales.count, @licenses.this_semester.mac_tiger_sales.count], :labels => ["XP", "Vista", "Leopard", "Tiger"]) %>
 
 <h3>Software Sales - All-Time</h3>
 
