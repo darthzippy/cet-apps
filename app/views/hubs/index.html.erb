@@ -11,7 +11,7 @@
 <% for hub in @hubs %>
   <tr>
     <td><%=h hub.hub_number %></td>
-    <td><%=h hub.checkouts.first.user.fullname unless hub.checkouts.first.nil? %></td>
+    <td><%=h hub.checkouts.first.user.first unless hub.checkouts.first.nil? %> <%=h hub.checkouts.first.user.last unless hub.checkouts.first.nil? %></td>
 	<td><%=h hub.checkouts.first.user.building unless hub.checkouts.first.nil? %> <%=h hub.checkouts.first.user.room unless hub.checkouts.first.nil? %></td>
     <td><%= link_to 'Show', hub %></td>
     <td><%= link_to 'Edit', edit_hub_path(hub) %></td>
