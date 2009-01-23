@@ -23,11 +23,11 @@
   </p>
   <p>
 	  <%= f.label :computer_type %><br />
-	  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color}) %>
+	  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other},{:prompt => "Select a Computer Type"}) %>
   </p>
   <p>
 	  <%= f.label :warranty_type %><br />
-	  <%= f.select(:warranty_type, %w{ None AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Encore Printer\ CPC\ Contract Other-Standard }) %>
+	  <%= f.select(:warranty_type, %w{ None AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Encore Printer\ CPC\ Contract Other-Standard },{:prompt => "Select a Warranty Type"}) %>
   </p>
   <p>
 	  <%= f.label :warranty_length %><br />
