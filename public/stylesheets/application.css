@@ -218,7 +218,16 @@ div.content ul li a:hover {
 	display:block;
 	width: 300px;
 	height: 79px;
-	margin: 14px 0 14px 14px;
+	margin: 14px 0 5px 14px;
+}
+
+#computer_show_computer_status, #computer_show_computer_status2 {
+	float:left;
+	display:block;
+	width: 300px;
+	height: 49px;
+	margin: 25px 0 5px 14px;
+
 }
 
 #computer_show_user_info, #computer_show_purchase_info {

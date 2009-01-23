@@ -10,8 +10,20 @@
     <%= f.text_field :serial %>
   </p>
   <p>
+    <%= f.label :manufacturer %><br />
+    <%= f.text_field :manufacturer %>
+  </p>
+  <p>
     <%= f.label :model %><br />
     <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label :part_number %><br />
+    <%= f.text_field :part_number %>
+  </p>
+  <p>
+	  <%= f.label :computer_type %><br />
+	  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color}) %>
   </p>
   <p>
 	  <%= f.label :warranty_type %><br />

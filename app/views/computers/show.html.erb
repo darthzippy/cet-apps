@@ -25,14 +25,13 @@
 		  <%=h @computer.manufacturer %>
 		</p>
 		<p>
-		  <b>Status:</b>
-		  <%=h @computer.status %>
+		  <b>Part Number:</b>
+		  <%=h @computer.part_number %>
 		</p>
-
 		<p>
-		  <b>Cstatus:</b>
-		  <%=h @computer.cstatus %>
-		</p>	
+		  <b>Type:</b>
+		  <%=h @computer.computer_type %>
+		</p>
 	</div>
 
 	<div id="computer_show_computer_info2">
@@ -59,8 +58,22 @@
 		    <%=h @computer.warranty_end_date %>
 		</p>	
 	</div>
+	
+	<div id="computer_show_computer_status">
+	    <p>
+		  <b>Status:</b>
+		  <%=h @computer.status %>
+		</p>
 
-
+		<p>
+		  <b>Cstatus:</b>
+		  <%=h @computer.cstatus %>
+		</p>
+		
+	</div>
+	<div id="computer_show_computer_status2">
+		
+	</div>
 	<div id="computer_show_purchase_info">
 		<p>
 		  <b>Purchase date:</b>
