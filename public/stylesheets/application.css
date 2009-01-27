@@ -195,6 +195,14 @@ div.content ul li a:hover {
 	background: #efefff;
 }
 
+.search_form {
+	padding-bottom: 20px;
+}
+
+.search_form input {
+	font: 150% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
 /*==COMPUTERS===*/
 
 #computer_index_search input {
@@ -286,7 +294,17 @@ a#add_comment {
 /*==DEPARTMENTS===*/
 
 #departments_show_users {
+}
 
+.filter {
+	float: right;
+	padding-bottom: 4px;
+	padding-right: 252px;
+}
+
+.filter a:hover {
+	color: #222;
+	background: #fff;
 }
 
 

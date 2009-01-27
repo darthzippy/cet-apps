@@ -4,7 +4,8 @@
 
 <%= render :partial => 'search_by_control' %>
 
-<h1>Listing computers</h1>
+<h2>COMPUTERS</h2>
+<%= render :partial => 'departments/filter' %>
 
 <table cellspacing="0">
   <tr>
@@ -29,6 +30,14 @@
   </tr>
 <% end %>
 </table>
+
+<p>
+  <strong>Filter:</strong>
+  <%= link_to_unless_current "All", :filter => 'all' %> |
+  <%= link_to_unless_current "PCs", :filter => 'pcs' %> |
+  <%= link_to_unless_current "Macs", :filter => 'macs' %> |
+  <%= link_to_unless_current "Printers", :filter => 'printers' %>
+</p>
 
 <br />
 

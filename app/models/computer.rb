@@ -25,6 +25,9 @@ class Computer < ActiveRecord::Base
   named_scope :laptops, :conditions => ["computer_type LIKE ?", "%laptop%"]
   named_scope :desktops, :conditions => ["computer_type LIKE ?", "%desktop%"]
   
+  named_scope :has_control_number, :conditions => ["NOT (control = ?)", " "]
+  named_scope :on_inventory, :conditions => ["NOT (department =?)", "off inventory"]
+  
   named_scope :ordered, lambda { |*order|
     { :include => :user, :order => order.flatten.first || 'users.last ASC' }
   }

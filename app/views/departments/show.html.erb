@@ -1,8 +1,7 @@
 <%= render :partial => 'search_by_department' %>
 <br />
 <p>
-  <b>Name:</b>
-  <%=h @department.name %>
+  <h2><%=h @department.name %></h2>
 </p>
 
 <p>
@@ -11,7 +10,9 @@
 </p>
 
 <div id="departments_show_users">
-	<h3>Users</h3>
+	<h3>USERS</h3>
+	<%= render :partial => 'filter' %>
+
 		<table cellspacing="0">
 		  <tr>
 	  	  <th>Name</th>
@@ -20,7 +21,7 @@
 		    <th>Model</th>	
 		  </tr>
 
-		<% for computer in @department.computers.ordered %>
+		<% for computer in @computers.has_control_number %>
 		  <tr>
   			<td><%= computer.hardware_assignments.first.user.fullname unless computer.hardware_assignments.first.user.nil? %></td>
   			<td><%= link_to computer.control, computer_path([computer.id]) %></td>
@@ -30,8 +31,6 @@
 	  <% end %>
 	  </table>	
 </div>
-
-
 
 <br \>
 <%= link_to 'Edit', edit_department_path(@department) %> |

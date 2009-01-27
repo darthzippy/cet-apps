@@ -19,8 +19,15 @@ class DepartmentsController < ApplicationController
   # GET /departments/1.xml
   def show
     @department = Department.find(params[:id], :include => {:computers => :hardware_assignments})
+    @computers = @department.computers.ordered
     #@users = @department.users.ordered('last')
     #@computers = @department.computers.all
+    case params[:filter]
+    when 'pcs' then @computers = @department.computers.ordered.pcs
+    when 'macs' then @computers = @department.computers.ordered.macs
+    when 'printers' then @computers = @department.computers.ordered.printers
+    else @computers = @department.computers.ordered
+    end
 
     respond_to do |format|
       format.html # show.html.erb
