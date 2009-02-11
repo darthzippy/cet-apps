@@ -65,4 +65,10 @@ class Computer < ActiveRecord::Base
     end  
   end
   
+  def is_printer?
+    if self.computer_type =~ /printer/
+      true
+    end
+  end
+  
 end

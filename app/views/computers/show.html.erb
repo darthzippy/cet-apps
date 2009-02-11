@@ -24,9 +24,14 @@
 		  <b>Manufacturer:</b>
 		  <%=h @computer.manufacturer %>
 		</p>
-		<p>
+		<p> 
+		<% if @computer.is_printer? %>
+		  <b>Cameron ID:</b>
+		  <%=h @computer.cameron_id %>
+		<% else %>
 		  <b>Part Number:</b>
 		  <%=h @computer.part_number %>
+		<% end %>
 		</p>
 		<p>
 		  <b>Type:</b>

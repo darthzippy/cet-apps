@@ -18,8 +18,14 @@
     <%= f.text_field :model %>
   </p>
   <p>
-    <%= f.label :part_number %><br />
-    <%= f.text_field :part_number %>
+	<% if @computer.is_printer? %>
+	  <%= f.label :cameron_id_id %><br />
+      <%= f.text_field :cameron_id %>
+	<% else %>
+	  <%= f.label :part_number %><br />
+      <%= f.text_field :part_number %>
+	<% end %>
+
   </p>
   <p>
 	  <%= f.label :computer_type %><br />
