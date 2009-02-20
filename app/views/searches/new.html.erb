@@ -1,0 +1,28 @@
+<h1>New Search</h1>
+
+<% form_for @search do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :department_id %><br />
+    <%= f.collection_select :department_id, Department.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :computer_type %><br />
+    <%= f.text_field :computer_type %>
+  </p>
+  <p>
+    <%= f.label :min_purdate %><br />
+    <%= f.date_select :min_purdate %>
+  </p>
+  <p>
+    <%= f.label :max_purdate %><br />
+    <%= f.date_select :max_purdate %>
+  </p>
+  <p>
+    <%= f.label :include_offinventory %><br />
+    <%= f.check_box :include_offinventory %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+
+

@@ -1,0 +1,13 @@
+one:
+  department_id: 1
+  computer_type: MyString
+  min_purdate: 2009-02-20
+  max_purdate: 2009-02-20
+  include_offinventory: false
+
+two:
+  department_id: 1
+  computer_type: MyString
+  min_purdate: 2009-02-20
+  max_purdate: 2009-02-20
+  include_offinventory: false
