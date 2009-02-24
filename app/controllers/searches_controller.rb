@@ -1,8 +1,10 @@
 class SearchesController < ApplicationController
   
+  require 'prawn'
+  
   layout 'application'
     
-  before_filter :login_required
+  #before_filter :login_required
   
   def new
     @search = Search.new
@@ -20,5 +22,11 @@ class SearchesController < ApplicationController
   
   def show
     @search = Search.find(params[:id])
+    
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @search }
+      format.pdf { render :layout => false }
+    end
   end
 end

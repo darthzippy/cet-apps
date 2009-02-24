@@ -1,14 +1,14 @@
-<h1>New Search</h1>
+<h2>Advanced Search</h2>
 
 <% form_for @search do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :department_id %><br />
-    <%= f.collection_select :department_id, Department.all, :id, :name %>
+    <%= f.collection_select :department_id, Department.all, :id, :name, {:include_blank => true, :prompt => "Select a Department"} %>
   </p>
   <p>
     <%= f.label :computer_type %><br />
-    <%= f.text_field :computer_type %>
+    <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other}, {:include_blank => true, :prompt => "Select a Computer Type"}) %>
   </p>
   <p>
     <%= f.label :min_purdate %><br />

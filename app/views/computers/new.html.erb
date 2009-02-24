@@ -2,7 +2,7 @@
 
 <%= error_messages_for :computer %>
 
-<%= render :partial => @computer, 
+<%= render :partial => 'computer_form',
   :locals => { :button_name => "Create"} %>
 
 <%= link_to 'Back', computers_path %>

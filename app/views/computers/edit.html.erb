@@ -2,7 +2,7 @@
 
 <%= error_messages_for :computer %>
 
-<%= render :partial => @computer, 
+<%= render :partial => 'computer_form', 
   :locals => { :button_name => "Update"} %>
 
 <%= link_to 'Show', @computer %> |

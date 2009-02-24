@@ -19,15 +19,7 @@
   </tr>
 
 <% for computer in @computers %>
-  <tr>
-    <td><%= link_to computer.control, computer %></td>
-    <td><%=h computer.model %></td>
-	<td><%=h computer.serial %></td>
-    <td><%=h computer.manufacturer %></td>
-	<td><%=h computer.department.name unless computer.department.nil? %></td>
-	<td><%=h computer.user.fullname unless computer.user.nil? %></td>
-    <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
-  </tr>
+  <%= render :partial => computer %>
 <% end %>
 </table>
 

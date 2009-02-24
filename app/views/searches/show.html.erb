@@ -1,25 +1,17 @@
-<h1>Search</h1>
+<h1>Search Results</h1>
 
-<p>
-  <strong>Department:</strong>
-  <%=h @search.department_id %>
-</p>
-<p>
-  <strong>Computer Type:</strong>
-  <%=h @search.computer_type %>
-</p>
-<p>
-  <strong>Min Purdate:</strong>
-  <%=h @search.min_purdate %>
-</p>
-<p>
-  <strong>Max Purdate:</strong>
-  <%=h @search.max_purdate %>
-</p>
-<p>
-  <strong>Include Offinventory:</strong>
-  <%=h @search.include_offinventory %>
-</p>
+<table cellspacing="0">
+  <tr>
+    <th>Control</th>
+    <th>Model</th>
+	<th>Serial #</th>
+    <th>Manufacturer</th>
+	<th>Department</th>
+	<th>User</th>
+	<th>Options</th>
+  </tr>
 
-<p>
-</p>
+<%= render :partial => @search.computers %>
+
+</table>
+

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20090220202402) do
     t.datetime "last_login_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cet_role"
   end
 
   create_table "checkouts", :force => true do |t|
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20090220202402) do
     t.datetime "checkin"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "updated_by"
   end
 
   create_table "comments", :force => true do |t|
@@ -43,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20090220202402) do
     t.string   "serial"
     t.string   "model"
     t.string   "manufacturer"
-    t.date     "purchase_date"
+    t.datetime "purchase_date"
     t.integer  "purchase_price"
     t.string   "purchase_acct"
     t.string   "status"

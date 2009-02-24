@@ -2,7 +2,7 @@ class ComputersController < ApplicationController
   
   layout 'application'
   
-  before_filter :login_required
+  #before_filter :login_required
   
   # GET /computers
   # GET /computers.xml
