@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090220202402) do
+ActiveRecord::Schema.define(:version => 20090227181628) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20090220202402) do
     t.datetime "last_login_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "cet_role"
   end
 
   create_table "checkouts", :force => true do |t|
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20090220202402) do
     t.datetime "checkin"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "updated_by"
   end
 
   create_table "comments", :force => true do |t|
@@ -45,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20090220202402) do
     t.string   "serial"
     t.string   "model"
     t.string   "manufacturer"
-    t.datetime "purchase_date"
+    t.date     "purchase_date"
     t.integer  "purchase_price"
     t.string   "purchase_acct"
     t.string   "status"
@@ -135,6 +133,8 @@ ActiveRecord::Schema.define(:version => 20090220202402) do
     t.boolean  "include_offinventory"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mac_or_pc"
+    t.boolean  "include_nameless"
   end
 
   create_table "shifts", :force => true do |t|

@@ -28,6 +28,7 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem "googlecharts", :lib => "gchart"
   config.gem 'prawn'
+  config.gem 'fastercsv'
   config.gem 'fiveruns_tuneup'
   
   # Only load the plugins named here, in the order given. By default, all plugins 

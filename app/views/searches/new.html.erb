@@ -3,25 +3,26 @@
 <% form_for @search do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :department_id %><br />
-    <%= f.collection_select :department_id, Department.all, :id, :name, {:include_blank => true, :prompt => "Select a Department"} %>
+    <%= f.label :mac_or_pc %><br />
+    <%= f.select(:mac_or_pc, %w{ Mac PC }, {:prompt => "Select Mac or PC"}) %>
   </p>
   <p>
     <%= f.label :computer_type %><br />
-    <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other}, {:include_blank => true, :prompt => "Select a Computer Type"}) %>
+    <%= f.select(:computer_type, %w{ Desktop Laptop }, {:prompt => "Select a Computer Type"}) %>
   </p>
   <p>
-    <%= f.label :min_purdate %><br />
-    <%= f.date_select :min_purdate %>
+    <%= f.label :minimum_purchase_date %><br />
+    <%= f.date_select :min_purdate, {:include_blank => true} %>
   </p>
   <p>
     <%= f.label :max_purdate %><br />
     <%= f.date_select :max_purdate %>
   </p>
   <p>
-    <%= f.label :include_offinventory %><br />
-    <%= f.check_box :include_offinventory %>
+    <%= f.label :include_nameless %><br />
+    <%= f.check_box("include_nameless",{},"1","0") %>
   </p>
+<br />
   <p><%= f.submit "Submit" %></p>
 <% end %>
 

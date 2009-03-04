@@ -5,8 +5,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>CET Apps: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold', 'application' %>
-  <%= javascript_include_tag :defaults, 'lowpro' %>
+  <%= stylesheet_link_tag("scaffold", :media => "screen", :cache => true) %>
+  <%= stylesheet_link_tag("application", :media => "screen", :cache => true) %>
+  <%= stylesheet_link_tag("print", :media => "print", :cache => true) %> 
+  <%= javascript_include_tag :defaults, 'lowpro', :cache => true %>
 </head>
 <body class="<%= controller.controller_name %>">
 

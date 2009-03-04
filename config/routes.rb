@@ -1,11 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :searches
-
-  map.resources :shifts
-
-
-
   
+  map.resources :searches
+  map.resources :shifts
   map.resources :hardware_assignments
   map.resources :departments
   map.resources :computers, :has_many => :comments

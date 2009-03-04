@@ -1,17 +1,26 @@
 <h1>Search Results</h1>
+<% if @search.computers.first.nil? %>
+<h2>NO RESULTS FOUND</h2>
+
+<%= link_to 'New Search', new_search_path %>
+
+<% else %>
+<%= link_to 'Export as PDF', search_path(@search, :pdf) %><br /><br />
+<%= link_to 'New Search', new_search_path %>
 
 <table cellspacing="0">
   <tr>
     <th>Control</th>
+    <th>Department</th>
+	<th>Name</th>
+	<th>E-mail</th>
     <th>Model</th>
-	<th>Serial #</th>
-    <th>Manufacturer</th>
-	<th>Department</th>
-	<th>User</th>
-	<th>Options</th>
+	<th>Purchase Date</th>
+	<th class="hide_for_printing">Options</th>
   </tr>
 
 <%= render :partial => @search.computers %>
 
 </table>
+<% end %>
 

@@ -13,7 +13,6 @@ class SearchesController < ApplicationController
   def create
     @search = Search.new(params[:search])
     if @search.save
-      flash[:notice] = "Successfully created search."
       redirect_to @search
     else
       render :action => 'new'
@@ -27,6 +26,22 @@ class SearchesController < ApplicationController
       format.html
       format.xml { render :xml => @search }
       format.pdf { render :layout => false }
+      format.csv do
+        csv_string = FasterCSV.generate do |csv|
+        # header row
+          csv << ["control", "model", "purchase date"]
+
+        # data rows
+          @search.computers.each do |computer|
+            csv << [computer.control, computer.model, computer.purchase_date]
+          end
+        end
+
+        # send it to the browser
+        send_data csv_string,
+                :type => 'text/csv; charset=iso-8859-1; header=present',
+                :disposition => "attachment; filename=cet_eq_custom_search.csv"
+      end
     end
   end
 end

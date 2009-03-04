@@ -7,27 +7,27 @@ class Search < ActiveRecord::Base
   private
   
   def find_computers
-    Computer.all(:conditions => conditions)
+    Computer.all(:conditions => conditions, :include => :department)
   end
-  
-  def department_conditions
-    ["computers.department_id = ?", department_id] unless department_id.blank?
-  end
-  
+
   def computer_type_conditions
-    ["computers.computer_type = ?", computer_type] unless computer_type.blank?
+    ["computers.computer_type LIKE ?", "%#{computer_type}%"] unless computer_type.blank?
   end
   
-  def minimum_purchase_date
+  def mac_or_pc_conditions
+    ["computers.computer_type LIKE ?", "%#{mac_or_pc}%"] unless mac_or_pc.blank?
+  end
+  
+  def minimum_purchase_date_conditions
     ["computers.purchase_date >= ?", min_purdate] unless min_purdate.blank?
   end
   
-  def maximum_purchase_date
+  def maximum_purchase_date_conditions
     ["computers.purchase_date <= ?", max_purdate] unless max_purdate.blank?
   end
   
-  def include_unassigned
-    
+  def include_nameless_conditions
+    ["computers.user is ?", include_nameless_results] unless include_nameless.blank?
   end
   
   def conditions
@@ -44,5 +44,13 @@ class Search < ActiveRecord::Base
   
   def conditions_parts
     private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
+  end
+  
+  def include_nameless_results
+    if include_nameless == 1
+      not nil
+    else
+      nil
+    end
   end
 end
