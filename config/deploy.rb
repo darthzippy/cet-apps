@@ -37,7 +37,7 @@ default_run_options[:pty] = true
 namespace :deploy do
   desc "Restart Application"
   task :restart, :roles => :app do
-    run "touch #{current_path}/temp/restart.txt"
+    run "touch #{current_path}/tmp/restart.txt"
   end
 end
 
