@@ -4,6 +4,5 @@
   <td><%=h computer.user.fullname unless computer.user.nil? %></td>
   <td><%=h computer.user.email unless computer.user.nil? %></td>
   <td><%=h computer.model %></td>
-  <td><%=h computer.purchase_date %></td>
   <td class="hide_for_printing"><%= link_to 'Edit', edit_computer_path(computer) %></td>
 </tr>

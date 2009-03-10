@@ -1,4 +1,6 @@
 set :application, "apps"
+set :user, "eric"
+set :group, "admin"
 
 set :runner, "root"
 
@@ -11,6 +13,7 @@ set :branch, "master"
 set :deploy_to,   "/Library/WebServer/#{application}"
 set :deploy_via,  :remote_cache
 set :use_sudo, false
+set :git_enable_submodules, 1
 
 set :scm_username, "darthzippy"
 set :scm_password, "Hermione1"
@@ -21,22 +24,21 @@ ssh_options[:forward_agent] = true
 # via the :deploy_to variable:
 # set :deploy_to, "/var/www/#{application}"
 
-
-
 role :app, "cetserv.gordon.edu"
 role :web, "cetserv.gordon.edu"
 role :db,  "cetserv.gordon.edu", :primary => true
-
-set :mongrel_cmd, "/usr/bin/mongrel_rails_persist"
-set :mongrel_ports, 4000..4003
-
-set :user, "eric"
-set :group, "admin"
 
 task :initialize_gems do
   'rake gems:install'
 end
 
-
-
 default_run_options[:pty] = true
+
+namespace :deploy do
+  desc "Restart Application"
+  task :restart, :roles => :app do
+    run "touch #{current_path}/temp/restart.txt"
+  end
+end
+
+after "deploy", "deploy:cleanup"

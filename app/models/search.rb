@@ -53,4 +53,30 @@ class Search < ActiveRecord::Base
       nil
     end
   end
+  
+  def dump_csv
+    #@computers = Computer.find(:all, :order => "control ASC")
+    @outfile = "computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+
+    csv_data = FasterCSV.generate do |csv|
+      csv << [
+      "Control",
+      "Model",
+      "Serial #",
+      ]
+      computers.each do |computer|
+        csv << [
+        computer.control,
+        computer.model,
+        computer.serial,
+        ]
+      end
+    end
+
+    send_data csv_data,
+      :type => 'text/csv; charset=iso-8859-1; header=present',
+      :disposition => "attachment; filename=#{@outfile}"
+
+    flash[:notice] = "Export complete!"
+  end
 end

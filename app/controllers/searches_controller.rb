@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
   
   require 'prawn'
+  require 'fastercsv'
   
   layout 'application'
     
@@ -27,20 +28,35 @@ class SearchesController < ApplicationController
       format.xml { render :xml => @search }
       format.pdf { render :layout => false }
       format.csv do
-        csv_string = FasterCSV.generate do |csv|
-        # header row
-          csv << ["control", "model", "purchase date"]
+        @outfile = "cet_computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
 
-        # data rows
+        csv_data = FasterCSV.generate do |csv|
+          csv << [
+          "Name",
+          "E-mail",
+          "Department",
+          "Control",
+          "Model"
+
+          ]
           @search.computers.each do |computer|
-            csv << [computer.control, computer.model, computer.purchase_date]
+            unless computer.department.nil? or computer.user.nil?
+              csv << [
+              computer.user.fullname,
+              computer.user.email,
+              computer.department.name,
+              computer.control,
+              computer.model
+              ]
+            end
           end
         end
 
-        # send it to the browser
-        send_data csv_string,
-                :type => 'text/csv; charset=iso-8859-1; header=present',
-                :disposition => "attachment; filename=cet_eq_custom_search.csv"
+        send_data csv_data,
+          :type => 'text/csv; charset=iso-8859-1; header=present',
+          :disposition => "attachment; filename=#{@outfile}"
+
+        flash[:notice] = "Export complete!"
       end
     end
   end

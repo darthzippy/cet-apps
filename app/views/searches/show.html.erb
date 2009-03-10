@@ -5,6 +5,7 @@
 <%= link_to 'New Search', new_search_path %>
 
 <% else %>
+<%= link_to 'Export as CSV', search_path, :format => :csv %>
 <%= link_to 'New Search', new_search_path %>
 
 <table cellspacing="0">
@@ -14,7 +15,6 @@
 	<th>Name</th>
 	<th>E-mail</th>
     <th>Model</th>
-	<th>Purchase Date</th>
 	<th class="hide_for_printing">Options</th>
   </tr>
 
