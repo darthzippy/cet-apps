@@ -1,9 +1,19 @@
 pdf.font "Helvetica"
 
 pdf.text "CET Apps Custom Search Report", :size => 24, :style => :bold
+pdf.text "Created at #{Time.now.to_formatted_s(:long)} by #{current_cet_user.display_name}"
 
-pdf.text "Control		Model		Department		User", :size => 16, :style => :bold, :spacing => 4
-@search.computers.each do |computer|
-  pdf.text "#{computer.control}			#{computer.model} 		#{computer.department.name unless computer.department.nil?}				#{computer.user.fullname unless computer.user.nil?}"
+pdf.move_down(10)
+
+items = @search.computers.map do |item|
+  [
+    item.control,
+	item.serial,
+	item.model,
+	item.purchase_date
+  ]
 end
 
+pdf.table items,
+  :row_colors => ["FFFFFF", "DDDDDD"],
+  :headers => ["Control", "Serial", "Model", "Purchase Date"]

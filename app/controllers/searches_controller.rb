@@ -27,37 +27,37 @@ class SearchesController < ApplicationController
       format.html
       format.xml { render :xml => @search }
       format.pdf { render :layout => false }
-      format.csv do
-        @outfile = "cet_computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+      #format.csv do
+      #  @outfile = "cet_computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
 
-        csv_data = FasterCSV.generate do |csv|
-          csv << [
-          "Name",
-          "E-mail",
-          "Department",
-          "Control",
-          "Model"
+      #  csv_data = FasterCSV.generate do |csv|
+      #    csv << [
+      #    "Name",
+      #    "E-mail",
+      #    "Department",
+      #    "Control",
+      #    "Model"
 
-          ]
-          @search.computers.each do |computer|
-            unless computer.department.nil? or computer.user.nil?
-              csv << [
-              computer.user.fullname,
-              computer.user.email,
-              computer.department.name,
-              computer.control,
-              computer.model
-              ]
-            end
-          end
-        end
+      #    ]
+      #    @search.computers.each do |computer|
+      #      unless computer.department.nil? or computer.user.nil?
+      #        csv << [
+      #        computer.user.fullname,
+      #        computer.user.email,
+      #        computer.department.name,
+      #        computer.control,
+      #        computer.model
+      #        ]
+      #      end
+      #    end
+      #  end
 
-        send_data csv_data,
-          :type => 'text/csv; charset=iso-8859-1; header=present',
-          :disposition => "attachment; filename=#{@outfile}"
+      #  send_data csv_data,
+      #    :type => 'text/csv; charset=iso-8859-1; header=present',
+      #    :disposition => "attachment; filename=#{@outfile}"
 
-        flash[:notice] = "Export complete!"
-      end
+      #  flash[:notice] = "Export complete!"
+      #end
     end
   end
 end

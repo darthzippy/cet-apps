@@ -5,7 +5,7 @@
 <%= link_to 'New Search', new_search_path %>
 
 <% else %>
-<%= link_to 'Export as CSV', search_path, :format => :csv %>
+<%= link_to 'Export as PDF', search_path(@search, :format => :pdf) %>
 <%= link_to 'New Search', new_search_path %>
 
 <table cellspacing="0">
