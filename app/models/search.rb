@@ -1,3 +1,20 @@
+# == Schema Information
+# Schema version: 20090227181628
+#
+# Table name: searches
+#
+#  id                   :integer(4)      not null, primary key
+#  department_id        :integer(4)
+#  computer_type        :string(255)
+#  min_purdate          :date
+#  max_purdate          :date
+#  include_offinventory :boolean(1)
+#  created_at           :datetime
+#  updated_at           :datetime
+#  mac_or_pc            :string(255)
+#  include_nameless     :boolean(1)
+#
+
 class Search < ActiveRecord::Base
   
   def computers

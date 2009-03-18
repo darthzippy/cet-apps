@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20090227181628
+#
+# Table name: hardware_assignments
+#
+#  id               :integer(4)      not null, primary key
+#  computer_id      :integer(4)
+#  user_id          :integer(4)
+#  department_id    :integer(4)
+#  primary_computer :boolean(1)
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:

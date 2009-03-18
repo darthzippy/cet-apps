@@ -4,11 +4,13 @@ class DepartmentsController < ApplicationController
   
   before_filter :login_required
   
+  auto_complete_for :department, :name
+  protect_from_forgery :except => [:auto_complete_for_department_name]
+  
   # GET /departments
   # GET /departments.xml
   def index
     @departments = Department.search(params[:search], params[:page])
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @departments }

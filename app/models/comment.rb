@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 20090227181628
+#
+# Table name: comments
+#
+#  id          :integer(4)      not null, primary key
+#  computer_id :integer(4)
+#  body        :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  updated_by  :string(255)
+#
+
 class Comment < ActiveRecord::Base
   
   belongs_to :computer

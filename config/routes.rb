@@ -3,7 +3,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :searches
   map.resources :shifts
   map.resources :hardware_assignments
-  map.resources :departments
+  map.resources :departments,
+    :collection => { 
+      :auto_complete_for_department_name => :get
+    }
   map.resources :computers, :has_many => :comments
   map.resources :users, :has_many => :licenses
   map.resources :users, :has_many => :checkouts

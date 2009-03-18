@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 20090227181628
+#
+# Table name: licenses
+#
+#  id          :integer(4)      not null, primary key
+#  user_id     :integer(4)
+#  software_id :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  updated_by  :string(255)
+#
+
 class License < ActiveRecord::Base
   belongs_to :user
   belongs_to :software

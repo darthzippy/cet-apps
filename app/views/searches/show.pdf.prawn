@@ -10,10 +10,10 @@ items = @search.computers.map do |item|
     item.control,
 	item.serial,
 	item.model,
-	item.purchase_date
+	item.try(:department).name,
   ]
 end
 
 pdf.table items,
   :row_colors => ["FFFFFF", "DDDDDD"],
-  :headers => ["Control", "Serial", "Model", "Purchase Date"]
+  :headers => ["Control", "Serial", "Model", "Department"]

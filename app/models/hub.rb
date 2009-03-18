@@ -1,3 +1,14 @@
+# == Schema Information
+# Schema version: 20090227181628
+#
+# Table name: hubs
+#
+#  id         :integer(4)      not null, primary key
+#  hub_number :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Hub < ActiveRecord::Base
   validates_uniqueness_of :hub_number, :on => :create, :message => "must be unique"
   validates_presence_of :hub_number, :on => :create, :message => "can't be blank"

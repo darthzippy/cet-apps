@@ -1,3 +1,15 @@
+# == Schema Information
+# Schema version: 20090227181628
+#
+# Table name: departments
+#
+#  id                  :integer(4)      not null, primary key
+#  name                :string(255)
+#  maintenance_account :string(255)
+#  created_at          :datetime
+#  updated_at          :datetime
+#
+
 class Department < ActiveRecord::Base
   
   has_many :hardware_assignments
@@ -16,7 +28,9 @@ class Department < ActiveRecord::Base
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
              :conditions => ['name like ?', "%#{search}%"],
-             :order => 'name'
+             :order => 'name ASC',
+             :include => {:hardware_assignments => :user}
   end
+
   
 end
