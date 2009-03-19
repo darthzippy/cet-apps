@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :cet_users
+
   
   map.resources :searches
   map.resources :shifts

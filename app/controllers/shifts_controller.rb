@@ -1,4 +1,9 @@
 class ShiftsController < ApplicationController
+  
+  layout 'application'
+  
+  before_filter :login_required
+  
   # GET /shifts
   # GET /shifts.xml
   def index
@@ -41,6 +46,7 @@ class ShiftsController < ApplicationController
   # POST /shifts.xml
   def create
     @shift = Shift.new(params[:shift])
+    @shift.update_attributes( :cet_user_id => current_cet_user.id )
     
     #@license = @user.licenses.build(params[:license])
     #@license.updated_by=current_cet_user.display_name
@@ -61,6 +67,7 @@ class ShiftsController < ApplicationController
   # PUT /shifts/1.xml
   def update
     @shift = Shift.find(params[:id])
+    @shift.update_attributes( :cet_user_id => current_cet_user.id )
 
     respond_to do |format|
       if @shift.update_attributes(params[:shift])

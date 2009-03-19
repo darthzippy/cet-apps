@@ -1,0 +1,22 @@
+<p>
+  <b>Cet user:</b>
+  <%=h @cet_user.display_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @cet_user.email %>
+</p>
+
+<div id="shifts">
+	<% for shift in @cet_user.shifts %>
+	  <div id="<%= dom_id(shift) %>">
+		<%= shift.start_time.to_formatted_s(:long) unless shift.start_time.nil? %>
+	  </div>
+	<% end %>
+</div>
+
+
+
+<%= link_to 'Edit', edit_cet_user_path(@cet_user) %> |
+<%= link_to 'Back', cet_users_path %>

@@ -10,7 +10,7 @@
 
 <% for shift in @shifts %>
   <tr>
-    <td><%=h shift.cet_user_id %></td>
+    <td><%=h shift.cet_user.display_name %></td>
     <td><%=h shift.payperiod_id %></td>
     <td><%=h shift.start_time %></td>
     <td><%=h shift.end_time %></td>

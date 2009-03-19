@@ -10,7 +10,7 @@ items = @search.computers.map do |item|
     item.control,
 	item.serial,
 	item.model,
-	item.try(:department).name,
+	item.department.try(:name),
   ]
 end
 

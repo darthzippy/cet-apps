@@ -14,4 +14,6 @@
 
 class Shift < ActiveRecord::Base
   belongs_to :cet_user
+  
+  named_scope :current_user_shifts, :conditions => ["cet_user_id = ?", '#{current_cet_user.id}']
 end

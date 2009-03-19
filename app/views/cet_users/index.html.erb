@@ -1,0 +1,18 @@
+<h1>Listing cet_users</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @cet_users.each do |cet_users| %>
+  <tr>
+    <td><%= link_to 'Show', cet_users %></td>
+    <td><%= link_to 'Edit', edit_cet_users_path(cet_users) %></td>
+    <td><%= link_to 'Destroy', cet_users, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cet_users', new_cet_users_path %>
