@@ -1,0 +1,72 @@
+<p>
+  <b>Name:</b>
+  <%=h @dvd.lastname %>, <%=h @dvd.firstname %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%=h @dvd.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%=h @dvd.address2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @dvd.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @dvd.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%=h @dvd.zip %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @dvd.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h number_to_phone(@dvd.phone, :area_code => true, :delimeter => " ") %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @dvd.quantity %>
+</p>
+
+<p>
+  <b>Pickup:</b>
+  <%=h @dvd.pickup %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%=h @dvd.paid %>
+</p>
+
+<p>
+  <b>Paid date:</b>
+  <%=h @dvd.paid_date.to_s(:long) %>
+</p>
+
+<p>
+  <b>Paid with:</b>
+  <%=h @dvd.paid_with %>
+</p>
+
+<p>
+  <b>Delivered:</b>
+  <%=h @dvd.delivered %>
+</p>
+
+<%= link_to 'Edit', edit_dvd_path(@dvd) %> |
+<%= link_to 'Back', dvds_path %>

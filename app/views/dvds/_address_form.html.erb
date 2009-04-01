@@ -1,0 +1,67 @@
+<% form_for(@dvd) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state, :size => 2 %>
+  </p>
+  <p>
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip, :size => 10 %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity, :size => 4 %>
+  </p>
+  <p>
+    <%= f.label :pickup %><br />
+	<%= f.select(:pickup, %w{ Send\ via\ US\ Mail Pickup\ at\ CET },{:prompt => "Select a Delivery Method"}) %>
+  </p>
+  <p>
+    <%= f.label :paid %><br />
+	<%= f.select(:paid, [ ['Waiting for Payment',0],['Paid',1]]) %>
+  </p>
+  <p>
+    <%= f.label :paid_date %><br />
+    <%= f.date_select :paid_date %>
+  </p>
+  <p>
+    <%= f.label :paid_with %><br />
+	<%= f.select(:paid_with, %w{ Paid\ with\ Check Paid\ with\ Cash },{:prompt => "Select a Payment Method"}) %>
+  </p>
+  <p>
+    <%= f.label :delivered %><br />
+    <%= f.check_box :delivered %>
+  </p>
+  <p>
+    <%= f.submit button_name %>
+  </p>
+<% end %>

@@ -61,6 +61,12 @@ class User < ActiveRecord::Base
     end
   end
   
+  def is_gradstudent?
+    if self.role =~ /grad(1|2)/ 
+      true
+    end
+  end
+  
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
              :conditions => ['last like ?', "%#{search}%"],

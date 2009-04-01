@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :cet_user_id %><br />
-    <%= f.text_field :cet_user_id %>
+    <%= f.collection_select :cet_user_id, CetUser.all, :id, :display_name %>
   </p>
   <p>
     <%= f.label :payperiod_id %><br />

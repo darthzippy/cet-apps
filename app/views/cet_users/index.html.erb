@@ -4,15 +4,16 @@
   <tr>
   </tr>
 
-<% @cet_users.each do |cet_users| %>
+<% @cet_users.each do |cet_user| %>
   <tr>
-    <td><%= link_to 'Show', cet_users %></td>
-    <td><%= link_to 'Edit', edit_cet_users_path(cet_users) %></td>
-    <td><%= link_to 'Destroy', cet_users, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= cet_user.display_name %></td>
+    <td><%= link_to 'Show', cet_user %></td>
+    <td><%= link_to 'Edit', edit_cet_user_path(cet_user) %></td>
+    <td><%= link_to 'Destroy', cet_user, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New cet_users', new_cet_users_path %>
+<%= link_to 'New cet_user', new_cet_user_path %>

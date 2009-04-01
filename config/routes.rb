@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :cet_users
 
-  
+  map.resources :cet_users
   map.resources :searches
   map.resources :shifts
   map.resources :hardware_assignments
@@ -17,6 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :hubs
   map.resources :checkouts
   map.resources :comments
+  map.resources :dvds
 
   map.root :users
 

@@ -7,7 +7,7 @@ class ShiftsController < ApplicationController
   # GET /shifts
   # GET /shifts.xml
   def index
-    @shifts = Shift.find(:all)
+    @shifts = Shift.find(:all, :include => :cet_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,7 +46,7 @@ class ShiftsController < ApplicationController
   # POST /shifts.xml
   def create
     @shift = Shift.new(params[:shift])
-    @shift.update_attributes( :cet_user_id => current_cet_user.id )
+    @shift.update_attributes( :cet_user_id => current_cet_user.id, :start_time => Time.now )
     
     #@license = @user.licenses.build(params[:license])
     #@license.updated_by=current_cet_user.display_name
@@ -90,6 +90,23 @@ class ShiftsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(shifts_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def end_shift
+    @shift = Shift.find(params[:id])
+    @shift.update_attributes( :end_time => Time.now )
+
+    respond_to do |format|
+      if @shift.update_attributes(params[:shift])
+        flash[:notice] = 'Shift was successfully ended.'
+        format.html { redirect_to(@shift) }
+        format.xml  { head :ok }
+        format.js
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @shift.errors, :status => :unprocessable_entity }
+      end
     end
   end
 end

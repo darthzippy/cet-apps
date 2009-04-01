@@ -15,5 +15,6 @@
 class Shift < ActiveRecord::Base
   belongs_to :cet_user
   
-  named_scope :current_user_shifts, :conditions => ["cet_user_id = ?", '#{current_cet_user.id}']
+  named_scope :my_open_shifts, :conditions => ["end_time is ?", nil]
+  
 end

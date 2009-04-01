@@ -182,6 +182,15 @@ div#login {
 }
 
 /*==NAV==*/
+
+#logo {
+	clear: left;
+}
+
+div.content {
+	margin-right: -198px;
+	width:700px;
+}
 div.content li a {
 	background: #fff;
 }
@@ -193,6 +202,10 @@ div.content ul li a {
 div.content ul li a:hover {
 	color: #333;
 	background: #efefff;
+}
+
+div#content {
+	
 }
 
 .search_form {

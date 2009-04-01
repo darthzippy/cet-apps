@@ -1,22 +1,28 @@
 <h1>Listing shifts</h1>
 
-<table>
+<table cellspacing="0">
   <tr>
     <th>Cet user</th>
     <th>Payperiod</th>
     <th>Start time</th>
     <th>End time</th>
+	<th></th>
+	<th></th>
+	<th></th>
   </tr>
 
 <% for shift in @shifts %>
   <tr>
     <td><%=h shift.cet_user.display_name %></td>
     <td><%=h shift.payperiod_id %></td>
-    <td><%=h shift.start_time %></td>
-    <td><%=h shift.end_time %></td>
+    <td><%=h shift.start_time.to_s(:long) unless shift.start_time.nil? %></td>
+    <td><%=h shift.end_time.to_s(:long) unless shift.end_time.nil? %></td>
     <td><%= link_to 'Show', shift %></td>
     <td><%= link_to 'Edit', edit_shift_path(shift) %></td>
     <td><%= link_to 'Destroy', shift, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% if shift.end_time.nil? %>
+      <td><%= render "shifts/end_shift", :object => @shift = shift %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
@@ -24,3 +30,4 @@
 <br />
 
 <%= link_to 'New shift', new_shift_path %>
+

@@ -1,0 +1,8 @@
+<div class="search_form">
+	Search by last name or phone number	
+	<% form_tag dvds_path, :method => 'get' do %>
+	  <%= text_field_tag :search, params[:search] %>
+	  <%= submit_tag "Search" %>
+	<% end %>
+	<%= link_to 'clear', dvds_path %>
+</div>

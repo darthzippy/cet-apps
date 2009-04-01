@@ -1,0 +1,45 @@
+<div id="paginate">
+<%= will_paginate @dvds %>	
+</div>
+
+<%= render :partial => 'search_dvds_by_name' %>
+<%= link_to 'Export as CSV', dvds_path(@dvds, :format => :csv) %><br />
+<h2>Listing DVD Sales</h2>
+
+<table cellspacing="0">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Quantity</th>
+    <th>Pickup</th>
+    <th>Paid</th>
+    <th>Paid date</th>
+    <th>Paid with</th>
+    <th>Delivered</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+
+<% @dvds.each do |dvd| %>
+  <tr>
+    <td><%=h dvd.lastname %>, <%=h dvd.firstname %></td>
+    <td><%=h dvd.email %></td>
+    <td><%=h number_to_phone(dvd.phone, :area_code => true, :delimeter => " ") %></td>
+    <td><%=h dvd.quantity %></td>
+    <td><%=h dvd.pickup %></td>
+    <td><%=h dvd.paid %></td>
+    <td><%=h dvd.paid_date.to_s(:long) %></td>
+    <td><%=h dvd.paid_with %></td>
+    <td><%=h dvd.delivered %></td>
+    <td><%= link_to 'Show', dvd %></td>
+    <td><%= link_to 'Edit', edit_dvd_path(dvd) %></td>
+    <td><%= link_to 'Destroy', dvd, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New dvd', new_dvd_path %>
