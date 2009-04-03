@@ -1,6 +1,4 @@
-<%= link_to_function('Add Comment', nil, :id => "add_comment") do |page|
-	  page[:computer_show_comments_add].blind_down
- end %>
+<%= link_to 'Add Comment', nil, :id => "add_comment" %>
 
 <div id="computer_show_comments_add">
   <%= render :partial => @comment = Comment.new, :locals => { :button_name => 'Create'}%>	

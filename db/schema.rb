@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20090401170133) do
     t.string   "serial"
     t.string   "model"
     t.string   "manufacturer"
-    t.date     "purchase_date"
+    t.datetime "purchase_date"
     t.integer  "purchase_price"
     t.string   "purchase_acct"
     t.string   "status"

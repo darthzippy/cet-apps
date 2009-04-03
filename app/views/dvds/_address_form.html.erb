@@ -34,7 +34,7 @@
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :phone %><br />
+    <%= f.label "cel phone or summer phone" %><br />
     <%= f.text_field :phone %>
   </p>
   <p>
@@ -45,14 +45,21 @@
     <%= f.label :pickup %><br />
 	<%= f.select(:pickup, %w{ Send\ via\ US\ Mail Pickup\ at\ CET },{:prompt => "Select a Delivery Method"}) %>
   </p>
-  <p>
-    <%= f.label :paid %><br />
-	<%= f.select(:paid, [ ['Waiting for Payment',0],['Paid',1]]) %>
-  </p>
-  <p>
-    <%= f.label :paid_date %><br />
-    <%= f.date_select :paid_date %>
-  </p>
+
+  <div id="paid">
+   <p>
+      <%= f.label :paid %><br />
+	  <%= f.select(:paid, [ ['Waiting for Payment',0],['Paid',1]]) %>
+    </p>	
+  </div> 
+
+  <div id="paid_date">
+ 	  <p>
+	    <%= f.label :paid_date %><br />
+	    <%= f.date_select :paid_date %>
+	  </p> 	
+  </div>
+
   <p>
     <%= f.label :paid_with %><br />
 	<%= f.select(:paid_with, %w{ Paid\ with\ Check Paid\ with\ Cash },{:prompt => "Select a Payment Method"}) %>

@@ -4,9 +4,7 @@
     <%= f.text_area(:body, options = { "cols" => 40, "rows" => 10 }) %>
   </p>
 
-  <p><%= f.submit button_name %> or <%= link_to_function("Cancel", nil) do |page|
-		page[:computer_show_comments_add].blind_up
-	  end %>
+  <p><%= f.submit button_name %> or <%= link_to "Cancel", nil, :id => "comment_cancel" %>
   </p>	
 <% end %>
 

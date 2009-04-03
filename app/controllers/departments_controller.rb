@@ -2,7 +2,7 @@ class DepartmentsController < ApplicationController
   
   layout 'application'
   
-  before_filter :login_required
+  #before_filter :login_required
   
   auto_complete_for :department, :name
   protect_from_forgery :except => [:auto_complete_for_department_name]
