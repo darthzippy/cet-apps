@@ -1,5 +1,9 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '../../../../test/test_helper')) 
 
+ActionController::Routing::Routes.draw do |map|
+  map.connect  ':controller/:action/:id'
+end
+
 class AutoCompleteTest < Test::Unit::TestCase
   include AutoComplete
   include AutoCompleteMacrosHelper
@@ -11,7 +15,16 @@ class AutoCompleteTest < Test::Unit::TestCase
   include ActionView::Helpers::CaptureHelper
   
   def setup
-    @controller = Class.new do
+    @controller = Class.new(ActionController::Base) do
+
+      auto_complete_for :some_model, :some_field
+
+      auto_complete_for :some_model, :some_other_field do |items, params|
+        items.scoped( { :conditions => [ "a_third_field = ?", params['some_model']['a_third_field'] ] })
+      end
+
+      attr_reader :items
+
       def url_for(options)
         url =  "http://www.example.com/"
         url << options[:action].to_s if options and options[:action]
@@ -19,6 +32,12 @@ class AutoCompleteTest < Test::Unit::TestCase
       end
     end
     @controller = @controller.new
+
+    Object.const_set("SomeModel", Class.new(ActiveRecord::Base)) unless Object.const_defined?("SomeModel")
+
+    @request = ActionController::TestRequest.new
+    @response = ActionController::TestResponse.new
+
   end
 
 
@@ -64,4 +83,29 @@ class AutoCompleteTest < Test::Unit::TestCase
       text_field_with_auto_complete(:message, :recipient, {}, :skip_style => true)
   end
   
+  # auto_complete_for :some_model, :some_field
+  def test_default_auto_complete_for
+    get :auto_complete_for_some_model_some_field, :some_model => { :some_field => "some_value" }
+    default_auto_complete_find_options = @controller.items.proxy_options
+    assert_equal "`some_models`.some_field ASC", default_auto_complete_find_options[:order]
+    assert_equal 10, default_auto_complete_find_options[:limit]
+    assert_equal ["LOWER(`some_models`.some_field) LIKE ?", "%some_value%"], default_auto_complete_find_options[:conditions]
+  end
+
+  # auto_complete_for :some_model, :some_other_field do |items, params|
+  #   items.scoped( { :conditions => [ "a_third_field = ?", params['some_model']['a_third_field'] ] })
+  # end
+  def test_auto_complete_for_with_block
+    get :auto_complete_for_some_model_some_other_field, :some_model => { :some_other_field => "some_value", :a_third_field => "some_value" }
+    custom_auto_complete_find_options = @controller.items.proxy_options
+    assert_equal [ "a_third_field = ?", 'some_value' ], custom_auto_complete_find_options[:conditions]
+
+    default_auto_complete_scope = @controller.items.proxy_scope
+    assert !default_auto_complete_scope.nil?
+    default_auto_complete_find_options = default_auto_complete_scope.proxy_options
+    assert_equal "`some_models`.some_other_field ASC", default_auto_complete_find_options[:order]
+    assert_equal 10, default_auto_complete_find_options[:limit]
+    assert_equal ["LOWER(`some_models`.some_other_field) LIKE ?", "%some_value%"], default_auto_complete_find_options[:conditions]
+  end
+
 end
