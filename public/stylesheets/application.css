@@ -320,6 +320,30 @@ a#add_comment {
 	background: #fff;
 }
 
+/*===DVDS===*/
+
+.full_name p,.city_state_zip p {
+	display: inline;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+#dvd_address_form input {
+	font-size: 200%;
+}
+
+a#dvds_csv {
+	float: right;
+	margin-right: 240px;
+}
+
+#dvds_show {
+	font-size: 200%;
+	margin: 20px 40px;
+}
 
 /*==========*/
 

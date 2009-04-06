@@ -3,8 +3,9 @@
 </div>
 
 <%= render :partial => 'search_dvds_by_name' %>
-<%= link_to 'Export as CSV', dvds_path(@dvds, :format => :csv) %><br />
-<h2>Listing DVD Sales</h2>
+<%= link_to 'Export as CSV', dvds_path(@dvds, :format => :csv), :id => 'dvds_csv' %><br />
+<h2><%= link_to 'Add DVD sale', new_dvd_path %></h2><br />
+<h2>DVD Sales</h2>
 
 <table cellspacing="0">
   <tr>
@@ -39,7 +40,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New dvd', new_dvd_path %>
