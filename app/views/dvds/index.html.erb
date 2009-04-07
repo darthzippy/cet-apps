@@ -31,7 +31,7 @@
     <td><%=h dvd.quantity %></td>
     <td><%=h dvd.pickup %></td>
     <td><%=h dvd.paid %></td>
-    <td><%=h dvd.paid_date.to_s(:long) %></td>
+    <td><%=h dvd.paid_date.to_s(:long) unless dvd.paid_date.nil? %></td>
     <td><%=h dvd.paid_with %></td>
     <td><%=h dvd.delivered %></td>
     <td><%= link_to 'Show', dvd %></td>
