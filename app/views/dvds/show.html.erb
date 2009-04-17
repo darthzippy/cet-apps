@@ -7,7 +7,9 @@
 	<p>
 	  <b>Address:</b><br />
 	  <%=h @dvd.address1 %><br />
-	  <%=h @dvd.address2 %><br />
+	  <% if @dvd.two_line_address? %>
+	    <%=h @dvd.address2 %><br />
+	  <% end %>
 	  <%=h @dvd.city %>, <%=h @dvd.state %> <%=h @dvd.zip %>
 	</p>
 	<br />

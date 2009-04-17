@@ -16,4 +16,12 @@ class Dvd < ActiveRecord::Base
              :conditions => ['lastname like ? OR phone like ?', "%#{search}%", "%#{search}%"],
              :order => 'lastname'
   end
+  
+  def two_line_address?
+    if address2.blank?
+      false
+    else
+      true
+    end
+  end
 end
