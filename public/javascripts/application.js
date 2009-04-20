@@ -53,7 +53,13 @@ jQuery(document).ready(function($){
 
  
 
-  $('#date').datepicker({ dateFormat: 'yy-mm-dd' });
+  $('.date').datepicker({ dateFormat: 'yy-mm-dd' });
+
+  $('.search-date').datepicker({ 
+	dateFormat: 'yy-mm-dd',
+	changeMonth: true,
+	changeYear: true
+  });			
 
   $('.end_shift_form').submit(function (){
     alert('It Works!');	

@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20090401170133) do
     t.string   "serial"
     t.string   "model"
     t.string   "manufacturer"
-    t.datetime "purchase_date"
+    t.date     "purchase_date"
     t.integer  "purchase_price"
     t.string   "purchase_acct"
     t.string   "status"
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(:version => 20090401170133) do
     t.datetime "updated_at"
   end
 
-  create_table "hardware_assignments", :force => true do |t|
+  create_table "hardwareassignments", :force => true do |t|
     t.integer  "computer_id"
     t.integer  "user_id"
     t.integer  "department_id"

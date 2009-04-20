@@ -53,10 +53,12 @@
 		</div>
 		<br />
 
+	  <div id="yield">
+		  <p style="color: green"><%= flash[:notice] %></p>
 
-	  <p style="color: green"><%= flash[:notice] %></p>
-	  
-	  <%= yield  %>
+		  <%= yield  %>	  	
+	  </div>
+
 	</div>
 
 	<div id="footer">  

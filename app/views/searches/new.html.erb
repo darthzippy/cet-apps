@@ -12,11 +12,11 @@
   </p>
   <p>
     <%= f.label :minimum_purchase_date %><br />
-    <%= f.date_select :min_purdate, {:include_blank => true} %>
+    <%= f.text_field :min_purdate, :class => 'search-date' %>
   </p>
   <p>
     <%= f.label :max_purdate %><br />
-    <%= f.date_select :max_purdate %>
+    <%= f.text_field :max_purdate, :class => 'search-date' %>
   </p>
 <br />
   <p><%= f.submit "Submit" %></p>

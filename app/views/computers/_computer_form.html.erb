@@ -1,49 +1,57 @@
 <% form_for(@computer) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :control %><br />
-    <%= f.text_field :control %>
-  </p>
-  <p>
-    <%= f.label :serial %><br />
-    <%= f.text_field :serial %>
-  </p>
-  <p>
-    <%= f.label :manufacturer %><br />
-    <%= f.text_field :manufacturer %>
-  </p>
-  <p>
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
-  </p>
-  <p>
-	<% if @computer.is_printer? %>
-	  <%= f.label :cameron_id_id %><br />
-      <%= f.text_field :cameron_id %>
-	<% else %>
-	  <%= f.label :part_number %><br />
-      <%= f.text_field :part_number %>
-	<% end %>
 
-  </p>
-  <p>
-	  <%= f.label :computer_type %><br />
-	  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other},{:prompt => "Select a Computer Type"}) %>
-  </p>
-  <p>
-	  <%= f.label :warranty_type %><br />
-	  <%= f.select(:warranty_type, %w{ None AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Encore Printer\ CPC\ Contract Other-Standard },{:prompt => "Select a Warranty Type"}) %>
-  </p>
-  <p>
-	  <%= f.label :warranty_length %><br />
-	  <%= f.select(:warranty_length, [ ['none',0],['1',1], ['2',2], ['3',3], ['4',4]]) %>
-  </p>
+  <div id="computer_edit_model_info">
+	  <p>
+	    <%= f.label :control %><br />
+	    <%= f.text_field :control %>
+	  </p>
+	  <p>
+	    <%= f.label :serial %><br />
+	    <%= f.text_field :serial %>
+	  </p>
+	  <p>
+	    <%= f.label :manufacturer %><br />
+	    <%= f.text_field :manufacturer %>
+	  </p>
+	  <p>
+	    <%= f.label :model %><br />
+	    <%= f.text_field :model %>
+	  </p>
+	  <p>
+		<% if @computer.is_printer? %>
+		  <%= f.label :cameron_id_id %><br />
+	      <%= f.text_field :cameron_id %>
+		<% else %>
+		  <%= f.label :part_number %><br />
+	      <%= f.text_field :part_number %>
+		<% end %>
+	  </p>	
+  </div>
+
+  <div id="computer_edit_type_info">
+	  <p>
+		  <%= f.label :computer_type %><br />
+		  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other},{:prompt => "Select a Computer Type"}) %>
+	  </p>
+	  <p>
+		  <%= f.label :warranty_type %><br />
+		  <%= f.select(:warranty_type, %w{ None AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Encore Printer\ CPC\ Contract Other-Standard },{:prompt => "Select a Warranty Type"}) %>
+	  </p>
+	  <p>
+		  <%= f.label :warranty_length %><br />
+		  <%= f.select(:warranty_length, [ ['none',0],['1',1], ['2',2], ['3',3], ['4',4]]) %>
+	  </p>	
+  </div>
+
+<div class="clear">	
+</div>
   
   <div id="computer_edit_purchase_info">
   	  <p>
 	    <%= f.label :purchase_date %><br />
-	    <%= f.date_select :purchase_date %>
+	    <%= f.text_field :purchase_date, :class => 'date' %>
 	  </p>
 	  <p>
 	    <%= f.label :purchase_price %><br />
@@ -54,24 +62,28 @@
 	    <%= f.text_field :purchase_acct %>
 	  </p>	
   </div>
-  <p>
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </p>
-  <p>
-    <%= f.label :cstatus %><br />
-    <%= f.text_field :cstatus %>
-  </p>
-  <p>
-    <%= f.label :memory %><br />
-    <%= f.text_field :memory %>GB
-  </p>
-  <p>
-    <%= f.label :hard_drive %><br />
-    <%= f.text_field :hard_drive %>GB
-  </p>
 
-<div id="hardware_assignments">
+  <div id="computer_edit_status_info">
+	  <p>
+	    <%= f.label :status %><br />
+	    <%= f.text_field :status %>
+	  </p>
+	  <p>
+	    <%= f.label :cstatus %><br />
+	    <%= f.text_field :cstatus %>
+	  </p>
+	  <p>
+	    <%= f.label :memory %><br />
+	    <%= f.text_field :memory %>GB
+	  </p>
+	  <p>
+	    <%= f.label :hard_drive %><br />
+	    <%= f.text_field :hard_drive %>GB
+	  </p>	
+  </div>
+
+
+<div id="hardware_assignments" class="clear">
 	<% for hardware_assignment in @computer.hardware_assignments %>
 	  <% fields_for "computer[hardware_assignment_attributes][]", hardware_assignment do |hardware_assignment_form| %>
 	  <p>

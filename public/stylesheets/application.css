@@ -59,6 +59,9 @@ a:hover img {
 	border-bottom: 1px solid #e3e3e3;
 }
 
+#yield {
+}
+
 table {
 	padding-left: 40px;
 	padding-bottom: 20px;
@@ -227,11 +230,15 @@ div#content {
 	margin: 20px auto;
 	width: 798px;
 }
-#computer_new_purchase_info, #computer_edit_purchase_info {
-	border: 1px solid #999;
-	width: 400px;
-	padding: 20px;
-	margin: 20px;
+
+#computer_new_purchase_info, #computer_edit_purchase_info, #computer_edit_status_info, #computer_edit_type_info, #computer_edit_model_info {
+	display: inline;
+}
+
+#computer_new_purchase_info, #computer_edit_purchase_info, #computer_edit_model_info {
+	float: left;
+	width: 300px;
+	height: 250px;
 }
 
 #computer_show_computer_info1, #computer_show_computer_info2, #computer_show_user_info, #computer_show_purchase_info {
@@ -262,6 +269,7 @@ div#content {
 
 #hardware_assignments {
 	border: 1px solid #999;
+	width: 400px;
 	padding: 20px;
 	margin: 20px;	
 }
