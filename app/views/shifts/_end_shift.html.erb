@@ -1,4 +1,5 @@
-<% remote_form_for :shift, @shift, :html => {:class => 'end_shift_form'}, :url => { :action => "end_shift", :id => @shift } do |f| %>
+<% form_for @shift, :url => { :id => @shift, :action => "end_shift" }, :html => { :class => 'end_shift_form' } do |f| %>
   <%= f.error_messages %>
   <%= f.submit "End Shift" %>
 <% end %>
+

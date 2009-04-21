@@ -1,0 +1,5 @@
+jQuery.noConflict();
+jQuery(document).ready(function($){
+  $('#<%= dom_id(@shift) %>').find('.end_time').html('<td class="end_time"><%=h @shift.end_time.to_s(:long) unless @shift.end_time.nil? %></td>').effect("highlight", {}, 3000);
+  $('.end_shift_form').replaceWith('');
+});

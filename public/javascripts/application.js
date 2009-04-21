@@ -3,6 +3,8 @@
 
 jQuery.noConflict();
 
+
+
 jQuery(document).ready(function($){
   $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#computer_show_user_info_vax,#computer_show_purchase_info_vax").hide();
   
@@ -53,7 +55,7 @@ jQuery(document).ready(function($){
 
  
 
-  $('.date').datepicker({ dateFormat: 'yy-mm-dd' });
+  $('.paid_date_field').datepicker({ dateFormat: 'yy-mm-dd' });
 
   $('.search-date').datepicker({ 
 	dateFormat: 'yy-mm-dd',
@@ -61,8 +63,11 @@ jQuery(document).ready(function($){
 	changeYear: true
   });			
 
-  $('.end_shift_form').submit(function (){
-    alert('It Works!');	
-  });
+  $('.end_shift_form').submit(function () {
+	$.post(this.action, $(this).serialize(), null, "script");
+    return false;	
+  });	
+
+
 	
 });

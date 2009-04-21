@@ -12,6 +12,7 @@ class ShiftsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @shifts }
+      format.js
     end
   end
 
@@ -99,7 +100,6 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if @shift.update_attributes(params[:shift])
-        flash[:notice] = 'Shift was successfully ended.'
         format.html { redirect_to(@shift) }
         format.xml  { head :ok }
         format.js
