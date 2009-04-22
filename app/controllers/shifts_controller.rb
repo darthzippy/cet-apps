@@ -54,9 +54,9 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if @shift.save
-        flash[:notice] = 'Shift was successfully created.'
         format.html { redirect_to(@shift) }
         format.xml  { render :xml => @shift, :status => :created, :location => @shift }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @shift.errors, :status => :unprocessable_entity }
@@ -72,7 +72,6 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if @shift.update_attributes(params[:shift])
-        flash[:notice] = 'Shift was successfully updated.'
         format.html { redirect_to(@shift) }
         format.xml  { head :ok }
       else
@@ -100,7 +99,7 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if @shift.update_attributes(params[:shift])
-        format.html { redirect_to(@shift) }
+        format.html { redirect_to shifts_path }
         format.xml  { head :ok }
         format.js
       else

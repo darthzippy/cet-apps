@@ -66,6 +66,11 @@ jQuery(document).ready(function($){
   $('.end_shift_form').submit(function () {
 	$.post(this.action, $(this).serialize(), null, "script");
     return false;	
+  });
+
+  $('.new_shift_link').click(function () {
+	$.post(this.action, $(this).serialize(), null, "script");
+    return false;	
   });	
 
 
