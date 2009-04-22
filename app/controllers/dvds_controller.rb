@@ -94,6 +94,7 @@ class DvdsController < ApplicationController
   # POST /dvds.xml
   def create
     @dvd = Dvd.new(params[:dvd])
+    @dvd.update_attributes( :updated_by => current_cet_user.display_name )
 
     respond_to do |format|
       if @dvd.save
@@ -111,6 +112,7 @@ class DvdsController < ApplicationController
   # PUT /dvds/1.xml
   def update
     @dvd = Dvd.find(params[:id])
+    @dvd.update_attributes( :updated_by => current_cet_user.display_name )
 
     respond_to do |format|
       if @dvd.update_attributes(params[:dvd])

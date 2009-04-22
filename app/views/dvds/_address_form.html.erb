@@ -9,12 +9,12 @@
   </p>
   <p>
     <%= f.label :lastname %><br />
-    <%= f.text_field :lastname %>
+    <%= f.text_field :lastname, :class => "required name" %>
   </p>	
 </div>
   <p class="clear">
     <%= f.label :address1 %><br />
-    <%= f.text_field :address1 %>
+    <%= f.text_field :address1, :class => "required" %>
   </p>
   <p>
     <%= f.label :address2 %><br />
@@ -24,15 +24,15 @@
 <div class="city_state_zip">
 	<p>
 	    <%= f.label :city %><br />
-	    <%= f.text_field :city %>
+	    <%= f.text_field :city, :class => "required" %>
 	  </p>
 	  <p>
 	    <%= f.label :state %><br />
-	    <%= f.text_field :state, :size => 2 %>
+	    <%= f.text_field :state, :size => 2, :class => "required" %>
 	  </p>
 	  <p>
 	    <%= f.label :zip %><br />
-	    <%= f.text_field :zip, :size => 10 %>
+	    <%= f.text_field :zip, :size => 10, :class => "required number" %>
 	  </p>	
 </div>
   <p class="clear">
@@ -41,7 +41,7 @@
   </p>
   <p>
     <%= f.label "cel phone or summer phone" %><br />
-    <%= f.text_field :phone %><br />
+    <%= f.text_field :phone, :class => "required number" %><br />
 	<span class="phone-format">No spaces, ')','(' or '-' example: 1234567890</span>
   </p>
   <p>
@@ -62,17 +62,23 @@
 
   <div id="paid_date">
 	<%= f.label :paid_date %><br />
-    <%= f.text_field :paid_date, :class => 'paid_date_field' %>
+    <%= f.text_field :paid_date, :class => 'date_entry_field' %>
+  </div>
+  <div class="clear">	
+  </div>
+  <div id="paid_with">
+	  <p>
+	    <%= f.label :paid_with %><br />
+		<%= f.select(:paid_with, %w{ Paid\ with\ Check Paid\ with\ Cash },{:prompt => "Select a Payment Method"}) %>
+	  </p>
+  	
   </div>
 
   <p class="clear">
-    <%= f.label :paid_with %><br />
-	<%= f.select(:paid_with, %w{ Paid\ with\ Check Paid\ with\ Cash },{:prompt => "Select a Payment Method"}) %>
-  </p>
-  <p>
     <%= f.label :delivered %><br />
     <%= f.check_box :delivered %>
   </p>
+
   <p>
     <%= f.submit button_name %>
   </p>

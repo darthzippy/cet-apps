@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090401170133) do
+ActiveRecord::Schema.define(:version => 20090422130823) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20090401170133) do
     t.boolean  "delivered"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "updated_by"
   end
 
   create_table "hardwareassignments", :force => true do |t|

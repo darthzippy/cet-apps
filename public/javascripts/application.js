@@ -37,25 +37,25 @@ jQuery(document).ready(function($){
 
   var var_name = $('#paid_checkbox').attr('checked')?1:0;
   if (var_name == 1) {
-    $('#paid_date').show();	
+    $('#paid_date,#paid_with').show();	
   }
   if (var_name == 0) {
-    $('#paid_date').hide();
+    $('#paid_date,#paid_with').hide();
   }
 
   $("#paid_checkbox").change(function () {
 	var var_name = $('#paid_checkbox').attr('checked')?1:0;
 	if (var_name == 1) {
-	  $('#paid_date').show("slow");	
+	  $('#paid_date,#paid_with').show("slow");	
 	}
 	if (var_name == 0) {
-	  $('#paid_date').hide("slow");	
+	  $('#paid_date,#paid_with').hide("slow");	
 	}
   });
 
  
 
-  $('.paid_date_field').datepicker({ dateFormat: 'yy-mm-dd' });
+  $('.date_entry_field').datepicker({ dateFormat: 'yy-mm-dd' });
 
   $('.search-date').datepicker({ 
 	dateFormat: 'yy-mm-dd',

@@ -53,6 +53,10 @@
 	  <%=h @dvd.delivered %>
 	</p>
 	
+	<p>
+	  Edited by <%= h @dvd.updated_by %> on <%= h @dvd.updated_at.to_formatted_s(:long) unless @dvd.updated_at.nil?  %>
+	</p>
+	
 </div>
 <%= link_to 'Edit', edit_dvd_path(@dvd) %> |
 <%= link_to 'Back', dvds_path %>
