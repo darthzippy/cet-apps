@@ -37,19 +37,19 @@ jQuery(document).ready(function($){
 
   var var_name = $('#paid_checkbox').attr('checked')?1:0;
   if (var_name == 1) {
-    $('#paid_date,#paid_with').show();	
+    $('#paid_date,#paid_with').show();
   }
   if (var_name == 0) {
     $('#paid_date,#paid_with').hide();
   }
 
-  $("#paid_checkbox").change(function () {
+  $("#paid_checkbox").click(function () {
 	var var_name = $('#paid_checkbox').attr('checked')?1:0;
 	if (var_name == 1) {
-	  $('#paid_date,#paid_with').show("slow");	
+	  $('#paid_date,#paid_with').show("slow");
 	}
 	if (var_name == 0) {
-	  $('#paid_date,#paid_with').hide("slow");	
+	  $('#paid_date,#paid_with').hide("slow");
 	}
   });
 
