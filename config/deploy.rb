@@ -39,6 +39,13 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
   end
+  
+  desc "Generate spin script from variables"
+    task :generate_spin_script, :roles => :app do
+      result = render_erb_template(File.dirname(__FILE__) + "/templates/spin.erb")
+      put result, "#{current_path}/script/spin", :mode => 0755
+    end
+    after "deploy:update_code", "deploy:generate_spin_script"
 end
 
 after "deploy", "deploy:cleanup"
