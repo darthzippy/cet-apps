@@ -42,7 +42,9 @@ class SearchesController < ApplicationController
           "Warranty End Date",
           "Part Number",
           "Cameron ID",
+          "Status",
           "Department",
+          "Maintenance Account",
           "User",
           "Email"
           ]
@@ -59,7 +61,9 @@ class SearchesController < ApplicationController
               computer.warranty_end,
               computer.part_number,
               computer.cameron_id,
+              computer.status,
               computer.department.try(:name),
+              computer.department.try(:maintenance_account),
               computer.user.try(:fullname),
               computer.user.try(:email)
               ]

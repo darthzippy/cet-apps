@@ -4,18 +4,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>CET Apps: <%= controller.action_name %></title> 
-  <%= javascript_include_tag :defaults, 'jquery-1.3.2.js' :cache => true %>
+  <title>CET Apps: <%= controller.action_name %></title>
+
+  <pre>
+  <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print"> 
+  <!--[if IE]>
+    <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  </pre>
+  <%= stylesheet_link_tag("application1", :media => "screen") %>
+  <%= stylesheet_link_tag("/stylesheets/smoothness/jquery-ui-1.7.1.custom.css", :media => "screen") %>
+  <%= stylesheet_link_tag("print", :media => "print") %> 
+  <%= javascript_include_tag :defaults, 'jquery/jquery-1.3.2.js', 'jquery/jquery-ui-1.7.1.custom.min.js', 'jquery/jquery-validate/jquery.validate.js' %>
 </head>
 <body class="<%= controller.controller_name %>">
 
 <div id="page">	
-	<div id="sub-content">
+	<div id="header">
 		<h1 id="logo"> 
           <a href="/">CET Apps</a> 
         </h1>
-		<div class="content"> 
-	    	<ul class="nav">
+		<div id="navbar"> 
+	    	<ul>
 			  <li id="computers-nav"> 
 		        <%= link_to 'eq', computers_path %> 
 		      </li>
@@ -41,20 +52,21 @@
 	    </div>	
 	</div>
 	<div id="content">
-		<div id="login">
+      <p style="color: green"><%= flash[:notice] %></p>
+	  <div id="yield">
+	    <%= yield  %>	
+	  </div>
+	  <div id="sidebar">
+	     <div id="login">
 			<% if logged_in? %>
 			  <h1>
 			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %> | <%= link_to 'logout', :controller => 'session', :action => 'logout' %></h1>
 			<% end %>	
-		</div>
-		<br />
-
-
-	  <p style="color: green"><%= flash[:notice] %></p>
-	  
-	  <%= yield  %>
+		 </div>
+	  </div>	
 	</div>
-
+    </div>
+</div>	
 	<div id="footer">  
       <div class="logo">
 	 	<%= image_tag("gordon_logo.png") %>
@@ -73,6 +85,6 @@
       </div> 
   	</div>
 
-</div>
+
 </body>
 </html>

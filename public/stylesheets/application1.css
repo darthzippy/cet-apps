@@ -1,0 +1,126 @@
+body {
+	background: #EEE;
+}
+
+#page, #footer {
+	padding: 0 20px;
+	margin: 0 40px;
+	background: #FFF;
+	border-left: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+/*---- HEADER ----*/
+
+
+#header {
+	height: 94px;
+	width: 950px;
+    position: absolute;
+	margin-top: -69px;
+	margin-left: -21px;
+}
+
+#header h1 a,
+#header h1 a:visited {
+  text-decoration: none;
+  display: block;
+  width: 252px;
+  height: 94px;
+  text-indent: -9999px;
+  background: url(../images/cet_apps.png) top left no-repeat;
+  float: left;
+}
+
+/*==NAV==*/
+
+#logo {
+	clear: left;
+}
+
+#navbar {
+  float: right;
+  text-align:right;
+}
+
+#navbar ul {
+	list-style: none;
+	display: block;
+	margin: 0 10px;
+}
+
+#navbar ul li {
+	float: left;
+	margin: 28px 0.2em;
+	text-transform: uppercase;
+	font: bold 1em Helvetica;
+}
+
+#navbar ul li a {
+	
+	padding: 8px 10px 9px 10px;
+	text-decoration: none;
+	background: #fff;
+	color: #353535;
+	border-top: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+
+#navbar ul li a:hover {
+	color: #333;
+	background: #efefff;
+}
+
+
+/*---- FOOTER ----*/
+
+#footer {
+  clear: both;
+  padding: 1em;
+  text-align: right;
+  margin: 10px 0 0 0;
+  height: 100px;
+}
+ 
+#footer .links {
+  margin-left: 1em;
+  margin-top: 1em;
+  text-align: left;
+  float: left;
+  width: 46em;
+  color: #333;
+}
+ 
+#footer .links p {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #ccc;
+}
+ 
+#footer .links ul li {
+  display: inline;
+  margin-right: 5px;
+}
+ 
+#footer .logo {
+  float: right;
+  width: 115px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: #999;
+}
+ 
+#footer .logo a,
+#footer .logo a:visited {
+  text-decoration: none;  
+  color: #888;
+}
+ 
+#footer .logo img {
+  display: block;
+  margin: 7px auto;
+}

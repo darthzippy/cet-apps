@@ -22,7 +22,7 @@ body {
   line-height: 1;
 }
 	
-}/*---- GENERAL ----*/
+/*---- GENERAL ----*/
 
 body {
   background: #EEE;
@@ -147,6 +147,8 @@ div#login {
 	height: 100px;
 	width: 100px;
 }
+
+
 /*--- TODOS ---*/
 
 #spinner {
@@ -207,9 +209,6 @@ div.content ul li a:hover {
 	background: #efefff;
 }
 
-div#content {
-	
-}
 
 .search_form {
 	padding-bottom: 20px;
