@@ -66,11 +66,11 @@
   <div id="computer_edit_status_info">
 	  <p>
 	    <%= f.label :status %><br />
-	    <%= f.text_field :status %>
+	    <%= f.select :status, [ ['Under CET Warranty','C'],['Non-Supported/Obsolete','O'], ['Exempt from Coverage','E']] %>
 	  </p>
 	  <p>
 	    <%= f.label :cstatus %><br />
-	    <%= f.text_field :cstatus %>
+	    <%= f.select :cstatus, [ ['Under CET Warranty','C'],['Non-Supported/Obsolete','O'], ['Exempt from Coverage','E']] %>
 	  </p>
 	  <p>
 	    <%= f.label :memory %><br />

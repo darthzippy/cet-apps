@@ -20,6 +20,8 @@
 </head>
 <body class="<%= controller.controller_name %>">
 
+<div class="container">
+	
 <div id="page">	
 	<div id="header">
 		<h1 id="logo"> 
@@ -48,42 +50,48 @@
 	          <li id="shifts-nav"> 
 	            <%= link_to 'shifts', shifts_path %>  
 	          </li>
+	          <li id="dvds-nav"> 
+	            <%= link_to 'dvd sales', dvds_path %>  
+	          </li>
 	    	</ul> 
 	    </div>	
 	</div>
 	<div id="content">
       <p style="color: green"><%= flash[:notice] %></p>
-	  <div id="yield">
+	  <div id="yield" class="span-18">
 	    <%= yield  %>	
 	  </div>
-	  <div id="sidebar">
+	  <div id="sidebar" class="span-6 last">
 	     <div id="login">
 			<% if logged_in? %>
-			  <h1>
-			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %> | <%= link_to 'logout', :controller => 'session', :action => 'logout' %></h1>
+			  <h3>
+			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %><%= link_to 'logout', :controller => 'session', :action => 'logout' %></h3>
 			<% end %>	
 		 </div>
 	  </div>	
 	</div>
     </div>
-</div>	
-	<div id="footer">  
-      <div class="logo">
-	 	<%= image_tag("gordon_logo.png") %>
-        Service Provided By<br />Gordon College CET 
-      </div> 
-      <div class="links"> 
-        <ul> 
-          <li><a href="http://cetserv.gordon.edu/groups/cet/blog/">Blog</a></li>  
-          <li><a href="mailto:eric.givens@gordon.edu?subject=CET Apps Issue">Report an Issue</a></li> 
-          <li><a href="mailto:eric.givens@gordon.edu?subject=CET Apps Feature Request">Request a Feature</a></li> 
-        </ul> 
-        <p> 
-          'CET Apps' is &copy; 2009
-          <a href="http://www.gordon.edu">Gordon College</a> 
-        </p> 
-      </div> 
-  	</div>
+</div>
+
+	<div id="footer" class="span-24 last">  
+	  <div class="logo">
+	  <%= image_tag("gordon_logo.png") %>
+	    Service Provided By<br />Gordon College CET 
+	  </div> 
+	  <div class="links"> 
+	    <ul> 
+	      <li><a href="http://cetserv.gordon.edu/groups/cet/blog/">Blog</a></li>  
+	      <li><a href="mailto:eric.givens@gordon.edu?subject=CET Apps Issue">Report an Issue</a></li> 
+	      <li><a href="mailto:eric.givens@gordon.edu?subject=CET Apps Feature Request">Request a Feature</a></li> 
+	    </ul> 
+	    <p> 
+	      'CET Apps' is &copy; 2009
+	      <a href="http://www.gordon.edu">Gordon College</a> 
+	    </p> 
+	  </div> 
+	</div>
+
+</div>
 
 
 </body>

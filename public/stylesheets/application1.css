@@ -3,8 +3,8 @@ body {
 }
 
 #page, #footer {
-	padding: 0 20px;
-	margin: 0 40px;
+	padding: 0 0px;
+	margin: 0 0px;
 	background: #FFF;
 	border-left: 1px solid #e3e3e3;
 	border-right: 1px solid #e3e3e3;
@@ -16,10 +16,10 @@ body {
 
 #header {
 	height: 94px;
-	width: 950px;
+	width: 960px;
     position: absolute;
-	margin-top: -69px;
-	margin-left: -21px;
+	margin-top: -68px;
+	margin-left: -1px;
 }
 
 #header h1 a,
@@ -74,6 +74,41 @@ body {
 }
 
 
+/*---- CONTENT ----*/
+
+#content {
+	padding-top: 20px;
+}
+
+#yield {
+	margin: 0px;
+	margin-right: 8px;
+}
+
+/*---- SIDEBAR ----*/
+
+#sidebar {
+	height: 400px;
+	background: #CDE855;
+}
+
+#login {
+	
+}
+
+#login a {
+	
+	padding: 3px 6px;
+	margin: 5px;
+	float: right;
+	text-decoration: none;
+	background-color: #493F0B;
+	color: #FFF;
+	text-transform: uppercase;
+	font: bold 0.8em Helvetica;
+}
+
+
 /*---- FOOTER ----*/
 
 #footer {
@@ -81,7 +116,7 @@ body {
   padding: 1em;
   text-align: right;
   margin: 10px 0 0 0;
-  height: 100px;
+  height: 200px;
 }
  
 #footer .links {

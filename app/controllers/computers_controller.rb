@@ -1,6 +1,6 @@
 class ComputersController < ApplicationController
   
-  layout 'application'
+  layout 'application_w_grid'
   
   before_filter :login_required
   
