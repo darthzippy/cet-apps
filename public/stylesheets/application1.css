@@ -93,7 +93,7 @@ body {
 	padding: 10px;
 }
 
-#login a {
+#login a, .filter a {
 	
 	padding: 3px 6px;
 	margin: 5px;
@@ -139,7 +139,7 @@ body {
 .pagination span.current,
 .pagination a:hover {
   color: #020;
-  background: #9C6;
+  background: #DDFFCC;
 }
  
 .pagination a.prev_page,
@@ -162,10 +162,6 @@ body {
 	margin: 0px;
 	margin-right: 4px;
 	padding: 10px 0px 10px 5px;
-}
-
-#paginate {
-	float: right;
 }
 
 /*==COMMENTS===*/
