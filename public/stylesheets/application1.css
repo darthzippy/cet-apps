@@ -1,5 +1,5 @@
 body {
-	background: #EEE;
+	background: #555;
 }
 
 #page, #footer {
@@ -15,11 +15,13 @@ body {
 
 
 #header {
-	height: 94px;
-	width: 960px;
+
+	height: 68px;
+	width: 952px;
     position: absolute;
 	margin-top: -68px;
 	margin-left: -1px;
+	background: #EEE;
 }
 
 #header h1 a,
@@ -52,20 +54,18 @@ body {
 
 #navbar ul li {
 	float: left;
-	margin: 28px 0.2em;
+	margin: 8px 0.2em;
 	text-transform: uppercase;
 	font: bold 1em Helvetica;
 }
 
 #navbar ul li a {
 	
-	padding: 8px 10px 9px 10px;
+	padding: 8px 10px 8px 10px;
 	text-decoration: none;
-	background: #fff;
+
 	color: #353535;
-	border-top: 1px solid #e3e3e3;
-    border-left: 1px solid #e3e3e3;
-    border-right: 1px solid #e3e3e3;
+
 }
 
 #navbar ul li a:hover {
@@ -77,23 +77,26 @@ body {
 /*---- CONTENT ----*/
 
 #content {
-	padding-top: 20px;
+	padding-top: -40px;
 }
 
 #yield {
 	margin: 0px;
-	margin-right: 8px;
+	margin-right: 4px;
+	padding: 10px 0px 10px 5px;
 }
 
 /*---- SIDEBAR ----*/
 
 #sidebar {
-	height: 400px;
-	background: #CDE855;
+	height: 700px;
+	margin-top: -20px;
+	background: #DDFFCC;
+	border-left: 1px solid #65896D;
 }
 
 #login {
-	
+	padding: 10px;
 }
 
 #login a {
@@ -108,12 +111,16 @@ body {
 	font: bold 0.8em Helvetica;
 }
 
+#logged_in {
+	font-size: 0.8em;
+	color: #888;
+}
+
 
 /*---- FOOTER ----*/
 
 #footer {
   clear: both;
-  padding: 1em;
   text-align: right;
   margin: 10px 0 0 0;
   height: 200px;
