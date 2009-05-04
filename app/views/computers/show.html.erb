@@ -3,7 +3,7 @@
 
 <div id="computer_show_content">
 	<h3>COMPUTER INFO</h3>
-	<div id="computer_show_computer_info1">
+	<div id="computer_show_computer_info1" class="span-9">
 
 		<p>
 		  <b>Control:</b>
@@ -39,7 +39,7 @@
 		</p>
 	</div>
 
-	<div id="computer_show_computer_info2">
+	<div id="computer_show_computer_info2" class="span-9 last">
 		<p>
 		  <b>Memory:</b>
 		  <%=h @computer.memory %>
@@ -64,6 +64,8 @@
 		</p>	
 	</div>
 	
+	<div class="clear"></div>
+	
 	<div id="computer_show_computer_status">
 	    <p>
 		  <b>Status:</b>
@@ -79,7 +81,10 @@
 	<div id="computer_show_computer_status2">
 		
 	</div>
-	<div id="computer_show_purchase_info">
+	
+	<div class="clear"></div>
+	
+	<div id="computer_show_purchase_info" class="span-9">
 		<p>
 		  <b>Purchase date:</b>
 		  <%=h @computer.purchase_date.to_formatted_s(:long) unless @computer.purchase_date.nil? %>
@@ -111,7 +116,7 @@
 
 	</div>
 
-	<div id="computer_show_user_info">
+	<div id="computer_show_user_info" class="span-9 last">
 		<p>
 		  <b>Department:</b>
 		  <%=h @computer.department.name unless @computer.department.nil? %>
@@ -134,8 +139,9 @@
 			  <%=h @computer.legacy_user %>
 			</p>	
 		</div>
-
 	</div>
+	
+	<div class="clear"></div>
 
 	<div id="computer_show_comments_list">
 	 <%= render :partial => 'comments/comments', :locals => {:computer => @computer} %>	

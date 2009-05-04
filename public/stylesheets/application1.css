@@ -70,7 +70,7 @@ body {
 
 #navbar ul li a:hover {
 	color: #333;
-	background: #efefff;
+	background: #9AE4E8;
 }
 
 
@@ -78,12 +78,6 @@ body {
 
 #content {
 	padding-top: -40px;
-}
-
-#yield {
-	margin: 0px;
-	margin-right: 4px;
-	padding: 10px 0px 10px 5px;
 }
 
 /*---- SIDEBAR ----*/
@@ -116,6 +110,100 @@ body {
 	color: #888;
 }
 
+/*---- PAGINATION ----*/
+.pagination {
+  float: left;
+  font-size: 1em;
+  text-align: left;
+  padding: 3px;
+  margin-left: 60px;
+}
+ 
+.pagination span.current,
+.pagination span.disabled,
+.pagination a {
+  background: #EFC;
+  color: #240;
+  -moz-border-radius: .25em;
+  -webkit-border-radius: .25em;
+  border: .1em solid #9C6;
+  font-family: 'Arial Black';
+  font-weight: bold;
+  padding: .25em .5em; 
+  text-decoration: none;
+}
+ 
+.pagination a {
+  background-color: white;
+}
+.pagination span.current,
+.pagination a:hover {
+  color: #020;
+  background: #9C6;
+}
+ 
+.pagination a.prev_page,
+.pagination a.next_page {
+  border: 0;
+  background: white;
+  font: black;
+}
+ 
+.pagination span.disabled {
+  border: 0;
+  background: white;
+  color: #888;
+  font-weight: normal;
+}
+
+/*==YIELD===*/
+
+#yield {
+	margin: 0px;
+	margin-right: 4px;
+	padding: 10px 0px 10px 5px;
+}
+
+#paginate {
+	float: right;
+}
+
+/*==COMMENTS===*/
+
+a#add_comment {
+	float: right;
+}
+
+#computer_show_comments_list {
+	background-color: #F1F1F1;
+	border: 1px solid #999;
+	width: 400px;
+	padding: 20px;
+	margin-top: 10px;
+	clear: both;
+}
+
+#computer_show_comments_list p.comment {
+	font: 1.4em "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	padding: 5px;
+}
+
+.comment_user_info {
+	float: right;
+	padding-right: 10px;
+	font-size: 75%;
+	color: #888;
+}
+
+.comment_body {
+	
+}
+
+.comment {
+	border-bottom: 1px solid #999;
+	padding-top: 5px;
+	padding-bottom: 20px;
+}
 
 /*---- FOOTER ----*/
 

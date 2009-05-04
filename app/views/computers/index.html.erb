@@ -1,6 +1,4 @@
-<div id="paginate">
-<%= will_paginate @computers %>	
-</div>
+
 
 <%= render :partial => 'search_by_control' %>
 
@@ -22,5 +20,8 @@
   <%= render :partial => computer %>
 <% end %>
 </table>
+<div id="paginate">
+<%= will_paginate @computers %>	
+</div>
 <br />
 <%= link_to 'New computer', new_computer_path %>

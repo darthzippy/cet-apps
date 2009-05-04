@@ -1,10 +1,11 @@
 <%= link_to 'Add Comment', nil, :id => "add_comment" %>
 
+<h3>COMMENTS</h3>
+
 <div id="computer_show_comments_add">
   <%= render :partial => @comment = Comment.new, :locals => { :button_name => 'Create'}%>	
 </div>
 
-<h3>COMMENTS</h3>
 <% for comment in @computer.comments.ordered %>
   <div id="<%= dom_id(comment) %>" class="comment">
       <p class="comment_body"><%= h comment.body %> <br />

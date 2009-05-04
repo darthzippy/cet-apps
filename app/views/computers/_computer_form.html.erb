@@ -2,7 +2,7 @@
   <%= f.error_messages %>
 
 
-  <div id="computer_edit_model_info">
+  <div id="computer_edit_model_info" class="span-9">
 	  <p>
 	    <%= f.label :control %><br />
 	    <%= f.text_field :control %>
@@ -18,6 +18,21 @@
 	  <p>
 	    <%= f.label :model %><br />
 	    <%= f.text_field :model %>
+	  </p>	
+  </div>
+
+  <div id="computer_edit_type_info" class="span-9 last">
+	  <p>
+		  <%= f.label :computer_type %><br />
+		  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other},{:prompt => "Select a Computer Type"}) %>
+	  </p>
+	  <p>
+		  <%= f.label :warranty_type %><br />
+		  <%= f.select(:warranty_type, %w{ None AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Printer\ CPC\ Contract Other-Standard },{:prompt => "Select a Warranty Type"}) %>
+	  </p>
+	  <p>
+		  <%= f.label :warranty_length %><br />
+		  <%= f.select(:warranty_length, [ ['none',0],['1',1], ['2',2], ['3',3], ['4',4]]) %>
 	  </p>
 	  <p>
 		<% if @computer.is_printer? %>
@@ -27,28 +42,13 @@
 		  <%= f.label :part_number %><br />
 	      <%= f.text_field :part_number %>
 		<% end %>
-	  </p>	
-  </div>
-
-  <div id="computer_edit_type_info">
-	  <p>
-		  <%= f.label :computer_type %><br />
-		  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other},{:prompt => "Select a Computer Type"}) %>
 	  </p>
-	  <p>
-		  <%= f.label :warranty_type %><br />
-		  <%= f.select(:warranty_type, %w{ None AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Encore Printer\ CPC\ Contract Other-Standard },{:prompt => "Select a Warranty Type"}) %>
-	  </p>
-	  <p>
-		  <%= f.label :warranty_length %><br />
-		  <%= f.select(:warranty_length, [ ['none',0],['1',1], ['2',2], ['3',3], ['4',4]]) %>
-	  </p>	
   </div>
 
 <div class="clear">	
 </div>
   
-  <div id="computer_edit_purchase_info">
+  <div id="computer_edit_purchase_info" class="span-9">
   	  <p>
 	    <%= f.label :purchase_date %><br />
 	    <%= f.text_field :purchase_date, :class => 'date_entry_field' %>
@@ -63,14 +63,14 @@
 	  </p>	
   </div>
 
-  <div id="computer_edit_status_info">
+  <div id="computer_edit_status_info"class="span-9 last">
 	  <p>
 	    <%= f.label :status %><br />
-	    <%= f.select :status, [ ['Under CET Warranty','C'],['Non-Supported/Obsolete','O'], ['Exempt from Coverage','E']] %>
+	    <%= f.select :status, [ ['Under CET Warranty','C'],['Non-Supported/Obsolete','O'],['Exempt from Coverage','E'],['Printer Under CPC Contract','P']] %>
 	  </p>
 	  <p>
 	    <%= f.label :cstatus %><br />
-	    <%= f.select :cstatus, [ ['Under CET Warranty','C'],['Non-Supported/Obsolete','O'], ['Exempt from Coverage','E']] %>
+	    <%= f.select :cstatus, [ ['Under CET Warranty','C'],['Non-Supported/Obsolete','O'],['Exempt from Coverage','E'],['Printer Under CPC Contract','P']] %>
 	  </p>
 	  <p>
 	    <%= f.label :memory %><br />

@@ -56,7 +56,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         flash[:notice] = 'Comment was successfully created.'
-        format.html { redirect_to(@computer, @comment) }
+        format.html { redirect_to(@computer) }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
         format.js
       else
@@ -64,7 +64,7 @@ class CommentsController < ApplicationController
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
         format.js do
           render :update do |page|
-            page.redirect_to(@computer, @comment)
+            page.redirect_to(@computer)
           end
         end
       end
@@ -79,7 +79,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
         flash[:notice] = 'Comment was successfully updated.'
-        format.html { redirect_to(@computer, @comment) }
+        format.html { redirect_to(@computer) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
