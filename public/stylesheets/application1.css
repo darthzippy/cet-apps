@@ -11,6 +11,63 @@ body {
 	border-bottom: 1px solid #e3e3e3;
 }
 
+/*==LOGIN==*/
+
+#login_box {
+	background-color: rgb(234, 242, 245);
+	border: 20px solid rgb(221, 221, 221);
+	height: 220px;
+	width: 400px;
+	padding: 2em 2em 4em 2em;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#login_box h1 {
+	font-size: 260%;
+	margin-bottom: 1em;
+}
+
+#login_box p {
+	font: 130% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	margin-bottom: 1em;
+}
+
+#login_box label {
+	color: rgb(102, 102, 102);
+	font-size: 110%;
+}
+
+span.login_tips {
+	font-size: 70%;
+}
+
+#login_box input {
+	font: 200% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+div#login {
+	float: right;
+	margin-top: -20px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+#login h1 {
+	font-size: 1.8em;
+}
+#logged_in,
+.logout {
+	color: #777;
+}
+
+
+#login_tips {
+	font-size: 75%;
+	color: #777;
+}
+
+
 /*---- HEADER ----*/
 
 
