@@ -20,10 +20,9 @@
 </head>
 <body class="<%= controller.controller_name %>">
 
-<div class="container">
-	
-<div id="page" class="span-24">	
-	<div id="header" class="span-24 last">
+<div id="test">
+  <div class="container">		
+	<div id="header" class="span-24">
 		<h1 id="logo"> 
           <a href="/">CET Apps</a> 
         </h1>
@@ -54,8 +53,15 @@
 	            <%= link_to 'dvd sales', dvds_path %>  
 	          </li>
 	    	</ul> 
-	    </div>	
-	</div>
+	    </div>
+	</div>	
+  </div>	
+	
+</div>
+<div class="container">
+	
+		
+	<div id="page" class="span-24">	
 	<div id="content">
       <p style="color: green"><%= flash[:notice] %></p>
 	  <div id="yield" class="span-18">

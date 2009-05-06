@@ -1,10 +1,22 @@
 body {
-	background: #555;
+	background: #4C4C4C;
+}
+
+#test {
+	height: 68px;
+	background: #EEE;
+	
+}
+
+pre {
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
+	height: 0;
+	border: 3px solid blue;
 }
 
 #page, #footer {
-	padding: 0 0px;
-	margin: 0 0px;
 	background: #FFF;
 	border-left: 1px solid #e3e3e3;
 	border-right: 1px solid #e3e3e3;
@@ -46,22 +58,6 @@ span.login_tips {
 	font: 200% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 }
 
-div#login {
-	float: right;
-	margin-top: -20px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-}
-
-#login h1 {
-	font-size: 1.8em;
-}
-#logged_in,
-.logout {
-	color: #777;
-}
-
-
 #login_tips {
 	font-size: 75%;
 	color: #777;
@@ -72,12 +68,10 @@ div#login {
 
 
 #header {
-
+	margin: auto;
+	padding: auto;
+	width: 960px;
 	height: 68px;
-	width: 952px;
-    position: absolute;
-	margin-top: -68px;
-	margin-left: -1px;
 	background: #EEE;
 }
 
@@ -90,6 +84,7 @@ div#login {
   text-indent: -9999px;
   background: url(../images/cet_apps.png) top left no-repeat;
   float: left;
+  position: absolute;
 }
 
 /*==NAV==*/
@@ -141,7 +136,7 @@ div#login {
 
 #sidebar {
 	height: 700px;
-	margin-top: -20px;
+	margin-top: 0px;
 	background: #DDFFCC;
 	border-left: 1px solid #65896D;
 }
