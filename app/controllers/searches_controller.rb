@@ -3,7 +3,7 @@ class SearchesController < ApplicationController
   require 'prawn'
   require 'fastercsv'
   
-  layout 'application_old'
+  layout 'application'
     
   before_filter :login_required
   

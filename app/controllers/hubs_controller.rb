@@ -1,6 +1,6 @@
 class HubsController < ApplicationController
   
-  layout 'application_old'
+  layout 'application'
   
   before_filter :login_required
   
