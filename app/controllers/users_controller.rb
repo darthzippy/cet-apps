@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  layout 'application'
+  layout 'application_old'
   
   before_filter :login_required
     

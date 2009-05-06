@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   
-  layout 'application'
+  layout 'application_old'
   
   before_filter :load_computer, :login_required
   

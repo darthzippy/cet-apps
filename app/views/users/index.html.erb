@@ -1,7 +1,3 @@
-<div id="paginate">
-<%= will_paginate @users %>	
-</div>
-
 <%= render :partial => 'search' %>
 
 <h2>USERS</h2>
@@ -21,4 +17,8 @@
   </tr>
 <% end %>
 </table>
+
+<div id="paginate">
+<%= will_paginate @users %>	
+</div>
 
