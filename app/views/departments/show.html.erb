@@ -5,12 +5,19 @@
 </p>
 
 <p>
-  <b>Maintenance account:</b>
-  <%=h @department.maintenance_account %>
+  <h3>
+    <b>Maintenance account:</b>
+    <%=h @department.maintenance_account %>
+  </h3>
+</p>
+
+<p>
+  <h3>
+    CURRENT YEARLY MAINTENANCE TOTAL: <b><%=h number_to_currency(@department.maintenance_fee_total) %></b>
+  </h3>
 </p>
 
 <div id="departments_show_users">
-	<h3>USERS</h3>
 	<%= render :partial => 'filter' %>
 
 		<table cellspacing="0">

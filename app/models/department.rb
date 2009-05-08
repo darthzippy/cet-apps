@@ -33,7 +33,11 @@ class Department < ActiveRecord::Base
   end
   
   def maintenance_fee_total
-    self.computers.sum(:new_charge)
+    total = 0
+    self.computers.each do |c|
+      total = (c.maintenance_fee + total)
+    end
+    total
   end
 
   
