@@ -132,4 +132,40 @@ class Computer < ActiveRecord::Base
       true
     end
   end
+  
+  def charge
+    if computer_type =~ /(l|L)aptop/
+      100
+    elsif computer_type =~ /(d|D)esktop/
+      70
+    elsif self.is_printer?
+      if computer_type =~ /(c|C)olor/
+        150
+      else
+        100
+      end
+    else
+      0
+    end  
+  end
+  
+  def covered_this_year?
+    if self.warranty_end_date.nil?
+      false
+    elsif self.warranty_end_date.to_date > Date.today.end_of_year
+      true
+    end
+  end
+  
+  def maintenance_fee
+    if status =~ /(c|C)/
+      if covered_this_year?
+        charge/2
+      else
+        charge
+      end 
+    elsif status =~ /(o|O|e|E|p|P)/
+      0
+    end
+  end
 end

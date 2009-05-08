@@ -1,9 +1,9 @@
 <tr>
   <td><%= link_to computer.control, computer %></td>
   <td><%=h computer.model %></td>
-  <td><%=h computer.serial %></td>
   <td><%=h computer.manufacturer %></td>
   <td><%=h computer.department.name unless computer.department.nil? %></td>
   <td><%=h computer.user.fullname unless computer.user.nil? %></td>
+  <td><%=h number_to_currency(computer.maintenance_fee, :precision => 0) unless computer.maintenance_fee.nil? %></td>
   <td class="hide_for_printing"><%= link_to 'Edit', edit_computer_path(computer) %></td>
 </tr>

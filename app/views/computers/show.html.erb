@@ -77,6 +77,11 @@
 		  <%=h @computer.cstatus %>
 		</p>
 		
+		<p>
+		  <b>Maintenance Fee:</b>
+		  <%=h number_to_currency(@computer.maintenance_fee, :precision => 0) unless @computer.maintenance_fee.nil? %>
+		</p>
+		
 	</div>
 	<div id="computer_show_computer_status2">
 		

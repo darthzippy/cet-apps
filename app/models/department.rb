@@ -31,6 +31,10 @@ class Department < ActiveRecord::Base
              :order => 'name ASC',
              :include => {:hardware_assignments => :user}
   end
+  
+  def maintenance_fee_total
+    self.computers.sum(:charge)
+  end
 
   
 end
