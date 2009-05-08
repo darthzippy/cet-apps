@@ -33,7 +33,7 @@ class Department < ActiveRecord::Base
   end
   
   def maintenance_fee_total
-    self.computers.sum(:charge)
+    self.computers.sum(:new_charge)
   end
 
   

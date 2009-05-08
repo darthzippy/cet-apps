@@ -133,7 +133,7 @@ class Computer < ActiveRecord::Base
     end
   end
   
-  def charge
+  def new_charge
     if computer_type =~ /(l|L)aptop/
       100
     elsif computer_type =~ /(d|D)esktop/
@@ -160,9 +160,9 @@ class Computer < ActiveRecord::Base
   def maintenance_fee
     if status =~ /(c|C)/
       if covered_this_year?
-        charge/2
+        new_charge/2
       else
-        charge
+        new_charge
       end 
     elsif status =~ /(o|O|e|E|p|P)/
       0
