@@ -5,7 +5,7 @@
     <th>Room</th>
     <th></th>
     <th></th>
-    <th></th>
+    <!-- <th></th> -->
   </tr>
 
 <% for hub in @hubs %>
@@ -15,7 +15,7 @@
 	<td><%=h hub.checkouts.first.user.building unless hub.checkouts.first.nil? %> <%=h hub.checkouts.first.user.room unless hub.checkouts.first.nil? %></td>
     <td><%= link_to 'Show', hub %></td>
     <td><%= link_to 'Edit', edit_hub_path(hub) %></td>
-    <td><%= link_to 'Destroy', hub, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!-- <td><%= link_to 'Destroy', hub, :confirm => 'Are you sure?', :method => :delete %></td> -->
   </tr>
 <% end %>
 </table>
