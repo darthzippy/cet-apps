@@ -1,6 +1,6 @@
 class DvdsController < ApplicationController
   
-  layout 'application_new'
+  layout 'application'
   
   before_filter :login_required
   
@@ -13,6 +13,7 @@ class DvdsController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @dvds }
       format.csv do
+        @dvds = Dvd.find(:all)
         @outfile = "dvd_sales_" + Time.now.strftime("%m-%d-%Y") + ".csv"
 
         csv_data = FasterCSV.generate do |csv|
