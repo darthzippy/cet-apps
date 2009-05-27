@@ -46,7 +46,8 @@ class SearchesController < ApplicationController
           "Department",
           "Maintenance Account",
           "User",
-          "Email"
+          "Email",
+          "Maintenance Fee"
           ]
           @search.computers.each do |computer|
             #unless computer.department.nil?
@@ -65,7 +66,8 @@ class SearchesController < ApplicationController
               computer.department.try(:name),
               computer.department.try(:maintenance_account),
               computer.user.try(:fullname),
-              computer.user.try(:email)
+              computer.user.try(:email),
+              computer.try(:maintenance_fee)
               ]
             #end
           end

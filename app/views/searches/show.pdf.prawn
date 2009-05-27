@@ -11,9 +11,12 @@ items = @search.computers.map do |item|
 	item.serial,
 	item.model,
 	item.department.try(:name),
+	item.user.try(:fullname),
+	item.status,
+	item.try(:maintenance_fee)
   ]
 end
 
 pdf.table items,
   :row_colors => ["FFFFFF", "DDDDDD"],
-  :headers => ["Control", "Serial", "Model", "Department"]
+  :headers => ["Control", "Serial", "Model", "Department", "User", "Status", "Fee"]
