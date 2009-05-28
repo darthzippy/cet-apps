@@ -1,13 +1,15 @@
 body {
-	background: #4C4C4C;
+	background: #EEE;
 }
 
 #test {
 	margin-top: -8px;
-	height: 78px;
+	height: 100px;
 	background: #EEE;
 	
 }
+
+.showgrid * { background-color: transparent !important; }
 
 pre {
 	margin: 0;
@@ -72,7 +74,7 @@ span.login_tips {
 	margin: auto;
 	padding: auto;
 	width: 960px;
-	height: 68px;
+	height: 94px;
 	background: #EEE;
 }
 
@@ -83,10 +85,10 @@ span.login_tips {
   width: 252px;
   height: 94px;
   text-indent: -9999px;
-  background: url(../images/cet_apps.png) top left no-repeat;
+  background: url(../images/cet_apps_v2.png) top left no-repeat;
   float: left;
   position: absolute;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 /*==NAV==*/
@@ -98,6 +100,7 @@ span.login_tips {
 #navbar {
   float: right;
   text-align:right;
+  margin-top: 15px;
 }
 
 #navbar ul {
@@ -133,11 +136,14 @@ span.login_tips {
 	padding-top: -40px;
 }
 
+#page {
+	border: 1px solid #65896D;
+}
+
 /*---- SIDEBAR ----*/
 
 #sidebar {
 	height: 700px;
-	margin-top: -18px;
 	background: #DDFFCC;
 	border-left: 1px solid #65896D;
 }
@@ -163,6 +169,18 @@ span.login_tips {
 	color: #888;
 }
 
+.tweet {
+	height: 100px;
+	margin-left: 20px;
+	margin-top: 20px;
+	/*--background: #EDFFE6; --*/
+	background: url(../images/tweet_v2.png) top left no-repeat;
+}
+
+.tweet h4 {
+	padding: 1em;
+	color: #65896D;
+}
 /*---- PAGINATION ----*/
 .pagination {
   float: left;

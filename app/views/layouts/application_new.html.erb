@@ -62,18 +62,29 @@
 		
 	<div id="page" class="span-24">	
 	<div id="content">
-      <p style="color: green"><%= flash[:notice] %></p>
 	  <div id="yield" class="span-18">
+		<p style="color: green"><%= flash[:notice] %></p>
 	    <%= yield  %>	
 	  </div>
 	  <div id="sidebar" class="span-6 last">
-	     <div id="login">
+	    <div id="login">
 			<% if logged_in? %>
 			  <h3>
 			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %><%= link_to 'logout', :controller => 'session', :action => 'logout' %></h3>
 			<% end %>	
 		 </div>
-	  </div>	
+		<div id="tweets">
+			<p><h3>Latest Tweets from the CET</h3></p>
+		</div>
+	  	<div class="tweet span-5">
+		  <h4>This is a sample tweet.</h4>
+	  	</div>
+		<div class="tweet span-5">	  		
+	  	</div>
+		<div class="tweet span-5">	  		
+	  	</div>
+	  
+	</div>	
 	</div>
 
 </div>

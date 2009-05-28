@@ -5,20 +5,9 @@
   <b>ID:</b>
   <%=h @user.id %>
 </p>
-
 <p>
-  <b>Middle:</b>
-  <%=h @user.middle %>
-</p>
-
-<p>
-  <b>Last:</b>
-  <%=h @user.last %>
-</p>
-
-<p>
-  <b>Fullname:</b>
-  <%=h @user.fullname %>
+  <b>Name:</b>
+  <%=h @user.first %> <%=h @user.last %>
 </p>
 
 <p>
@@ -27,23 +16,17 @@
 </p>
 
 <p>
-  <b>Building:</b>
-  <%=h @user.building %>
-</p>
-
-<p>
-  <b>Room:</b>
-  <%=h @user.room %>
+  <b>Location:</b>
+  <%=h @user.building %> <%=h @user.room %>
 </p>
 
 <p>
   <b>Email:</b>
   <%=h @user.email %>
 </p>
-
 <p>
   <b>Phone:</b>
-  <%=h @user.phone %>
+  <%=h number_to_phone(@user.phone, :area_code => true, :delimeter => " ") %>
 </p>
 
 <% if @user.is_facstaff? %>
