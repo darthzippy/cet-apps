@@ -235,6 +235,19 @@ span.login_tips {
 	padding: 10px 0px 10px 5px;
 }
 
+/*==TABLE STYLINGS===*/
+
+.index-row:hover {
+	background-color: #EEE;
+}
+.index-row td a {
+	text-decoration: none;
+	color: #222;
+}
+
+.index-row td a:hover {
+	text-decoration: underline;
+}
 /*==COMMENTS===*/
 
 a#add_comment {

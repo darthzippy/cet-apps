@@ -11,7 +11,7 @@
   </tr>
 
 <% for department in @departments %>
-  <tr>
+  <tr id="<%= dom_id(department) %>" class="index-row">
     <td><%= link_to department.name, department %></td>
     <td><%=h department.maintenance_account %></td>
     <td><%= link_to 'Edit', edit_department_path(department) %></td>

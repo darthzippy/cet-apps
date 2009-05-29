@@ -10,7 +10,7 @@
   </tr>
 
 <% for user in @users %>
-  <tr>
+  <tr id="<%= dom_id(user) %>" class="index-row">
     <td><%= link_to user.fullname, user, :class => "fullname" %></td>
     <td><%=h user.role %></td>
 	<td><%=h user.licenses.last.software.name unless user.licenses.last.nil? %></td>
