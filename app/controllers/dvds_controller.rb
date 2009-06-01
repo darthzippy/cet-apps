@@ -11,7 +11,6 @@ class DvdsController < ApplicationController
     case params[:filter]
       when 'to_be_delivered' then @dvds = Dvd.to_be_delivered.search(params[:search], params[:page])
       when 'all' then @dvds = Dvd.search(params[:search], params[:page])
-      else @dvds = Dvd.search(params[:search], params[:page])
     end
 
     respond_to do |format|

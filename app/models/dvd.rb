@@ -17,7 +17,7 @@ class Dvd < ActiveRecord::Base
              :order => 'lastname'
   end
   
-  named_scope :to_be_delivered, :conditions => ["delivered =?", "NULL"]
+  named_scope :to_be_delivered, :conditions => ["delivered = ?", "NULL"]
   
   def two_line_address?
     if address2.blank?
