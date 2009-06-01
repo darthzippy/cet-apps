@@ -170,14 +170,17 @@ span.login_tips {
 }
 
 .tweet {
-	height: 100px;
+	height: 150px;
+	width: 190px;
+	overflow: hidden;
 	margin-left: 20px;
 	margin-top: 20px;
-	/*--background: #EDFFE6; --*/
-	background: url(../images/tweet_v2.png) top left no-repeat;
+	background: #EDFFE6;
+	/*--background: url(../images/tweet_v2.png) top left no-repeat; --*/
 }
 
-.tweet h4 {
+.tweet p {
+	
 	padding: 1em;
 	color: #65896D;
 }

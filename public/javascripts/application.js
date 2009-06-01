@@ -73,6 +73,20 @@ jQuery(document).ready(function($){
     return false;	
   });	
 
-
+  var siteName = 'cetapps';
+  $.getJSON(
+	'http://search.twitter.com/search.json?callback=?&rpp=3&q=from:' + siteName,
+	function(data) {
+		$.each(data, function(i, tweets) {
+			for(var num = 0; num < tweets.length; num++) {
+				if(tweets[num].text !== undefined) {
+					var tweetnum = num
+					$('#tweet-' + tweetnum).append('<p>' + tweets[num].text + '<br /><span class="created_at">Created at ' + tweets[num].created_at + ' via</span> ' + tweets[num].source + '</p>');
+				}
+			}
+		});
+	}
+  
+  );
 	
 });
