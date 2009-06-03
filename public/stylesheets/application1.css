@@ -5,7 +5,8 @@ body {
 #test {
 	margin-top: -8px;
 	height: 100px;
-	background: #EEE;
+	background: url(../images/banner.png) repeat-x;
+	margin-bottom: 10px;
 	
 }
 
@@ -75,7 +76,7 @@ span.login_tips {
 	padding: auto;
 	width: 960px;
 	height: 94px;
-	background: #EEE;
+
 }
 
 #header h1 a,
@@ -83,12 +84,11 @@ span.login_tips {
   text-decoration: none;
   display: block;
   width: 252px;
-  height: 94px;
+  height: 100px;
   text-indent: -9999px;
-  background: url(../images/cet_apps_v2.png) top left no-repeat;
+  background: url(../images/cet_apps_v3.png) top left no-repeat;
   float: left;
   position: absolute;
-  margin-top: 6px;
 }
 
 /*==NAV==*/
@@ -113,20 +113,20 @@ span.login_tips {
 	float: left;
 	margin: 14px 0.2em;
 	text-transform: uppercase;
-	font: bold 1em Helvetica;
+	font: bold 1.2em Helvetica;
 }
 
 #navbar ul li a {
 	
 	padding: 8px 10px 8px 10px;
 	text-decoration: none;
-	color: #353535;
+	color: #EEE;
 
 }
 
 #navbar ul li a:hover {
 	color: #333;
-	background: #9AE4E8;
+	background: #DDFFCC;
 }
 
 
@@ -137,7 +137,7 @@ span.login_tips {
 }
 
 #page {
-	border: 1px solid #65896D;
+	/*--border: 1px solid #65896D; --*/
 }
 
 /*---- SIDEBAR ----*/
@@ -145,7 +145,7 @@ span.login_tips {
 #sidebar {
 	height: 700px;
 	background: #DDFFCC;
-	border-left: 1px solid #65896D;
+	border-left: 1px solid #B6C4B7;
 }
 
 #login {
@@ -169,8 +169,38 @@ span.login_tips {
 	color: #888;
 }
 
+#tweets {
+	border-bottom: 1px solid #B6C4B7;
+	margin: 0 15px;
+	background: url(../images/brownbird_left.png) center right no-repeat;
+	}
+
+#tweets h3 {
+	padding: 0 1em;
+	color: #FFF;
+	text-shadow: #444 2px 2px 2px;
+}
+
+#tweets a,
+#tweets a:visited {
+	text-decoration: none;
+	display: block;
+	text-indent: -9999px;
+}
+
+#twitter-balloon {
+	position: absolute;
+	margin-top: -70px;
+	margin-left: 200px;
+}
+
+#twitter-balloon img {
+	width: 143px;
+	height: 32px;
+}
+
 .tweet {
-	height: 150px;
+	height: auto;
 	width: 190px;
 	overflow: hidden;
 	margin-left: 20px;

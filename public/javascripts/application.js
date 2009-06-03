@@ -6,7 +6,7 @@ jQuery.noConflict();
 
 
 jQuery(document).ready(function($){
-  $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#computer_show_user_info_vax,#computer_show_purchase_info_vax").hide();
+  $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#computer_show_user_info_vax,#computer_show_purchase_info_vax,#twitter-balloon").hide();
   
   $("#computer_show_user_info_vax_link").click(function () {
     $("#computer_show_user_info_vax").toggle("slow");
@@ -30,6 +30,14 @@ jQuery(document).ready(function($){
 
   $("#comment_cancel").click(function () {
     $("#computer_show_comments_add").toggle("slow");
+    return false;
+  });
+
+  $("#tweets").hover(function () {
+    $("#twitter-balloon").show();
+	},
+	function () {
+		$("#twitter-balloon").hide();
     return false;
   });
 

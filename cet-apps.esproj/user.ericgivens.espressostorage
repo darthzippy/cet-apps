@@ -14,13 +14,7 @@
 		<array>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/ericgivens/Desktop/cet-apps/app/views/layouts/application.html.erb</string>
-				<key>StateType</key>
-				<string>DefaultTab</string>
-			</dict>
-			<dict>
-				<key>DocumentURL</key>
-				<string>file://localhost/Users/ericgivens/Desktop/cet-apps/app/models/computer.rb</string>
+				<string>file://localhost/Users/ericgivens/Desktop/cet-apps/app/views/layouts/application_new.html.erb</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
