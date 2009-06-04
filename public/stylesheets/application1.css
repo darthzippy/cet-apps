@@ -2,7 +2,7 @@ body {
 	background: #EEE;
 }
 
-#test {
+#banner {
 	margin-top: -8px;
 	height: 100px;
 	background: url(../images/banner.png) repeat-x;
@@ -170,15 +170,7 @@ span.login_tips {
 }
 
 #tweets {
-	border-bottom: 1px solid #B6C4B7;
-	margin: 0 15px;
-	background: url(../images/brownbird_left.png) center right no-repeat;
-	}
-
-#tweets h3 {
-	padding: 0 1em;
-	color: #FFF;
-	text-shadow: #444 2px 2px 2px;
+	padding: 20px 10px 0 10px;
 }
 
 #tweets a,
@@ -188,10 +180,25 @@ span.login_tips {
 	text-indent: -9999px;
 }
 
+#follow-cet {
+	height: 57px;
+	width: 200px;
+	background: url(../images/follow-cet-apps-on-twitter.png) top left;
+}
+
+#follow-cet a,
+#follow-cet a:visited {
+	text-decoration: none;
+	display: block;
+	width: 200px;
+	height: 57px;
+	text-indent: -9999px;
+}
+
 #twitter-balloon {
 	position: absolute;
 	margin-top: -70px;
-	margin-left: 200px;
+	margin-left: 195px;
 }
 
 #twitter-balloon img {
@@ -209,9 +216,9 @@ span.login_tips {
 	/*--background: url(../images/tweet_v2.png) top left no-repeat; --*/
 }
 
-.tweet p {
-	
+.tweet p {	
 	padding: 1em;
+	padding-bottom: 0;
 	color: #65896D;
 }
 /*---- PAGINATION ----*/

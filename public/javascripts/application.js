@@ -35,9 +35,9 @@ jQuery(document).ready(function($){
 
   $("#tweets").hover(function () {
     $("#twitter-balloon").show();
-	},
-	function () {
-		$("#twitter-balloon").hide();
+  },
+  function () {
+	$("#twitter-balloon").hide();
     return false;
   });
 

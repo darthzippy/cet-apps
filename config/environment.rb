@@ -30,6 +30,8 @@ Rails::Initializer.run do |config|
   config.gem 'prawn'
   config.gem 'fastercsv'
   config.gem 'fiveruns_tuneup'
+  config.gem 'chronic'
+  config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
