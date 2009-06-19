@@ -61,8 +61,6 @@ jQuery(document).ready(function($){
 	}
   });
 
- 
-
   $('.date_entry_field').datepicker({ dateFormat: 'yy-mm-dd' });
 
   $('.search-date').datepicker({ 
