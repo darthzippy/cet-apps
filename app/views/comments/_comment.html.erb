@@ -1,4 +1,4 @@
-<% remote_form_for([@computer, @comment]) do |f| %>
+<% remote_form_for([@computer, Comment.new]) do |f| %>
   <p>
     <b>NEW COMMENT</b><br />
     <%= f.text_area(:body, options = { "cols" => 40, "rows" => 10 }) %>

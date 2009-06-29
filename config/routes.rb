@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :computers, :has_many => :comments
   map.resources :users, :has_many => :licenses
   map.resources :users, :has_many => :checkouts
-  map.resources :softwares
+  map.resources :softwares, :as => 'software'
   map.resources :licenses
   map.resources :hubs
   map.resources :checkouts

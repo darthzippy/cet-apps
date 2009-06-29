@@ -149,7 +149,10 @@
 	<div class="clear"></div>
 
 	<div id="computer_show_comments_list">
-	 <%= render :partial => 'comments/comments', :locals => {:computer => @computer} %>	
+	  <%= link_to 'Add Comment', nil, :id => "add_comment" %>
+	  <div id="comments_list">
+	    <%= render :partial => 'comments/comments', :locals => {:computer => @computer} %>	  	
+	  </div>
 	</div>
 
 	<br />

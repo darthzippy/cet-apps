@@ -1,9 +1,7 @@
-<%= link_to 'Add Comment', nil, :id => "add_comment" %>
-
 <h3>COMMENTS</h3>
 
 <div id="computer_show_comments_add">
-  <%= render :partial => @comment = Comment.new, :locals => { :button_name => 'Create'}%>	
+  <%= render :partial => 'comments/comment', :locals => {:button_name => 'Create'}%>	
 </div>
 
 <% for comment in @computer.comments.ordered %>
