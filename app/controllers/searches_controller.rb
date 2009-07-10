@@ -3,12 +3,13 @@ class SearchesController < ApplicationController
   require 'prawn'
   require 'fastercsv'
   
-  layout 'application'
+  layout 'application_new'
     
   before_filter :login_required
   
   def new
     @search = Search.new
+    @latest_search = Search.last
   end
   
   def create
@@ -80,5 +81,19 @@ class SearchesController < ApplicationController
         flash[:notice] = "Export complete!"
       end
     end
+  end
+  
+  def edit_multiple
+    @computers = Computer.find(params[:computer_ids])
+  end
+  
+  def update_multiple
+    @computers = Computer.find(params[:computer_ids])
+    @computers.each do |computer|
+      computer.update_attributes!(params[:computer].reject { |k,v| v.blank? })
+    end
+    flash[:notice] = "Computers Updated"
+    @latest_search = Search.last
+    redirect_to search_path(@latest_search)
   end
 end

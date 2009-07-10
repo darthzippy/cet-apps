@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :cet_users
-  map.resources :searches
+  map.resources :searches, :collection => { :edit_multiple => :post, :update_multiple => :put}
   map.resources :shifts
   map.resources :hardware_assignments
   map.resources :departments,

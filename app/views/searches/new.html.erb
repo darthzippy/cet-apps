@@ -1,5 +1,7 @@
 <h2>Advanced Search</h2>
 
+<%= link_to "Most Recent Search", search_path(@latest_search) %>
+
 <% form_for @search do |f| %>
   <%= f.error_messages %>
   <p>

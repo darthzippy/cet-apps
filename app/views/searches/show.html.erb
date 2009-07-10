@@ -5,23 +5,38 @@
 <%= link_to 'New Search', new_search_path %>
 
 <% else %>
-<%= link_to 'Export as PDF', search_path(@search, :format => :pdf) %><br />
-<%= link_to 'Export as CSV', search_path(@search, :format => :csv) %><br />
-<%= link_to 'New Search', new_search_path %>
+	<%= link_to 'Export as PDF', search_path(@search, :format => :pdf) %><br />
+	<%= link_to 'Export as CSV', search_path(@search, :format => :csv) %><br />
+	<%= link_to 'New Search', new_search_path %>
 
-<table cellspacing="0">
-  <tr>
-    <th>Control</th>
-    <th>Model</th>
-	<th>Manufacturer</th>
-	<th>Department</th>
-    <th>User</th>
-	<th>Fee</th>
-	<th class="hide_for_printing">Options</th>
-  </tr>
+	<% form_tag edit_multiple_searches_path do %>
+	<table cellspacing="0">
+	  <tr>
+		<th></th>
+	    <th>Control</th>
+	    <th>Model</th>
+		<th>Manufacturer</th>
+		<th>Department</th>
+	    <th>User</th>
+		<th>Fee</th>
+		<th class="hide_for_printing">Options</th>
+	  </tr>
 
-<%= render :partial => @search.computers %>
+	<% for computer in @search.computers %>
+	<tr id="<%= dom_id(computer) %>" class="index-row">
+	  <td><%= check_box_tag "computer_ids[]", computer.id %></td>
+	  <td><%= link_to computer.control, computer %></td>
+	  <td><%=h computer.model %></td>
+	  <td><%=h computer.manufacturer %></td>
+	  <td><%=h computer.department.name unless computer.department.nil? %></td>
+	  <td><%=h computer.user.fullname unless computer.user.nil? %></td>
+	  <td><%=h number_to_currency(computer.maintenance_fee, :precision => 0) unless computer.maintenance_fee.nil? %></td>
+	  <td class="hide_for_printing"><%= link_to 'Edit', edit_computer_path(computer) %></td>
+	</tr>
+	<% end %>
 
-</table>
+	</table>
+	<%= submit_tag "Edit Checked" %>
+	<% end %>
 <% end %>
 

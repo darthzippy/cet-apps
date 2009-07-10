@@ -1,0 +1,71 @@
+<% form_for :computer, :url => update_multiple_searches_path, :html => { :method => :put } do |f| %>
+	
+	<ul>
+	  <% for computer in @computers %>
+		<li>
+		  <%= h computer.control %>
+		  <%= h computer.model %>
+		  <%= hidden_field_tag "computer_ids[]", computer.id %>
+	    </li>
+	  <% end %>
+	</ul>
+	
+	<p>
+	  <%= f.label :manufacturer %><br />
+	  <%= f.text_field :manufacturer %>
+	</p>
+	<p>
+	  <%= f.label :model %><br />
+	  <%= f.text_field :model %>
+	</p>
+	<p>
+		  <%= f.label :computer_type %><br />
+		  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other},{:prompt => "Select a Computer Type", :include_blank => true }) %>
+	  </p>
+	  <p>
+		  <%= f.label :warranty_type %><br />
+		  <%= f.select(:warranty_type, %w{ None AppleCare HP\ Standard HP\ Accidental Greenpages\ Accidental Printer\ CPC\ Contract Other-Standard },{:prompt => "Select a Warranty Type", :include_blank => true }) %>
+	  </p>
+	  <p>
+		  <%= f.label :warranty_length %><br />
+		  <%= f.select(:warranty_length, [ ['none',0],['1',1], ['2',2], ['3',3], ['4',4]], :include_blank => true ) %>
+	  </p>
+	  <p>
+		<% if computer.is_printer? %>
+		  <%= f.label :cameron_id_id %><br />
+	      <%= f.text_field :cameron_id %>
+		<% else %>
+		  <%= f.label :part_number %><br />
+	      <%= f.text_field :part_number %>
+		<% end %>
+	  </p>
+	    <%= f.label :purchase_date %><br />
+	    <%= f.text_field :purchase_date, :class => 'date_entry_field' %>
+	  </p>
+	  <p>
+	    <%= f.label :purchase_price %><br />
+	    $<%= f.text_field :purchase_price %>
+	  </p>
+	  <p>
+	    <%= f.label :purchase_acct %><br />
+	    <%= f.text_field :purchase_acct %>
+	  </p>
+	 <p>
+	    <%= f.label :status %><br />
+	    <%= f.select(:status, [ ['Under CET Warranty','C'],['Non-Supported/Obsolete','O'],['Exempt from Coverage','E'],['Printer Under CPC Contract','P']], :include_blank => true )%>
+	  </p>
+	  <p>
+	    <%= f.label :cstatus %><br />
+	    <%= f.select(:cstatus, [ ['Under CET Warranty','C'],['Non-Supported/Obsolete','O'],['Exempt from Coverage','E'],['Printer Under CPC Contract','P']], :include_blank => true )%>
+	  </p>
+	  <p>
+	    <%= f.label :memory %><br />
+	    <%= f.text_field :memory %>GB
+	  </p>
+	  <p>
+	    <%= f.label :hard_drive %><br />
+	    <%= f.text_field :hard_drive %>GB
+	  </p>
+	
+	<%= f.submit "Submit" %>
+<% end %>
