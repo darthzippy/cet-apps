@@ -67,9 +67,9 @@ class Computer < ActiveRecord::Base
   validates_uniqueness_of :control, :on => :create, :message => "must be unique"
   
   validates_presence_of :serial, :on => :create, :message => "can't be blank"
-  validates_presence_of :model, :on => :create, :message => "can't be blank"
+  #validates_presence_of :model, :on => :create, :message => "can't be blank"
   validates_presence_of :purchase_date, :on => :create, :message => "can't be blank"
-  validates_presence_of :purchase_price, :on => :create, :message => "can't be blank"
+  #validates_presence_of :purchase_price, :on => :create, :message => "can't be blank"
   
   has_many :hardware_assignments
   has_one :user, :through => :hardware_assignments
