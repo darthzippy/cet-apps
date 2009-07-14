@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :cet_users
-  map.resources :searches, :collection => { :edit_multiple => :post, :update_multiple => :put}
+  map.resources :searches, :collection => { :edit_multiple => :post, :update_multiple => :put }
   map.resources :shifts
   map.resources :hardware_assignments
   map.resources :departments,
@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
       :auto_complete_for_department_name => :get
     }
   map.resources :computers, :has_many => :comments
+  map.resources :computers, :collection => { :new_quick => :post, :create_quick => :put }
   map.resources :users, :has_many => :licenses
   map.resources :users, :has_many => :checkouts
   map.resources :softwares, :as => 'software'

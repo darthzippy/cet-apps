@@ -1,6 +1,6 @@
 class ComputersController < ApplicationController
   
-  layout 'application_new'
+  layout 'application'
   
   before_filter :login_required
   
@@ -100,4 +100,26 @@ class ComputersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def new_quick
+    @computer = Computer.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @computer }
+    end
+  end
+  
+  def create_quick
+    @computers = Computer.new(params[:new_computers])
+    @computers.each do |c|
+      c.save
+    end
+    respond_to do |format|
+      flash[:notice] = 'Computers were successfully created.'
+      format.html { redirect_to computers_path }
+      format.js
+    end
+  end
+  
 end

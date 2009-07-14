@@ -1,0 +1,50 @@
+<% form_for "new_computers[]", :computer, :url => create_quick_computers_path do |f| %>
+  <%= f.error_messages %>
+
+
+<div id="computer_edit_model_info" class="span-9">
+ <p>
+   <%= f.label :control %><br />
+   <%= f.text_field :control %>
+ </p>
+ <p>
+   <%= f.label :serial %><br />
+   <%= f.text_field :serial %>
+ </p>
+ <p>
+   <%= f.label :manufacturer %><br />
+   <%= f.text_field :manufacturer %>
+ </p>
+ <p>
+   <%= f.label :model %><br />
+   <%= f.text_field :model %>
+ </p>	
+</div>
+
+<div id="hardware_assignments" class="span-9 last">
+	<% for hardware_assignment in @computer.hardware_assignments %>
+	  <% fields_for "computer[hardware_assignment_attributes][]", hardware_assignment do |hardware_assignment_form| %>
+	  <p>
+	    <label>DEPARTMENTS</label>
+	    <%= hardware_assignment_form.collection_select(:department_id, Department.all, :id, :name, {:prompt => "Select a Department"}, {:index => nil}) %>
+	  </p>
+	  <p>
+	    <label>USERS</label>
+	    <%= hardware_assignment_form.collection_select :user_id, User.faculty_staff.ordered('last ASC'), :id, :fullname, {:prompt => "Select a User", :include_blank => true}, {:index => nil}  %>
+	  </p>
+	  <p>
+	   <label>PRIMARY COMPUTER</label>
+	    <%= hardware_assignment_form.select :primary_computer, [["Yes",true],["No",false]], {}, {:index => nil}  %>
+	  </p>
+	    <% unless hardware_assignment.new_record? %>
+	      <%= hardware_assignment_form.hidden_field :id, :index => nil %>
+	    <% end %>
+	  <% end %>
+	<% end %>	
+</div>
+
+
+  <p>
+    <%= f.submit button_name %>
+  </p>
+<% end %
