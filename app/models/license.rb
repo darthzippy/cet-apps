@@ -24,7 +24,7 @@ class License < ActiveRecord::Base
   named_scope :mac_office2004_sales, :conditions => { :software_id => 7 }
   named_scope :win_office2003_sales, :conditions => { :software_id => 8 }
   
-  named_scope :recent, lambda { { :conditions => [ "created_at BETWEEN ? AND ?", "2009-01-12 01:00:00", Time.now.utc ] } }
-  named_scope :this_semester, lambda { { :conditions => [ "created_at BETWEEN ? AND ?", "2008-08-21 01:00:00", Time.now.utc ] } }
+  named_scope :this_year, lambda { { :conditions => [ "created_at BETWEEN ? AND ?", "2009-01-12 01:00:00", Time.now.utc ] } }
+  named_scope :this_semester, lambda { { :conditions => [ "created_at BETWEEN ? AND ?", "2009-08-14 01:00:00", Time.now.utc ] } }
   named_scope :alltime
 end
