@@ -14,8 +14,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :has_many => :checkouts
   map.resources :softwares, :as => 'software'
   map.resources :licenses
-  map.resources :hubs
-  map.resources :checkouts
   map.resources :comments
   map.resources :dvds
 

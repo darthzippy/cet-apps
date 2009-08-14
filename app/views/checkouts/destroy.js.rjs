@@ -1,3 +1,0 @@
-page[:hubs].replace_html :partial => 'checkouts/checkouts',
-                         :locals  => {:checkouts => @user.checkouts,
-                                      :user     => @user}

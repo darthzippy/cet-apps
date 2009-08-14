@@ -26,9 +26,6 @@ class User < ActiveRecord::Base
   has_many :licenses
   has_many :softwares, :through => :licenses
   
-  has_many :checkouts
-  has_many :hubs, :through => :checkouts
-  
   has_many :hardware_assignments
   has_many :computers, :through => :hardware_assignments
   has_many :departments, :through => :hardware_assignments

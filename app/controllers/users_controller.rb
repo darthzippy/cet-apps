@@ -22,7 +22,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     @license = License.new
-    @checkout = Checkout.new
 
     respond_to do |format|
       format.html # show.html.erb

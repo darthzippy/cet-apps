@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090422130823) do
+ActiveRecord::Schema.define(:version => 20090814141622) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -17,15 +17,6 @@ ActiveRecord::Schema.define(:version => 20090422130823) do
     t.string   "display_name"
     t.string   "given_name"
     t.datetime "last_login_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "checkouts", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "hub_id"
-    t.datetime "checkout"
-    t.datetime "checkin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -123,17 +114,11 @@ ActiveRecord::Schema.define(:version => 20090422130823) do
     t.string   "updated_by"
   end
 
-  create_table "hardwareassignments", :force => true do |t|
+  create_table "hardware_assignments", :force => true do |t|
     t.integer  "computer_id"
     t.integer  "user_id"
     t.integer  "department_id"
     t.boolean  "primary_computer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "hubs", :force => true do |t|
-    t.string   "hub_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
