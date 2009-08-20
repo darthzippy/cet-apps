@@ -51,7 +51,7 @@ namespace :utils do
     desc "Import Users from Webcheckout CSV file"
     task :update_users => :copy_file do
       quotes_option = "--fields-optionally-enclosed-by='\"'"
-      sh "mysqlimport -u root --local cet_apps_development #{lib}/wco/users.txt --verbose #{quotes_option} --fields-terminated-by=',' --columns=id,role,first,middle,last,building,room,on_campus,state,country,zip,email,phone,blank1,barcode,blank2,department,active,updated_at --delete"
+      sh "mysqlimport -u root --local cet_apps_production #{lib}/wco/users.txt --verbose #{quotes_option} --fields-terminated-by=',' --columns=id,role,first,middle,last,building,room,on_campus,state,country,zip,email,phone,blank1,barcode,blank2,department,active,updated_at --delete"
     end   
      
   end #namespace :wco
