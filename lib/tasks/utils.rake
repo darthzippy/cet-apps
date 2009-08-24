@@ -2,10 +2,9 @@ require 'config/environment'
 require 'fastercsv'
 
 namespace :utils do
-    
-  desktop = "/Users/ericgivens/Desktop"
+
   folder = "/Volumes/cet"
-  lib = "/Users/ericgivens/Desktop/cet-apps/lib"
+  lib = "/Library/WebServer/apps/current/lib"
   
   desc "Create a connection to NAS1"
   task :nas_login do
@@ -34,8 +33,12 @@ namespace :utils do
     
     desc "Run course combine script"
     task :course_combine => :download do
-      
-    end   
+      sh "sh #{lib}/bb/bb_enroll_09FA.sh"
+      src = "#{lib}/bb/Blackboard_Export_Roles_Students.csv"
+      dest = "#{folder}/Blackboard/Blackboard_Export_Roles_Students-COMBINED.csv"
+      File.cp(src, dest)
+      puts "Combined Bb enrollment file uploaded to NAS1"
+    end
  
   end #namespace :bb
   
