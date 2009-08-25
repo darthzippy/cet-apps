@@ -1,7 +1,7 @@
 require 'find'
 require 'ftools'
   namespace :db do  desc "Backup the database to a file. Options: DIR=base_dir RAILS_ENV=production MAX=20"
-    task :backup => do
+    task :backup => :environment do
       datestamp = Time.now.strftime("%Y-%m-%d_%H-%M-%S")    
       base_path = ENV["DIR"] || "db"
       backup_base = File.join(base_path, 'backup')

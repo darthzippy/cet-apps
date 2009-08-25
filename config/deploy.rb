@@ -42,7 +42,7 @@ namespace :deploy do
   
   desc "Update the crontab file"
   task :update_crontab, :roles => :db do
-    run "cd #{current_path} && whenever --update_crontab #{application}"
+    run "cd #{current_path} && whenever"
   end
 end
 
