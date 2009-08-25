@@ -20,7 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, :at => '7:00 am' do
-  rake "db:backup RAILS_ENV=production"
   rake "utils:bb:course_combine"
   rake "utils:wco:update_users"
 end
