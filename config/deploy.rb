@@ -39,6 +39,12 @@ namespace :deploy do
   task :restart, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
   end
+  
+  desc "Update the crontab file"
+  task :update_crontab, :roles => :db do
+    run "cd #{current_path} && whenever --update_crontab #{application}"
+  end
 end
 
 after "deploy", "deploy:cleanup"
+after "deploy:cleanup", "deploy:update_crontab"
