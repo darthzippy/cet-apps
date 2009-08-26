@@ -1,3 +1,4 @@
+perl -pi -e 's/BIO2222009FA/NSM2222009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/ECB217B2009FA/ECB217A2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/SWK3102009FA/SOC3102009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 
