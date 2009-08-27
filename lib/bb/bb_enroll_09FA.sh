@@ -1,5 +1,12 @@
 perl -pi -e 's/BIO2222009FA/NSM2222009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/COM420A2009FA/COM420A-B2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/COM420B2009FA/COM420A-B2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/ECB217B2009FA/ECB217A2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/EDU1122009FA/EDU112-1162009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/EDU1132009FA/EDU112-1162009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/EDU1142009FA/EDU112-1162009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/EDU1152009FA/EDU112-1162009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/EDU1162009FA/EDU112-1162009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/SWK3102009FA/SOC3102009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 
 perl -pi -e 's/COR107A2009FA/COR1072009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
