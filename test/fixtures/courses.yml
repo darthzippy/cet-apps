@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  source: MyString
+  destination: MyString
+  semester: MyString
+  year: 
+
+two:
+  source: MyString
+  destination: MyString
+  semester: MyString
+  year: 

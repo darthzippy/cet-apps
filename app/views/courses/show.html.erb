@@ -1,0 +1,23 @@
+<p>
+  <b>Source:</b>
+  <%=h @course.source %>
+</p>
+
+<p>
+  <b>Destination:</b>
+  <%=h @course.destination %>
+</p>
+
+<p>
+  <b>Semester:</b>
+  <%=h @course.semester %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%=h @course.year %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

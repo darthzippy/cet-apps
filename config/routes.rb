@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :courses
+
 
   map.resources :cet_users
   map.resources :searches, :collection => { :edit_multiple => :post, :update_multiple => :put }
