@@ -6,7 +6,7 @@ namespace :utils do
   lib = "/Library/WebServer/apps/current/lib"
   
   desc "Create a connection to NAS1"
-  task :nas_login do
+  task :nas_login doœ
     user = "eric.givens"
     pass = "Hermione1"
     nas1 = "nas1/cet"
