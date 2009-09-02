@@ -5,21 +5,29 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>CET Apps: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag("scaffold", :media => "screen") %>
-  <%= stylesheet_link_tag("application", :media => "screen") %> 
+
+  <pre>
+  <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print"> 
+  <!--[if IE]>
+    <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  </pre>
+  <%= stylesheet_link_tag("application1", :media => "screen") %>
   <%= stylesheet_link_tag("/stylesheets/smoothness/jquery-ui-1.7.1.custom.css", :media => "screen") %>
   <%= stylesheet_link_tag("print", :media => "print") %> 
   <%= javascript_include_tag :defaults, 'jquery/jquery-1.3.2.js', 'jquery/jquery-ui-1.7.1.custom.min.js', 'jquery/jquery-validate/jquery.validate.js' %>
 </head>
 <body class="<%= controller.controller_name %>">
 
-<div id="page">	
-	<div id="sub-content">
+<div id="banner">
+  <div class="container">		
+	<div id="header" class="span-24">
 		<h1 id="logo"> 
           <a href="/">CET Apps</a> 
         </h1>
-		<div class="content"> 
-	    	<ul class="nav">
+		<div id="navbar"> 
+	    	<ul>
 			  <li id="computers-nav"> 
 		        <%= link_to 'eq', computers_path %> 
 		      </li>
@@ -31,51 +39,79 @@
 		      </li>
 		 	  <li id="softwares-nav">
 		 	    <%= link_to 'software', softwares_path %>
-		 	  </li>   
+		 	  </li>  
 	          <li id="search-nav"> 
 	            <%= link_to 'search', new_search_path %>  
+	          </li>
+	          <li id="shifts-nav"> 
+	            <%= link_to 'shifts', shifts_path %>  
 	          </li>
 	          <li id="dvds-nav"> 
 	            <%= link_to 'dvd sales', dvds_path %>  
 	          </li>
+			  <li id="courses-nav"> 
+	            <%= link_to 'BB', courses_path %>  
+	          </li>
 	    	</ul> 
-	    </div>	
-	</div>
+	    </div>
+	</div>	
+  </div>		
+</div>
+
+<div class="container">	
+		
+	<div id="page" class="span-24">	
 	<div id="content">
-		<div id="login">
-			<% if logged_in? %>
-			  <h1>
-			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %> | <%= link_to 'logout', :controller => 'session', :action => 'logout' %></h1>
-			<% end %>	
-		</div>
-		<br />
-
-	  <div id="yield">
-		  <p style="color: green"><%= flash[:notice] %></p>
-
-		  <%= yield  %>	  	
+	  <div id="yield" class="span-18">
+		<p style="color: green"><%= flash[:notice] %></p>
+	    <%= yield  %>	
 	  </div>
-
+	  <div id="sidebar" class="span-6 last">
+	    <div id="login">
+			<% if logged_in? %>
+			  <h3>
+			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %><%= link_to 'logout', :controller => 'session', :action => 'logout' %></h3>
+			<% end %>	
+		 </div>
+		<div id="tweets">
+			<div id="follow-cet">
+			  <a href="http://twitter.com/cetapps">Follow CET Apps on Twitter</a>	
+			</div>
+			<div id="twitter-balloon">
+				<img src="/images/twitter_balloon.png" />
+			</div>
+		</div>
+	  	<div id="tweet-0" class="tweet span-5">
+	  	</div>
+		<div id="tweet-1" class="tweet span-5">	  		
+	  	</div>
+		<div id="tweet-2" class="tweet span-5">	  		
+	  	</div>
+	</div>	
 	</div>
-
-	<div id="footer">  
-      <div class="logo">
-	 	<%= image_tag("gordon_logo.png") %>
-        Service Provided By<br />Gordon College CET 
-      </div> 
-      <div class="links"> 
-        <ul> 
-          <li><a href="http://cetserv.gordon.edu/groups/cet/blog/">Blog</a></li>  
-          <li><a href="mailto:eric.givens@gordon.edu?subject=CET Apps Issue">Report an Issue</a></li> 
-          <li><a href="mailto:eric.givens@gordon.edu?subject=CET Apps Feature Request">Request a Feature</a></li> 
-        </ul> 
-        <p> 
-          'CET Apps' is &copy; 2009
-          <a href="http://www.gordon.edu">Gordon College</a> 
-        </p> 
-      </div> 
-  	</div>
 
 </div>
+
+	<div id="footer" class="span-24">  
+	  <div class="logo">
+	  <%= image_tag("gordon_logo.png") %>
+	    Service Provided By<br />Gordon College CET 
+	  </div> 
+	  <div class="links"> 
+	    <ul> 
+	      <li><a href="http://cetserv.gordon.edu/groups/cet/blog/">Blog</a></li>  
+	      <li><a href="mailto:eric.givens@gordon.edu?subject=CET Apps Issue">Report an Issue</a></li> 
+	      <li><a href="mailto:eric.givens@gordon.edu?subject=CET Apps Feature Request">Request a Feature</a></li> 
+	    </ul> 
+	    <p> 
+	      'CET Apps' is &copy; 2009
+	      <a href="http://www.gordon.edu">Gordon College</a> 
+	    </p> 
+	  </div> 
+	</div>
+
+</div>
+
+
 </body>
 </html>

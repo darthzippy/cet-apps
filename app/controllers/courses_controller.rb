@@ -1,4 +1,9 @@
 class CoursesController < ApplicationController
+  
+  layout 'application'
+  
+  before_filter :login_required
+  
   # GET /courses
   # GET /courses.xml
   def index

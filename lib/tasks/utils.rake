@@ -38,6 +38,31 @@ namespace :utils do
       File.cp(src, dest)
       puts "Combined Bb enrollment file uploaded to NAS1"
     end
+    
+    desc "Run NEW course combine script"
+    task :new_course_combine => :download do
+      #sh "sh #{lib}/bb/bb_enroll_09FA.sh"
+      src = "#{lib}/bb/Blackboard_Export_Roles_Students.csv"
+      dest = "#{folder}/Blackboard/Blackboard_Export_Roles_Students-COMBINED.csv"
+      
+      File.open(src, "r+") do |file|
+        @courses = Course.all
+        lines = file.readlines
+        
+        @courses.each do |course|
+          lines.each do |line|
+            line.gsub!(/#{course.source.upcase}/, course.destination.upcase)
+          end
+        end
+        
+        file.pos = 0
+        file.print lines
+        file.truncate(file.pos)
+      end
+      
+      File.cp(src, dest)
+      puts "Combined Bb enrollment file uploaded to NAS1"
+    end
  
   end #namespace :bb
   
