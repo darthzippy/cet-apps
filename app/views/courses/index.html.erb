@@ -1,20 +1,19 @@
 <h1>Listing courses</h1>
 
-<table>
+<table cellspacing="0">
   <tr>
     <th>Source</th>
     <th>Destination</th>
-    <th>Semester</th>
-    <th>Year</th>
+	<th></th>
+	<th></th>
   </tr>
 
 <% @courses.each do |course| %>
   <tr>
     <td><%=h course.source %></td>
     <td><%=h course.destination %></td>
-    <td><%= link_to 'Show', course %></td>
     <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= link_to(image_tag("trash.gif"), course, :confirm => 'Are you sure?', :method => :delete ) %></td>
   </tr>
 <% end %>
 </table>
