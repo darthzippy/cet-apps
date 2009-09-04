@@ -1,4 +1,4 @@
-require 'config/environment'
+#require 'config/environment'
 
 namespace :utils do
 
@@ -6,7 +6,7 @@ namespace :utils do
   lib = "/Library/WebServer/apps/current/lib"
   
   desc "Create a connection to NAS1"
-  task :nas_login do
+  task :nas_login => :environment do
     user = "eric.givens"
     pass = "Hermione1"
     nas1 = "nas1/cet"

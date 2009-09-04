@@ -12,10 +12,22 @@ perl -pi -e 's/EDU5142009FA/EDU511-514-5152009FA/g' /Library/WebServer/apps/curr
 perl -pi -e 's/EDU5152009FA/EDU511-514-5152009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/EDU6142009FA/EDU511-514-5152009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/EDU6152009FA/EDU511-514-5152009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+
+perl -pi -e 's/PHY119L12009FA/PHY119-121L2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/PHY119L22009FA/PHY119-121L2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/PHY119L32009FA/PHY119-121L2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/PHY121L12009FA/PHY119-121L2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/PHY121L22009FA/PHY119-121L2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/PHY121L32009FA/PHY119-121L2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/PHY121L42009FA/PHY119-121L2009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+
+perl -pi -e 's/MUS251M2009FA/MUS2512009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+perl -pi -e 's/MUS251P2009FA/MUS2512009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/MUS257M2009FA/MUS2572009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/MUS257P2009FA/MUS2572009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/MUS258M2009FA/MUS2582009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 perl -pi -e 's/MUS258P2009FA/MUS2582009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
+
 perl -pi -e 's/SWK3102009FA/SOC3102009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
 
 perl -pi -e 's/COR107A2009FA/COR1072009FA/g' /Library/WebServer/apps/current/lib/bb/Blackboard_Export_Roles_Students.csv
