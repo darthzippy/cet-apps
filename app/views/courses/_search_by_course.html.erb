@@ -1,0 +1,8 @@
+<div class="search_form">
+	Search by course
+	<% form_tag courses_path, :method => 'get' do %>
+	  <%= text_field_tag :search, params[:search] %>
+	  <%= submit_tag "Search" %>
+	<% end %>
+	<%= link_to 'clear', courses_path %>
+</div>

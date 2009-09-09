@@ -2,12 +2,12 @@ class CoursesController < ApplicationController
   
   layout 'application'
   
-  before_filter :login_required
+  #before_filter :login_required
   
   # GET /courses
   # GET /courses.xml
   def index
-    @courses = Course.all
+    @courses = Course.search(params[:search], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

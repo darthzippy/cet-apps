@@ -1,5 +1,9 @@
 <h2>Blackboard Course Combination Utility</h2>
 
+<%= render :partial => 'search_by_course' %>
+
+<h2><%= link_to 'New course', new_course_path  %></h2>
+
 <table cellspacing="0">
   <tr>
     <th>Source</th>
@@ -18,6 +22,6 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New course', new_course_path %>
+<div id="paginate">
+<%= will_paginate @courses %>	
+</div>
