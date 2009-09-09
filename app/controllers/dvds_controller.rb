@@ -1,8 +1,8 @@
 class DvdsController < ApplicationController
   
-  layout 'application'
+  layout 'application_new'
   
-  before_filter :login_required
+  #before_filter :login_required
   
   # GET /dvds
   # GET /dvds.xml

@@ -3,9 +3,9 @@ class SearchesController < ApplicationController
   require 'prawn'
   require 'fastercsv'
   
-  layout 'application'
+  layout 'application_new'
     
-  before_filter :login_required
+  #before_filter :login_required
   
   def new
     @search = Search.new

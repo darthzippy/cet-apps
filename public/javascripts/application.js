@@ -6,17 +6,7 @@ jQuery.noConflict();
 
 
 jQuery(document).ready(function($){
-  $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#computer_show_user_info_vax,#computer_show_purchase_info_vax,#twitter-balloon").hide();
-  
-  $("#computer_show_user_info_vax_link").click(function () {
-    $("#computer_show_user_info_vax").toggle("slow");
-    return false;
-  });
-
-  $("#computer_show_purchase_info_vax_link").click(function () {
-    $("#computer_show_purchase_info_vax").toggle("slow");
-    return false;
-  });
+  $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#twitter-balloon").hide();
 
   $("#os_add").click(function () {
     $("#add_os").toggle("slow");
@@ -41,7 +31,7 @@ jQuery(document).ready(function($){
     return false;
   });
 
-  $('.new_dvd,.edit_dvd').validate();
+  $('.new_dvd,.edit_dvd,.new_course,.edit_course,.new_computer,.edit_computer').validate();
 
   var var_name = $('#paid_checkbox').attr('checked')?1:0;
   if (var_name == 1) {
