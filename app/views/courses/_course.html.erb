@@ -3,11 +3,11 @@
 
   <p>
     <%= f.label :source %><br />
-    <%= f.text_field :source %>
+    <%= f.text_field :source, :class => "required number" %>
   </p>
   <p>
     <%= f.label :destination %><br />
-    <%= f.text_field :destination %>
+    <%= f.text_field :destination, :class => "required" %>
   </p>
   <p>
     <%= f.submit button_name %>

@@ -1,8 +1,8 @@
 class ComputersController < ApplicationController
   
-  layout 'application'
+  layout 'application_new'
   
-  before_filter :login_required
+  #before_filter :login_required
   
   # GET /computers
   # GET /computers.xml

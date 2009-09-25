@@ -104,21 +104,6 @@
 		  <b>Purchase acct:</b>
 		  <%=h @computer.purchase_acct %>
 		</p>
-		<p>
-		  <%= link_to "Show Purchase Info from VAX", @computer, :id => 'computer_show_purchase_info_vax_link' %>
-		</p>
-		<br />
-		<div id="computer_show_purchase_info_vax">
-			<p>
-			  <b>Purchase date:</b>
-			  <%=h @computer.legacy_purchase_date %>
-			</p>
-			<p>
-			  <b>Purchase acct:</b>
-			  <%=h @computer.legacy_account %>
-			</p>	
-		</div>
-
 	</div>
 
 	<div id="computer_show_user_info" class="span-9 last">
@@ -130,20 +115,6 @@
 		  <b>User:</b>
 		  <%=h @computer.user.fullname unless @computer.user.nil? %>
 		</p>
-		<p>
-		  <%= link_to "Show User Info from VAX", @computer, :id => 'computer_show_user_info_vax_link' %>
-		</p>
-		<br />
-		<div id="computer_show_user_info_vax">
-			<p>
-			  <b>Department:</b>
-			  <%=h @computer.legacy_department %>
-			</p>
-			<p>
-			  <b>User:</b>
-			  <%=h @computer.legacy_user %>
-			</p>	
-		</div>
 	</div>
 	
 	<div class="clear"></div>

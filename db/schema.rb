@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(:version => 20090828192255) do
     t.datetime "last_login_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cet_role"
+  end
+
+  create_table "checkouts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "hub_id"
+    t.datetime "checkout"
+    t.datetime "checkin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "updated_by"
   end
 
   create_table "comments", :force => true do |t|
@@ -130,8 +141,15 @@ ActiveRecord::Schema.define(:version => 20090828192255) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "hubs", :id => false, :force => true do |t|
     t.integer "id"
+=======
+  create_table "hubs", :force => true do |t|
+    t.string   "hub_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+>>>>>>> 1d717677f383fc1a1704fd5f24f78d706678c0ac
   end
 
   create_table "licenses", :force => true do |t|

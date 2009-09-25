@@ -137,15 +137,25 @@ span.login_tips {
 }
 
 #page {
-	/*--border: 1px solid #65896D; --*/
+	background: #ccc url(../images/2_column_background.png) repeat-y 50% 0;
+}
+
+/*==YIELD===*/
+
+#yield {
+	margin: 0px;
+	margin-right: 4px;
+	padding: 10px 0px 10px 5px;
+
 }
 
 /*---- SIDEBAR ----*/
 
 #sidebar {
-	height: 700px;
-	background: #DDFFCC;
-	border-left: 1px solid #B6C4B7;
+	/*height: 1700px; */
+	/* background: #DDFFCC; */
+	/* border-left: 1px solid #B6C4B7; */
+	display: inline;
 }
 
 #login {
@@ -265,14 +275,6 @@ span.login_tips {
   background: white;
   color: #888;
   font-weight: normal;
-}
-
-/*==YIELD===*/
-
-#yield {
-	margin: 0px;
-	margin-right: 4px;
-	padding: 10px 0px 10px 5px;
 }
 
 /*==TABLE STYLINGS===*/
