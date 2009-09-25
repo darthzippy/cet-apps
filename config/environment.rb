@@ -30,6 +30,9 @@ Rails::Initializer.run do |config|
   config.gem 'prawn'
   config.gem 'fastercsv'
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
+  config.gem "justinfrench-formtastic", :lib => 'formtastic', :source => 'http://gems.github.com'
+  #config.gem 'activeldap'
+  #config.gem "binarylogic-searchlogic"
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.

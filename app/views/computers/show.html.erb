@@ -124,7 +124,7 @@
 	<div id="computer_show_user_info" class="span-9 last">
 		<p>
 		  <b>Department:</b>
-		  <%=h @computer.department.name unless @computer.department.nil? %>
+		  <%=h @computer.departments.first.name unless @computer.departments.first.nil? %>
 		</p>
 		<p>
 		  <b>User:</b>

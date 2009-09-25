@@ -84,25 +84,18 @@
 
 
 <div id="hardware_assignments" class="clear">
-	<% for hardware_assignment in @computer.hardware_assignments %>
-	  <% fields_for "computer[hardware_assignment_attributes][]", hardware_assignment do |hardware_assignment_form| %>
+	
+	<h1>Nested Form</h1>
+	<% f.fields_for :hardware_assignments do |hw| %>
 	  <p>
-	    <label>DEPARTMENTS</label>
-	    <%= hardware_assignment_form.collection_select(:department_id, Department.all, :id, :name, {:prompt => "Select a Department"}, {:index => nil}) %>
+	  	<%= hw.label :id, 'Department' %>
+		<%= hw.collection_select(:department_id, Department.all, :id, :name, {:prompt => "Select a Department"}) %>
 	  </p>
 	  <p>
-	    <label>USERS</label>
-	    <%= hardware_assignment_form.collection_select :user_id, User.faculty_staff.ordered('last ASC'), :id, :fullname, {:prompt => "Select a User", :include_blank => true}, {:index => nil}  %>
+	  	<%= hw.label :id, 'User' %>
+		<%= hw.collection_select(:user_id, User.all, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
 	  </p>
-	  <p>
-	   <label>PRIMARY COMPUTER</label>
-	    <%= hardware_assignment_form.select :primary_computer, [["Yes",true],["No",false]], {}, {:index => nil}  %>
-	  </p>
-	    <% unless hardware_assignment.new_record? %>
-	      <%= hardware_assignment_form.hidden_field :id, :index => nil %>
-	    <% end %>
-	  <% end %>
-	<% end %>	
+	<% end %>
 </div>
 
 

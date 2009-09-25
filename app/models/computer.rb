@@ -62,7 +62,7 @@
 
 class Computer < ActiveRecord::Base
   validates_presence_of :control, :on => :create, :message => "can't be blank"
-  validates_length_of :control, :within => 5..5, :on => :create, :message => "must be present"
+  validates_length_of :control, :within => 5..5, :on => :create, :message => "must be five characters long"
   validates_numericality_of :control, :on => :create, :message => "is not a number"
   validates_uniqueness_of :control, :on => :create, :message => "must be unique"
   
@@ -73,8 +73,10 @@ class Computer < ActiveRecord::Base
   
   has_many :hardware_assignments
   has_one :user, :through => :hardware_assignments
-  has_one :department, :through => :hardware_assignments
+  has_many :departments, :through => :hardware_assignments
   has_many :comments
+  
+  accepts_nested_attributes_for :hardware_assignments, :departments, :user, :allow_destroy => true
   
   named_scope :computer_type, lambda { |computer_type|
       { :conditions => { :computer_type => computer_type } }
@@ -94,30 +96,13 @@ class Computer < ActiveRecord::Base
     { :include => :user, :order => order.flatten.first || 'users.last ASC' }
   }
      
-  after_update :save_hardware_assignments
+  #after_update :save_hardware_assignments
   
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
              :conditions => ['control like ? OR serial like ?', "%#{search}%", "%#{search}%"],
              :order => 'purchase_date',
              :include => {:hardware_assignments => :user}
-  end
-  
-  def hardware_assignment_attributes=(hardware_assignment_attributes)
-    hardware_assignment_attributes.each do |attributes|
-      if attributes[:id].blank?
-        hardware_assignments.build(attributes)
-      else
-        hardware_assignment = hardware_assignments.detect { |t| t.id == attributes[:id].to_i }
-        hardware_assignment.attributes = attributes
-      end
-    end
-  end
-  
-  def save_hardware_assignments
-    hardware_assignments.each do |h|
-      h.save(false)
-    end
   end
   
   def warranty_end_date
