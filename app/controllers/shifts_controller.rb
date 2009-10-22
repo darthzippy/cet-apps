@@ -7,7 +7,7 @@ class ShiftsController < ApplicationController
   # GET /shifts
   # GET /shifts.xml
   def index
-    @shifts = Shift.find(:all, :include => :cet_user)
+    @shifts = Shift.my_shifts(current_cet_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
