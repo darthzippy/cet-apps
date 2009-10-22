@@ -8,6 +8,10 @@
   <%=h @software.software_type %>
 </p>
 
+<p>
+  <b>Active:</b>
+  <%= @software.is_active? %>
+</p>
 
 <%= link_to 'Edit', edit_software_path(@software) %> |
 <%= link_to 'Back', softwares_path %>

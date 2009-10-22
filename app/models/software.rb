@@ -16,5 +16,14 @@ class Software < ActiveRecord::Base
   
   named_scope :os, :conditions => { :software_type  => "OS" }
   named_scope :office, :conditions => { :software_type  => "office" }
+  named_scope :active, :conditions => [ "active = ?", 1]
+  
+  def is_active?
+    if self.active
+      "Yes"
+    else
+      "No"
+    end
+  end
   
 end

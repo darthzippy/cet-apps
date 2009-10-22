@@ -4,6 +4,7 @@
   <tr>
     <th>Name</th>
     <th>Type</th>
+	<th>Active</th>
 	<th></th>
 	<th></th>
 	<th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%=h software.name %></td>
     <td><%=h software.software_type %></td>
+	<td><%=h software.is_active?  %></td>
     <td><%= link_to 'Show', software %></td>
     <td><%= link_to 'Edit', edit_software_path(software) %></td>
     <td><%= link_to 'Destroy', software, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -26,26 +28,22 @@
 
 <h2>Stats</h2>
 
-<h3>Software Sales This Semester (Spring 2009)</h3>
+<h3>Software Sales This Semester (Fall 2009)</h3>
 
 <p>Total Software Sales: <%= @licenses.this_semester.count %></p>
 
 <table cellspacing="0">
 	<tr>
-		<th>Office 2007 (Windows)</th>
-		<th>Office 2008 (Mac)</th>
-		<th>Windows XP</th>
-		<th>Windows Vista</th>
-		<th>Mac OSX Leopard</th>
-		<th>Mac OSX Tiger</th>
+		<% @softwares.active.each do |software| %>
+		  <th><%= software.name %></th>
+		<% end %>
 	</tr>
 	<tr>
-		<td><%= @licenses.this_semester.win_office2007_sales.count %></td>
-		<td><%= @licenses.this_semester.mac_office2008_sales.count %></td>
-		<td><%= @licenses.this_semester.win_xp_sales.count %></td>
-		<td><%= @licenses.this_semester.win_vista_sales.count %></td>
-		<td><%= @licenses.this_semester.mac_leopard_sales.count %></td>
-		<td><%= @licenses.this_semester.mac_tiger_sales.count %></td>
+
+		<% @softwares.active.each do |software| %>
+	      <td><%= software.licenses.this_semester.count %></td>
+	    <% end %>
+
 	</tr>
 </table>
 

@@ -12,6 +12,10 @@
     <%= f.text_field :software_type %>
   </p>
   <p>
+	<%= f.label :Active %><br />
+  	<%= f.check_box :active %>
+  </p>
+  <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
