@@ -34,14 +34,14 @@
 
 <table cellspacing="0">
 	<tr>
-		<% @softwares.active.each do |software| %>
+		<% @software.active.each do |software| %>
 		  <th><%= software.name %></th>
 		<% end %>
 	</tr>
 	<tr>
 
 		<% @softwares.active.each do |software| %>
-	      <td><%= software.licenses.this_semester.count %></td>
+	      <td><%= software.licenses_count %></td>
 	    <% end %>
 
 	</tr>

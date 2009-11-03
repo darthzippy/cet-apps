@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.string   "serial"
     t.string   "model"
     t.string   "manufacturer"
-    t.date     "purchase_date"
+    t.datetime "purchase_date"
     t.integer  "purchase_price"
     t.string   "purchase_acct"
     t.string   "status"
@@ -183,11 +183,7 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.datetime "updated_at"
     t.integer  "gordon_id"
     t.string   "on_campus"
-    t.string   "state",      :limit => 11
-    t.string   "country",    :limit => 11
-    t.string   "zip",        :limit => 11
-    t.string   "blank1",     :limit => 11
-    t.string   "blank2",     :limit => 11
+    t.integer  "hub_id"
   end
 
 end
