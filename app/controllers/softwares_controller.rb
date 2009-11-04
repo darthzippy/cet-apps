@@ -2,7 +2,7 @@ class SoftwaresController < ApplicationController
   
   require "gchart"
   
-  layout 'application'
+  layout 'application_new'
     
   before_filter :login_required
   
@@ -10,7 +10,7 @@ class SoftwaresController < ApplicationController
   # GET /softwares.xml
   def index
     @softwares = Software.find(:all, :include => :licenses, :order => "software_type DESC, name ASC")
-    @software = Software.all(:joins => :licenses, :select => "softwares.*, count(licenses.id) as licenses_count", :group => "softwares.id", :order => "software_type DESC, name ASC")
+    @software = Software.total_licenses.active
     @licenses = License
 
     respond_to do |format|

@@ -7,17 +7,15 @@
 	<th>Active</th>
 	<th></th>
 	<th></th>
-	<th></th>
   </tr>
 
-<% for software in @softwares %>
-  <tr>
+<% for software in @software %>
+  <tr class="index-row">
     <td><%=h software.name %></td>
     <td><%=h software.software_type %></td>
 	<td><%=h software.is_active?  %></td>
-    <td><%= link_to 'Show', software %></td>
     <td><%= link_to 'Edit', edit_software_path(software) %></td>
-    <td><%= link_to 'Destroy', software, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag("trash.gif"), software, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -30,77 +28,104 @@
 
 <h3>Software Sales This Semester (Fall 2009)</h3>
 
-<p>Total Software Sales: <%= @licenses.this_semester.count %></p>
+<p>Total Software Sales: <%= @software.this_semester.count %></p>
 
 <table cellspacing="0">
 	<tr>
-		<% @software.active.each do |software| %>
+		<% @software.this_semester.each do |software| %>
 		  <th><%= software.name %></th>
 		<% end %>
 	</tr>
 	<tr>
 
-		<% @softwares.active.each do |software| %>
+		<% @software.this_semester.each do |software| %>
 	      <td><%= software.licenses_count %></td>
 	    <% end %>
 
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d(:title => 'Office Sales - Mac vs. PC', :size => '300x120',:data => [@licenses.this_semester.win_office2007_sales.count, @licenses.this_semester.mac_office2008_sales.count], :labels => ["Office 2007 (Windows)", "Office 2008 (Mac)"]) %>
+<%= image_tag Gchart.pie_3d( :title => 'Office Sales - Mac vs. PC',
+							 :size => '400x160',
+							 :data => [@software.this_semester.individual_software("Office 2008 (Mac)").count,
+								       @software.this_semester.individual_software("Office 2007 (Windows)").count],
+							 :labels => ["Office 2008 (Mac)", "Office 2007 (Windows)"]) %>
 
-<%= image_tag Gchart.pie_3d(:title => 'OS Sales - Mac vs. PC', :size => '300x120',:data => [@licenses.this_semester.win_xp_sales.count, @licenses.this_semester.win_vista_sales.count, @licenses.this_semester.mac_leopard_sales.count, @licenses.this_semester.mac_tiger_sales.count], :labels => ["XP", "Vista", "Leopard", "Tiger"]) %>
+<%= image_tag Gchart.pie_3d( :title => 'OS Sales - Mac vs. PC',
+							 :size => '300x120',
+							 :data => [@software.this_semester.individual_software("Mac OSX 10.6 Snow Leopard").count,
+							  	       @software.this_semester.individual_software("OSX 10.5 Leopard").count,
+							 		   @software.this_semester.individual_software("Windows 7").count,
+							 		   @software.this_semester.individual_software("Windows Vista").count,
+							 		   @software.this_semester.individual_software("Windows XP").count],
+							 :labels => ["Snow Leopard", "Leopard", "Windows 7", "Vista", "XP"]) %>
 
 <h3>Software Sales This Year (2009)</h3>
 
-<p>Total Software Sales: <%= @licenses.this_year.count %></p>
+<p>Total Software Sales: <%= @software.this_year.count %></p>
 
 <table cellspacing="0">
 	<tr>
-		<th>Office 2007 (Windows)</th>
-		<th>Office 2008 (Mac)</th>
-		<th>Windows XP</th>
-		<th>Windows Vista</th>
-		<th>Mac OSX Leopard</th>
-		<th>Mac OSX Tiger</th>
+		<% @software.this_year.each do |software| %>
+		  <th><%= software.name %></th>
+		<% end %>
 	</tr>
 	<tr>
-		<td><%= @licenses.this_year.win_office2007_sales.count %></td>
-		<td><%= @licenses.this_year.mac_office2008_sales.count %></td>
-		<td><%= @licenses.this_year.win_xp_sales.count %></td>
-		<td><%= @licenses.this_year.win_vista_sales.count %></td>
-		<td><%= @licenses.this_year.mac_leopard_sales.count %></td>
-		<td><%= @licenses.this_year.mac_tiger_sales.count %></td>
+
+		<% @software.this_year.each do |software| %>
+	      <td><%= software.licenses_count %></td>
+	    <% end %>
+
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d(:title => 'Office Sales - Mac vs. PC', :size => '300x120',:data => [@licenses.this_year.win_office2007_sales.count, @licenses.this_year.mac_office2008_sales.count], :labels => ["Office 2007 (Windows)", "Office 2008 (Mac)"]) %>
+<%= image_tag Gchart.pie_3d( :title => 'Office Sales - Mac vs. PC',
+							 :size => '400x160',
+							 :data => [@software.this_year.individual_software("Office 2008 (Mac)").count,
+								       @software.this_year.individual_software("Office 2007 (Windows)").count],
+							 :labels => ["Office 2008 (Mac)", "Office 2007 (Windows)"]) %>
 
-<%= image_tag Gchart.pie_3d(:title => 'OS Sales - Mac vs. PC', :size => '300x120',:data => [@licenses.this_year.win_xp_sales.count, @licenses.this_year.win_vista_sales.count, @licenses.this_year.mac_leopard_sales.count, @licenses.this_year.mac_tiger_sales.count], :labels => ["XP", "Vista", "Leopard", "Tiger"]) %>
+<%= image_tag Gchart.pie_3d( :title => 'OS Sales - Mac vs. PC',
+							 :size => '300x120',
+							 :data => [@software.this_year.individual_software("Mac OSX 10.6 Snow Leopard").count,
+							  	       @software.this_year.individual_software("OSX 10.5 Leopard").count,
+							 		   @software.this_year.individual_software("Windows 7").count,
+							 		   @software.this_year.individual_software("Windows Vista").count,
+							 		   @software.this_year.individual_software("Windows XP").count],
+							 :labels => ["Snow Leopard", "Leopard", "Windows 7", "Vista", "XP"]) %>
+
 
 <h3>Software Sales - All-Time</h3>
 
-<p>Total Software Sales: <%= @licenses.count %></p>
+<p>Total Software Sales: <%= @software.count %></p>
 
 <table cellspacing="0">
 	<tr>
-		<th>Office 2007 (Windows)</th>
-		<th>Office 2008 (Mac)</th>
-		<th>Windows XP</th>
-		<th>Windows Vista</th>
-		<th>Mac OSX Leopard</th>
-		<th>Mac OSX Tiger</th>
+		<% @software.each do |software| %>
+		  <th><%= software.name %></th>
+		<% end %>
 	</tr>
 	<tr>
-		<td><%= @licenses.win_office2007_sales.count %></td>
-		<td><%= @licenses.mac_office2008_sales.count %></td>
-		<td><%= @licenses.win_xp_sales.count %></td>
-		<td><%= @licenses.win_vista_sales.count %></td>
-		<td><%= @licenses.mac_leopard_sales.count %></td>
-		<td><%= @licenses.mac_tiger_sales.count %></td>
+
+		<% @software.each do |software| %>
+	      <td><%= software.licenses_count %></td>
+	    <% end %>
+
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d(:title => 'Office Sales - Mac vs. PC', :size => '300x120',:data => [@licenses.win_office2007_sales.count, @licenses.mac_office2008_sales.count], :labels => ["Office 2007 (Windows)", "Office 2008 (Mac)"]) %>
+<%= image_tag Gchart.pie_3d( :title => 'Office Sales - Mac vs. PC',
+							 :size => '400x160',
+							 :data => [@software.individual_software("Office 2008 (Mac)").count,
+								       @software.individual_software("Office 2007 (Windows)").count],
+							 :labels => ["Office 2008 (Mac)", "Office 2007 (Windows)"]) %>
 
-<%= image_tag Gchart.pie_3d(:title => 'OS Sales - Mac vs. PC', :size => '300x120',:data => [@licenses.win_xp_sales.count, @licenses.win_vista_sales.count, @licenses.mac_leopard_sales.count, @licenses.mac_tiger_sales.count], :labels => ["XP", "Vista", "Leopard", "Tiger"]) %>
+<%= image_tag Gchart.pie_3d( :title => 'OS Sales - Mac vs. PC',
+							 :size => '300x120',
+							 :data => [@software.individual_software("Mac OSX 10.6 Snow Leopard").count,
+							  	       @software.individual_software("OSX 10.5 Leopard").count,
+							 		   @software.individual_software("Windows 7").count,
+							 		   @software.individual_software("Windows Vista").count,
+							 		   @software.individual_software("Windows XP").count],
+							 :labels => ["Snow Leopard", "Leopard", "Windows 7", "Vista", "XP"]) %>
+

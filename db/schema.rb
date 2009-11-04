@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.datetime "updated_at"
   end
 
+  create_table "checkouts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "hub_id"
+    t.datetime "checkout"
+    t.datetime "checkin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "updated_by"
+  end
+
   create_table "comments", :force => true do |t|
     t.integer  "computer_id"
     t.text     "body"
@@ -34,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.string   "serial"
     t.string   "model"
     t.string   "manufacturer"
-    t.datetime "purchase_date"
+    t.date     "purchase_date"
     t.integer  "purchase_price"
     t.string   "purchase_acct"
     t.string   "status"
@@ -130,6 +140,12 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.datetime "updated_at"
   end
 
+  create_table "hubs", :force => true do |t|
+    t.string   "hub_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "licenses", :force => true do |t|
     t.integer  "user_id"
     t.integer  "software_id"
@@ -183,7 +199,11 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.datetime "updated_at"
     t.integer  "gordon_id"
     t.string   "on_campus"
-    t.integer  "hub_id"
+    t.string   "state",      :limit => 11
+    t.string   "country",    :limit => 11
+    t.string   "zip",        :limit => 11
+    t.string   "blank1",     :limit => 11
+    t.string   "blank2",     :limit => 11
   end
 
 end
