@@ -21,16 +21,6 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.datetime "updated_at"
   end
 
-  create_table "checkouts", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "hub_id"
-    t.datetime "checkout"
-    t.datetime "checkin"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "updated_by"
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "computer_id"
     t.text     "body"
@@ -136,12 +126,6 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.integer  "user_id"
     t.integer  "department_id"
     t.boolean  "primary_computer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "hubs", :force => true do |t|
-    t.string   "hub_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

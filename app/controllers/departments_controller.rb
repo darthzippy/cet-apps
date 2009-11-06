@@ -1,5 +1,5 @@
 class DepartmentsController < ApplicationController
-  s
+  
   layout 'application'
   
   before_filter :login_required
