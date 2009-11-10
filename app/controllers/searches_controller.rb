@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
   
   layout 'application_new'
     
-  #before_filter :login_required
+  before_filter :login_required
   
   def new
     @search = Search.new

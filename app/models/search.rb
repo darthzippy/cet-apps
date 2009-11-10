@@ -24,7 +24,7 @@ class Search < ActiveRecord::Base
   private
   
   def find_computers
-    Computer.all(:conditions => conditions, :include => :department)
+    Computer.all(:conditions => conditions, :include => :departments)
   end
 
   def computer_type_conditions
