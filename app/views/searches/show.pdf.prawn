@@ -10,7 +10,7 @@ items = @search.computers.map do |item|
     item.control,
 	item.serial,
 	item.model,
-	item.departments.try(:name),
+	item.departments.try(:id),
 	item.user.try(:fullname),
 	item.status,
 	item.try(:maintenance_fee)

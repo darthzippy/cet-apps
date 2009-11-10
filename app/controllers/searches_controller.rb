@@ -27,7 +27,7 @@ class SearchesController < ApplicationController
     respond_to do |format|
       format.html
       format.xml { render :xml => @search }
-      format.pdf { render :layout => false }
+      format.pdf
       format.csv do
         @outfile = "cet_computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
 
