@@ -10,7 +10,7 @@ items = @search.computers.map do |item|
     item.control,
 	item.serial,
 	item.model,
-	item.departments.try(:id),
+	item.departments.first.try(:name),
 	item.user.try(:fullname),
 	item.status,
 	item.try(:maintenance_fee)
@@ -18,5 +18,8 @@ items = @search.computers.map do |item|
 end
 
 pdf.table items,
-  :row_colors => ["FFFFFF", "DDDDDD"],
-  :headers => ["Control", "Serial", "Model", "Department", "User", "Status", "Fee"]
+  :row_colors         => ["FFFFFF", "DDDDDD"],
+  :headers            => ["Control", "Serial", "Model", "Department", "User", "Status", "Fee"],
+  :align_headers      => :left,
+  :font_size          => 9,
+  :border_width       => 0.2

@@ -27,7 +27,7 @@ class SearchesController < ApplicationController
     respond_to do |format|
       format.html
       format.xml { render :xml => @search }
-      format.pdf
+      format.pdf { render :layout => false }
       format.csv do
         @outfile = "cet_computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
 
@@ -64,8 +64,8 @@ class SearchesController < ApplicationController
               computer.part_number,
               computer.cameron_id,
               computer.status,
-              computer.department.try(:name),
-              computer.department.try(:maintenance_account),
+              computer.departments.first.try(:name),
+              computer.departments.first.try(:maintenance_account),
               computer.user.try(:fullname),
               computer.user.try(:email),
               computer.try(:maintenance_fee)
