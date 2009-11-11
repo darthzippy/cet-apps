@@ -2,7 +2,7 @@ class SoftwaresController < ApplicationController
   
   require "gchart"
   
-  layout 'application_new'
+  layout 'application'
     
   before_filter :login_required
   
