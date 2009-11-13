@@ -45,20 +45,15 @@
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d( :title => 'Office Sales - Mac vs. PC',
-							 :size => '400x160',
-							 :data => [@software.this_semester.individual_software("Office 2008 (Mac)").count,
-								       @software.this_semester.individual_software("Office 2007 (Windows)").count],
-							 :labels => ["Office 2008 (Mac)", "Office 2007 (Windows)"]) %>
+<%= image_tag Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
+							 :size   => '300x120',
+							 :data   => @software.this_semester.office.chart_data,
+							 :labels => @software.this_semester.office.chart_label) %>
 
-<%= image_tag Gchart.pie_3d( :title => 'OS Sales - Mac vs. PC',
-							 :size => '300x120',
-							 :data => [@software.this_semester.individual_software("Mac OSX 10.6 Snow Leopard").count,
-							  	       @software.this_semester.individual_software("OSX 10.5 Leopard").count,
-							 		   @software.this_semester.individual_software("Windows 7").count,
-							 		   @software.this_semester.individual_software("Windows Vista").count,
-							 		   @software.this_semester.individual_software("Windows XP").count],
-							 :labels => ["Snow Leopard", "Leopard", "Windows 7", "Vista", "XP"]) %>
+<%= image_tag Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
+							 :size   => '300x120',
+							 :data   => @software.this_semester.os.chart_data,
+							 :labels => @software.this_semester.os.chart_label) %>
 
 <h3>Software Sales This Year (2009)</h3>
 
@@ -79,20 +74,15 @@
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d( :title => 'Office Sales - Mac vs. PC',
-							 :size => '400x160',
-							 :data => [@software.this_year.individual_software("Office 2008 (Mac)").count,
-								       @software.this_year.individual_software("Office 2007 (Windows)").count],
-							 :labels => ["Office 2008 (Mac)", "Office 2007 (Windows)"]) %>
+<%= image_tag Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
+							 :size   => '300x120',
+							 :data   => @software.this_year.office.chart_data,
+							 :labels => @software.this_year.office.chart_label) %>
 
-<%= image_tag Gchart.pie_3d( :title => 'OS Sales - Mac vs. PC',
-							 :size => '300x120',
-							 :data => [@software.this_year.individual_software("Mac OSX 10.6 Snow Leopard").count,
-							  	       @software.this_year.individual_software("OSX 10.5 Leopard").count,
-							 		   @software.this_year.individual_software("Windows 7").count,
-							 		   @software.this_year.individual_software("Windows Vista").count,
-							 		   @software.this_year.individual_software("Windows XP").count],
-							 :labels => ["Snow Leopard", "Leopard", "Windows 7", "Vista", "XP"]) %>
+<%= image_tag Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
+							 :size   => '300x120',
+							 :data   => @software.this_year.os.chart_data,
+							 :labels => @software.this_year.os.chart_label) %>
 
 
 <h3>Software Sales - All-Time</h3>
@@ -114,18 +104,13 @@
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d( :title => 'Office Sales - Mac vs. PC',
-							 :size => '400x160',
-							 :data => [@software.individual_software("Office 2008 (Mac)").count,
-								       @software.individual_software("Office 2007 (Windows)").count],
-							 :labels => ["Office 2008 (Mac)", "Office 2007 (Windows)"]) %>
+<%= image_tag Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
+							 :size   => '300x120',
+							 :data   => @software.office.chart_data,
+							 :labels => @software.office.chart_label) %>
 
-<%= image_tag Gchart.pie_3d( :title => 'OS Sales - Mac vs. PC',
-							 :size => '300x120',
-							 :data => [@software.individual_software("Mac OSX 10.6 Snow Leopard").count,
-							  	       @software.individual_software("OSX 10.5 Leopard").count,
-							 		   @software.individual_software("Windows 7").count,
-							 		   @software.individual_software("Windows Vista").count,
-							 		   @software.individual_software("Windows XP").count],
-							 :labels => ["Snow Leopard", "Leopard", "Windows 7", "Vista", "XP"]) %>
+<%= image_tag Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
+							 :size   => '300x120',
+							 :data   => @software.os.chart_data,
+							 :labels => @software.os.chart_label) %>
 
