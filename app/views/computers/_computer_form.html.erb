@@ -85,7 +85,7 @@
 
 <div id="hardware_assignments" class="clear">
 	
-	<h1>Nested Form</h1>
+	<h3>User Information</h3>
 	<% f.fields_for :hardware_assignments do |hw| %>
 	  <p>
 	  	<%= hw.label :id, 'Department' %>
@@ -93,7 +93,11 @@
 	  </p>
 	  <p>
 	  	<%= hw.label :id, 'User' %>
-		<%= hw.collection_select(:user_id, User.all, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
+		<%= hw.collection_select(:user_id, User.ordered, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Primary Computer' %>
+		<%= hw.check_box :primary_computer %>
 	  </p>
 	<% end %>
 </div>

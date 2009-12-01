@@ -237,7 +237,7 @@ div.content ul li a:hover {
 #computer_new_purchase_info, #computer_edit_purchase_info, #computer_edit_model_info {
 	float: left;
 	width: 300px;
-	height: 250px;
+	height: 200px;
 }
 
 #computer_show_computer_info1, #computer_show_computer_info2, #computer_show_user_info, #computer_show_purchase_info {
@@ -267,6 +267,7 @@ div.content ul li a:hover {
 }
 
 #hardware_assignments {
+	background-color: #F1F1F1;
 	border: 1px solid #999;
 	width: 400px;
 	padding: 20px;
