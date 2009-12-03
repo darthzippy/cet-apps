@@ -42,10 +42,14 @@ ol, ul {
 	list-style: none;
 }
 
-a {
+a, a:visited {
   color: #215f89;
 }
 
+a:hover {
+	color: #333;
+  	background: white;
+}
 
 a img {border: none; }
 

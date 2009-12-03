@@ -54,7 +54,7 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if @shift.save
-        format.html { redirect_to(@shift) }
+        format.html
         format.xml  { render :xml => @shift, :status => :created, :location => @shift }
         format.js
       else

@@ -31,6 +31,7 @@ Rails::Initializer.run do |config|
   config.gem 'fastercsv'
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   config.gem "justinfrench-formtastic", :lib => 'formtastic', :source => 'http://gems.github.com'
+  config.gem 'bullet', :source => 'http://gemcutter.org'
   #config.gem 'activeldap'
   #config.gem "binarylogic-searchlogic"
   
@@ -72,5 +73,15 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+  
+  config.after_initialize do
+    Bullet.enable = false 
+    Bullet.alert = true
+    Bullet.bullet_logger = true  
+    Bullet.console = true
+    Bullet.growl = true
+    Bullet.rails_logger = true
+    Bullet.disable_browser_cache = true
+  end
   
 end
