@@ -49,7 +49,8 @@
 			<% if logged_in? %>
 			  <h1>
 			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %> | <%= link_to 'logout', :controller => 'session', :action => 'logout' %></h1>
-			<% end %>	
+			<% end %>
+			<%= shift_for_sidebar.end_time %>	
 		</div>
 		<br />
 

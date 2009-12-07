@@ -55,6 +55,40 @@ namespace :utils do
       File.cp(src, dest)
       puts "Combined Bb enrollment file uploaded to NAS1"
     end
+    
+    desc "Download Blackboard files"
+    task :download_next => :nas_login do
+      src = "#{folder}/Blackboard/Blackboard_NextSession_Export_Roles_Students.csv"
+      dest = "#{lib}/bb"
+      File.cp(src, dest)
+      puts "Blackboard files copied to lib/bb folder"
+    end
+    
+    desc "Run course combine script"
+    task :course_combine_next => :download_next do
+      src = "#{lib}/bb/Blackboard_NextSession_Export_Roles_Students.csv"
+      dest = "#{folder}/Blackboard/Blackboard_NextSession_Export_Roles_Students-COMBINED.csv"
+      
+      @courses = Course.all
+      
+      File.open(src, "r+") do |file|  
+        lines = file.readlines
+        
+        @courses.each do |course|
+          puts "Substituting #{course.destination} for #{course.source}..."
+          lines.each do |line|
+            line.gsub!(/#{course.source.upcase}/, course.destination.upcase)
+          end
+        end
+        
+        file.pos = 0
+        file.print lines
+        file.truncate(file.pos)
+      end
+      
+      File.cp(src, dest)
+      puts "Combined Bb enrollment file uploaded to NAS1"
+    end
  
   end #namespace :bb
   

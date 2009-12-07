@@ -1,4 +1,4 @@
-<h1>Listing shifts</h1>
+<h3>OPEN SHIFTS</h3>
 
 <table id="shifts_table" cellspacing="0">
   <tr>
@@ -10,7 +10,41 @@
 	<th></th>
   </tr>
 
-<% for shift in @shifts %>
+<% for shift in @shifts.open %>
+  <%= render :partial => 'shift', :object => @shift = shift %>
+<% end %>
+</table>
+
+<h3>CLOSED SHIFTS</h3>
+
+<table id="shifts_table" cellspacing="0">
+  <tr>
+    <th>Cet user</th>
+    <th>Start time</th>
+    <th>End time</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+
+<% for shift in @shifts.closed %>
+  <%= render :partial => 'shift', :object => @shift = shift %>
+<% end %>
+</table>
+
+<h3>ALL SHIFTS</h3>
+
+<table id="shifts_table" cellspacing="0">
+  <tr>
+    <th>Cet user</th>
+    <th>Start time</th>
+    <th>End time</th>
+	<th></th>
+	<th></th>
+	<th></th>
+  </tr>
+
+<% for shift in @allshifts %>
   <%= render :partial => 'shift', :object => @shift = shift %>
 <% end %>
 </table>

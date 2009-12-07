@@ -20,5 +20,6 @@ class Shift < ActiveRecord::Base
   }
 
   named_scope :open, :conditions => ["end_time is ?", nil]
+  named_scope :closed, :conditions => ["end_time is not ?", nil]
   
 end
