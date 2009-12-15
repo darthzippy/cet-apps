@@ -2,6 +2,7 @@
 	<td><%=h shift.cet_user.display_name %></td>
 	<td class="start_time"><%=h shift.start_time.to_s(:long) unless shift.start_time.nil? %></td>
 	<td class="end_time"><%=h shift.end_time.to_s(:long) unless shift.end_time.nil? %></td>
+	<td><%= distance_of_time_in_words(shift.start_time, shift.end_time) unless shift.end_time.nil? %></td>
 	<td><%= link_to 'Show', shift %></td>
 	<td><%= link_to 'Edit', edit_shift_path(shift) %></td>
 	<td><%= link_to 'Destroy', shift, :confirm => 'Are you sure?', :method => :delete %></td>
