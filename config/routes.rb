@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :courses
-
 
   map.resources :cet_users
   map.resources :searches, :collection => { :edit_multiple => :post, :update_multiple => :put }
@@ -12,12 +10,14 @@ ActionController::Routing::Routes.draw do |map|
     }
   map.resources :computers, :has_many => :comments
   map.resources :computers, :collection => { :new_quick => :post, :create_quick => :put }
+  map.resources :users, :as => 'gordonusers'
   map.resources :users, :has_many => :licenses
   map.resources :users, :has_many => :checkouts
   map.resources :softwares, :as => 'software'
   map.resources :licenses
   map.resources :comments
   map.resources :dvds
+  map.resources :courses
 
   map.root :users
 

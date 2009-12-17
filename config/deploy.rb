@@ -24,9 +24,9 @@ ssh_options[:forward_agent] = true
 # via the :deploy_to variable:
 # set :deploy_to, "/var/www/#{application}"
 
-role :app, '172.16.9.158'
-role :web, '172.16.9.158'
-role :db,  '172.16.9.158', :primary => true
+role :app, 'cetserv.gordon.edu'
+role :web, 'cetserv.gordon.edu'
+role :db,  'cetserv.gordon.edu', :primary => true
 
 task :initialize_gems do
   'rake gems:install'
