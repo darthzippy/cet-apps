@@ -2,9 +2,10 @@
 <h3>Software licenses</h3>
 NOTE: Each student gets ONE Operating System and ONE Office Suite
 	<div id="licenses">
-	  <%= render :partial => 'licenses/licenses',
-	 			 :locals  => {:licenses => @user.licenses,
-							  :user     => @user} %>	
+	  <%= render 'licenses/licenses',
+	 			 {:licenses => @user.licenses,
+				  :user     => @user
+				 } %>	
 	</div>
 
 	<div class="add_links">

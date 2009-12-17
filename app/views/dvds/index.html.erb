@@ -2,11 +2,11 @@
 <%= will_paginate @dvds %>	
 </div>
 
-<%= render :partial => 'search_dvds_by_name' %>
+<%= render 'search_dvds_by_name' %>
 <%= link_to 'Export as CSV', dvds_path(@dvds, :format => :csv), :id => 'dvds_csv' %><br />
 <h2><%= link_to 'New DVD sale', new_dvd_path %></h2><br />
 <h2>DVD Sales</h2>
-<%= render :partial => 'dvds/filter' %>
+<%= render 'dvds/filter' %>
 
 <table cellspacing="0">
   <tr>

@@ -1,4 +1,4 @@
-<%= render :partial => 'search_by_department' %>
+<%= render 'search_by_department' %>
 <br />
 <p>
   <h2><%=h @department.name %></h2>
@@ -18,7 +18,7 @@
 </p>
 
 <div id="departments_show_users">
-	<%= render :partial => 'filter' %>
+	<%= render 'filter' %>
 
 		<table cellspacing="0">
 		  <tr>

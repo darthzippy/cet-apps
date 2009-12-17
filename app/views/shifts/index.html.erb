@@ -11,7 +11,7 @@
   </tr>
 
 <% for shift in @shifts.open %>
-  <%= render :partial => 'shift', :object => @shift = shift %>
+  <%= render 'shift', :object => @shift = shift %>
 <% end %>
 </table>
 
@@ -29,7 +29,7 @@
   </tr>
 
 <% for shift in @shifts.closed %>
-  <%= render :partial => 'shift', :object => @shift = shift %>
+  <%= render 'shift', :object => @shift = shift %>
 <% end %>
 </table>
 
@@ -47,7 +47,7 @@
   </tr>
 
 <% for shift in @allshifts %>
-  <%= render :partial => 'shift', :object => @shift = shift %>
+  <%= render 'shift', :object => @shift = shift %>
 <% end %>
 </table>
 

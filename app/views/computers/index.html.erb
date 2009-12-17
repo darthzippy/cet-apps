@@ -1,9 +1,9 @@
 
 
-<%= render :partial => 'search_by_control' %>
+<%= render 'search_by_control' %>
 
 <h2>COMPUTERS</h2>
-<%= render :partial => 'departments/filter' %>
+<%= render 'departments/filter' %>
 
 <table cellspacing="0">
   <tr>
@@ -17,7 +17,7 @@
   </tr>
 
 <% for computer in @computers %>
-  <%= render :partial => computer %>
+  <%= render computer %>
 <% end %>
 </table>
 <div id="paginate">

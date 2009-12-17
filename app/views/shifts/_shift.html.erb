@@ -7,6 +7,6 @@
 	<td><%= link_to 'Edit', edit_shift_path(shift) %></td>
 	<td><%= link_to 'Destroy', shift, :confirm => 'Are you sure?', :method => :delete %></td>
 	<% if shift.end_time.nil? %>
-      <td class="end_shift_form"><%= render :partial => "shifts/end_shift", :object => @shift %></td>
+      <td class="end_shift_form"><%= render "shifts/end_shift", :object => @shift %></td>
 	<% end %>
 </tr>

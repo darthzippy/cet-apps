@@ -1,4 +1,4 @@
-<%= render :partial => 'search_by_control' %>
+<%= render 'search_by_control' %>
 <br />
 
 <div id="computer_show_content">
@@ -122,7 +122,7 @@
 	<div id="computer_show_comments_list">
 	  <%= link_to 'Add Comment', nil, :id => "add_comment" %>
 	  <div id="comments_list">
-	    <%= render :partial => 'comments/comments', :locals => {:computer => @computer} %>	  	
+	    <%= render 'comments/comments', :computer => @computer %>	  	
 	  </div>
 	</div>
 

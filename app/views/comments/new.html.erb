@@ -2,7 +2,6 @@
 
 <%= error_messages_for :comment %>
 
-<%= render :partial => @comment, 
-  :locals => { :button_name => "Create"} %>
+<%= render @comment, :button_name => "Create" %>
 
 <%= link_to 'Back', computer_comments_path(@computer) %>
