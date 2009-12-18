@@ -32,6 +32,7 @@ Rails::Initializer.run do |config|
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   config.gem "justinfrench-formtastic", :lib => 'formtastic', :source => 'http://gems.github.com'
   config.gem 'haml'
+  config.gem 'mysql'
   #config.gem 'activeldap'
   #config.gem "binarylogic-searchlogic"
   
