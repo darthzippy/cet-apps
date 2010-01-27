@@ -5,7 +5,7 @@ class CreateComputers < ActiveRecord::Migration
       t.string :serial
       t.string :model
       t.string :manufacturer
-      t.datetime :purchase_date
+      t.date :purchase_date
       t.integer :purchase_price
       t.string :purchase_acct
       t.string :status
