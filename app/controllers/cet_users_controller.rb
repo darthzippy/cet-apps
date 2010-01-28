@@ -45,7 +45,7 @@ class CetUsersController < ApplicationController
   # POST /cet_users
   # POST /cet_users.xml
   def create
-    @cet_user = CetUser.new(params[:cet_users])
+    @cet_user = CetUser.new(params[:cet_user])
 
     respond_to do |format|
       if @cet_user.save

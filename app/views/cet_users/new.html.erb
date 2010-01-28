@@ -1,8 +1,29 @@
-<h1>New cet_users</h1>
+<h1>New CET User</h1>
 
-<% form_for(@cet_users) do |f| %>
+<% form_for(@cet_user) do |f| %>
   <%= f.error_messages %>
 
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login, :class => "required" %><br />
+	<span class="phone-format">Ex: first.last</span>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field(:email, :class => "required email") %><br />
+	<span class="phone-format">Ex: first.last@gordon.edu</span>
+  </p>
+  <p>
+    <%= f.label :display_name %><br />
+    <%= f.text_field :display_name, :class => "required" %><br />
+	<span class="phone-format">Ex: Eric Givens</span>
+  </p>
+  <p>
+    <%= f.label :given_name %><br />
+    <%= f.text_field :given_name, :class => "required" %><br />
+	<span class="phone-format">Ex: Eric</span>
+  </p>
+  
   <p>
     <%= f.submit 'Create' %>
   </p>

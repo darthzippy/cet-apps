@@ -31,7 +31,7 @@ jQuery(document).ready(function($){
     return false;
   });
 
-  $('.new_dvd,.edit_dvd,.new_course,.edit_course,.new_computer,.edit_computer').validate();
+  $('.new_dvd,.edit_dvd,.new_course,.edit_course,.new_computer,.edit_computer,.new_cet_user,.edit_cet_user').validate();
 
   var var_name = $('#paid_checkbox').attr('checked')?1:0;
   if (var_name == 1) {
