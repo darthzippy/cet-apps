@@ -1,0 +1,667 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BranfordMagazine 1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-10 19:35+0100\n"
+"PO-Revision-Date: 2008-02-10 19:37+0100\n"
+"Last-Translator: Michael Oeser - DER PRiNZ <kontakt@der-prinz.com>\n"
+"Language-Team: Michael Oeser <support@der-prinz.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: archive.php:45
+#: includes/ui.tabs.php:26
+#: includes/ui.tabs.php:33
+#: includes/ui.tabsNEW.php:27
+#: includes/ui.tabsNEW.php:34
+#: search.php:12
+#: tmpl_3-column-page.php:20
+#: tmpl_3-column-page.php:61
+#: tmpl_3-column-page.php:103
+#@ branfordmagazine
+msgid "Permanent Link to"
+msgstr "Permanent Link zu"
+
+#: 404.php:5
+#@ branfordmagazine
+msgid "Nothing found"
+msgstr "Keine Inhalte gefunden"
+
+#: archive.php:8
+#, php-format
+#@ branfordmagazine
+msgid "%s"
+msgstr "%s"
+
+#: archive.php:11
+#@ branfordmagazine
+msgid "Posts Tagged"
+msgstr "Beitr&auml;ge zum Stichwort"
+
+#: archive.php:16
+#: archive.php:18
+#: archive.php:20
+#, php-format
+#@ branfordmagazine
+msgid "Archive for %s"
+msgstr "Archiv für %s"
+
+#: archive.php:16
+#: includes/comments1.php:34
+#: search.php:13
+#@ branfordmagazine
+msgid "F jS, Y"
+msgstr "j. F Y"
+
+#: archive.php:18
+#@ branfordmagazine
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:23
+#: search.php:7
+#@ branfordmagazine
+msgid "Search Results"
+msgstr "Suchergebnis"
+
+#: archive.php:27
+#@ branfordmagazine
+msgid "All entries by this author"
+msgstr "Alle Beitr&auml;ge dieses Autors"
+
+#: archive.php:31
+#@ branfordmagazine
+msgid "Blog Archives"
+msgstr "Blogarchiv"
+
+#: archive.php:36
+#: archive.php:75
+#: search.php:24
+#@ branfordmagazine
+msgid "Previous entries"
+msgstr "Vorherige Eintr&auml;ge"
+
+#: archive.php:39
+#: archive.php:78
+#: search.php:25
+#@ branfordmagazine
+msgid "Next entries"
+msgstr "N&auml;chste Eintr&auml;ge"
+
+#: archive.php:51
+#: single.php:10
+#@ branfordmagazine
+msgid "By"
+msgstr "Von"
+
+#: single.php:10
+#@ branfordmagazine
+msgid "Category:"
+msgstr "Kategorie:"
+
+#: archive.php:61
+#@ branfordmagazine
+msgid "Posted in"
+msgstr "Ver&ouml;ffentlicht in"
+
+#: archive.php:64
+#@ branfordmagazine
+msgid "No Comments &#187;"
+msgstr "Keine Kommentare &#187;"
+
+#: archive.php:64
+#@ branfordmagazine
+msgid "1 Comment &#187;"
+msgstr "1 Kommentar &#187;"
+
+#: archive.php:83
+#@ branfordmagazine
+msgid "Not Found"
+msgstr "Nichts gefunden"
+
+#: 404.php:8
+#: 404.php:12
+#: archives.php:13
+#@ branfordmagazine
+msgid "Archives by Month:"
+msgstr "Archiv nach Monat:"
+
+#: 404.php:17
+#: archives.php:18
+#@ branfordmagazine
+msgid "Archives by Subject:"
+msgstr "Archiv nach Thema:"
+
+#: includes/comments1.php:3
+#@ branfordmagazine
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Please do not load this page directly. Thanks!"
+
+#: includes/comments1.php:10
+#: includes/comments2.php:7
+#@ branfordmagazine
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Dieser Beitrag ist passwortgesch&uuml;tzt."
+
+#: includes/comments1.php:23
+#@ branfordmagazine
+msgid "No comments"
+msgstr "Keine Kommentare"
+
+#: includes/comments1.php:23
+#@ branfordmagazine
+msgid "One comment"
+msgstr "Ein Kommentar"
+
+#: includes/comments1.php:23
+#@ branfordmagazine
+msgid "comments"
+msgstr "Kommentare"
+
+#: includes/comments1.php:25
+#: includes/comments1.php:26
+#@ branfordmagazine
+msgid "Leave a comment"
+msgstr "Hinterlasse einen Kommentar"
+
+#: includes/comments1.php:32
+#@ branfordmagazine
+msgid "on"
+msgstr "am"
+
+#: includes/comments1.php:35
+#@ branfordmagazine
+msgid "at"
+msgstr "um"
+
+#: includes/comments1.php:42
+#@ branfordmagazine
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar ben&ouml;tigt die Freigabe des Admins"
+
+#: includes/comments1.php:59
+#: includes/comments2.php:38
+#@ branfordmagazine
+msgid "Comments are closed."
+msgstr "Keine Kommentare m&ouml;glich."
+
+#: includes/comments1.php:65
+#@ branfordmagazine
+msgid "Leave Comment"
+msgstr "Schreibe einen Kommentar"
+
+#: includes/comments1.php:69
+#@ branfordmagazine
+msgid "You must be"
+msgstr "Du musst"
+
+#: includes/comments1.php:71
+#@ branfordmagazine
+msgid "logged in"
+msgstr "eingeloggt sein"
+
+#: includes/comments1.php:73
+#@ branfordmagazine
+msgid "to post a comment."
+msgstr "um einen Kommentar zu schreiben"
+
+#: includes/comments1.php:79
+#@ branfordmagazine
+msgid "Logged in as"
+msgstr "Eingeloggt als"
+
+#: includes/comments1.php:80
+#: includes/comments2.php:62
+#@ branfordmagazine
+msgid "Log out of this account"
+msgstr "Ausloggen"
+
+#: includes/comments1.php:81
+#@ branfordmagazine
+msgid "Logout &raquo;"
+msgstr "Logout &raquo;"
+
+#: includes/comments1.php:87
+#: includes/comments2.php:67
+#@ branfordmagazine
+msgid "Name"
+msgstr "Name"
+
+#: includes/comments1.php:88
+#: includes/comments1.php:95
+#: includes/comments2.php:67
+#: includes/comments2.php:70
+#@ branfordmagazine
+msgid "(required)"
+msgstr "(erforderlich)"
+
+#: includes/comments1.php:94
+#: includes/comments2.php:70
+#@ branfordmagazine
+msgid "Mail (will not be published)"
+msgstr "Mail (wird nicht ver&ouml;ffentlicht)"
+
+#: includes/comments1.php:101
+#: includes/comments2.php:73
+#@ branfordmagazine
+msgid "Website"
+msgstr "Website"
+
+#: includes/comments1.php:109
+#: includes/comments2.php:81
+#@ branfordmagazine
+msgid "Submit Comment"
+msgstr "Kommentar senden"
+
+#: tmpl_featured-page.php:24
+#@ branfordmagazine
+msgid "Recent Posts"
+msgstr "Letzte Beitr&auml;ge"
+
+#: page.php:9
+#: single.php:16
+#: tmpl_featured-page.php:43
+#: tmpl_fullwidth-page.php:14
+#@ branfordmagazine
+msgid "Read the rest of this page"
+msgstr "Weiterlesen..."
+
+#: page.php:11
+#: single.php:18
+#: tmpl_featured-page.php:44
+#: tmpl_fullwidth-page.php:16
+#@ branfordmagazine
+msgid "Pages"
+msgstr "Seiten"
+
+#: page.php:11
+#: single.php:18
+#: tmpl_featured-page.php:44
+#: tmpl_fullwidth-page.php:16
+#@ branfordmagazine
+msgid "number"
+msgstr "Anzahl"
+
+#: links.php:11
+#@ branfordmagazine
+msgid "Links:"
+msgstr "Links:"
+
+#: search.php:30
+#@ branfordmagazine
+msgid "No posts found. Try a different search?"
+msgstr "Nichts gefunden. Neue Suche?"
+
+#: searchform.php:3
+#@ branfordmagazine
+msgid "Search"
+msgstr "Suche"
+
+#: sidebar.php:16
+#: tmpl_3-column-page.php:31
+#: tmpl_3-column-page.php:73
+#: tmpl_3-column-page.php:115
+#: tmpl_3-column-pageSAVE.php:37
+#: tmpl_3-column-pageSAVE.php:85
+#: tmpl_3-column-pageSAVE.php:133
+#@ branfordmagazine
+msgid "More from this category"
+msgstr "Mehr aus dieser Kategorie"
+
+#: sidebar.php:26
+#@ branfordmagazine
+msgid "View all posts filed under"
+msgstr "Alle Beitr&auml;ge in der Kategorie"
+
+#: sidebar.php:26
+#@ branfordmagazine
+msgid "Archive for"
+msgstr "Archiv für"
+
+#: sidebar.php:51
+#@ branfordmagazine
+msgid "Browse Categories"
+msgstr "Kategorien durchsuchen"
+
+#: sidebar.php:74
+#@ branfordmagazine
+msgid "Browse Archives"
+msgstr "Archive durchsuchen"
+
+#: sidebar.php:81
+#@ branfordmagazine
+msgid "Stay informed"
+msgstr "Auf dem Laufenden bleiben"
+
+#: sidebar.php:88
+#@ branfordmagazine
+msgid "Who writes"
+msgstr "Wer schreibt"
+
+#: archive.php:49
+#: single.php:10
+#@ branfordmagazine
+msgid "M jS, Y"
+msgstr "j. F Y"
+
+#: single.php:26
+#@ branfordmagazine
+msgid "Sorry, no posts matched your criteria."
+msgstr "Leider keine Eintr&auml;ge zur Sucheanfrage gefunden."
+
+#: 404.php:7
+#@ branfordmagazine
+msgid "Sorry, but it seems as if the content you are looking for has been moved or deleted. Please try the sitesearch, look up the archives or go to the homepage."
+msgstr "Entschuldigen Sie. Offensichtlich existiert die von Ihnen aufgerufene Seite nicht mehr. Bitte probieren Sie die Suchfunktion, oder beginnen Sie auf der Homepage."
+
+#: archive.php:64
+#@ branfordmagazine
+msgid "% comment"
+msgid_plural "% comments"
+msgstr[0] "% Kommentar"
+msgstr[1] "% Kommentare"
+
+#: includes/comments2.php:16
+#@ branfordmagazine
+msgid "No Comments"
+msgstr "Keine Kommentare"
+
+#: includes/comments2.php:16
+#@ branfordmagazine
+msgid "One Comment"
+msgstr "Ein Kommentar"
+
+#: includes/comments2.php:16
+#@ branfordmagazine
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: includes/comments2.php:16
+#, php-format
+#@ branfordmagazine
+msgid "to &#8220;%s&#8221;"
+msgstr "auf &quot;% s&quot;"
+
+#: includes/comments2.php:48
+#@ branfordmagazine
+msgid "Leave a Comment"
+msgstr "Schreibe einen Kommentar"
+
+#: includes/comments2.php:48
+#, php-format
+#@ branfordmagazine
+msgid "Leave a Comment for %s"
+msgstr "Schreibe einen Kommentar für % s"
+
+#: includes/comments2.php:55
+#, php-format
+#@ branfordmagazine
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Sie müssen <a href=\\\"%s\\\">in</a> um einen Kommentar schreiben <a href=\\\"%s\\\">angemeldet</a> werden."
+
+#: includes/comments2.php:62
+#, php-format
+#@ kubrick
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr ""
+
+#: includes/comments2.php:62
+#@ branfordmagazine
+msgid "Log out &raquo;"
+msgstr "Melden Sie sich »"
+
+#: includes/comments2.php:77
+#, php-format
+#@ branfordmagazine
+msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+msgstr "<strong>XHTML:</strong> Sie können diese <code>%s</code> verwenden <code>%s</code>"
+
+#: includes/ui.tabs.php:34
+#: includes/ui.tabsNEW.php:35
+#@ branfordmagazine
+msgid "[continue reading...]"
+msgstr "[weiterlesen ...]"
+
+#: sidebar.php:58
+#@ branfordmagazine
+msgid "Ads &amp; Sponsors"
+msgstr "Ads &amp; Sponsors"
+
+#: sidebar.php:76
+msgid "Select Month"
+msgstr ""
+
+#: tools/theme-options.php:10
+msgid ""
+"<h3>Michael Oeser DER PRiNZ - Information</h3>\n"
+"\t\t\t\t\t\t\t\t\t\t<p>If you want to stay updated on regular WordPress tipps & tricks please visit my <a href=\"http://www.michaeloeser.de\" title=\"www.michaeloeser.de\">Website</a>, or subscribe via <a href=\"http://feeds.feedburner.com/michaeloeser\" title=\"RSS Feed\">RSS Feed</a> or <a href=\"http://feedburner.google.com/fb/a/mailverify?uri=michaeloeser\">email.</a><br />For all kind of issues concerning my themes I do offer support via my <a href=\"http://www.michaeloeser.de/support/support-forum/\" title=\"Support Forum\">Support Forum</a> only. Please consider registering. It´s worth it and can save you hours.</p>\n"
+"\t\t\t\t\t\t\t\t\t\t<p><strong>INFO:</strong> All preset IDs are just examples and do match the categories in my demodatabase. In most cases they will not match the IDs in YOUR database!</p><hr /><br /><br />"
+msgstr ""
+
+#: tools/theme-options.php:15
+msgid ""
+"<h3>Setup the leadarticle</h3>\n"
+"\t\t\t\t<p>The leadarticle is the most recent newsarticle displayed in the tabbed area of the homepage</p>"
+msgstr ""
+
+#: tools/theme-options.php:19
+msgid "Leadarticle category"
+msgstr ""
+
+#: tools/theme-options.php:20
+msgid "Enter the ID of the category that will be used as the leadarticle category"
+msgstr ""
+
+#: tools/theme-options.php:25
+msgid "Leadarticle number of posts"
+msgstr ""
+
+#: tools/theme-options.php:26
+msgid "Enter a number of posts displayed in the leadarticle (default = 1)"
+msgstr ""
+
+#: tools/theme-options.php:28
+#: tools/theme-options.php:67
+#: tools/theme-options.php:107
+#: tools/theme-options.php:119
+#: tools/theme-options.php:131
+msgid "1"
+msgstr ""
+
+#: tools/theme-options.php:34
+msgid ""
+"<h3>Setup the featured articles in the left column</h3>\n"
+"\t\t\t\t<p>The featured articles are the articles (three by default) in the left column of the homepage. They are taken from one specific category, typicallly called \"featured articles\"</p>"
+msgstr ""
+
+#: tools/theme-options.php:38
+msgid "Featured articles category"
+msgstr ""
+
+#: tools/theme-options.php:39
+msgid "Enter the ID of the category that will be used as the featured article category"
+msgstr ""
+
+#: tools/theme-options.php:44
+msgid "Featured articles number of posts"
+msgstr ""
+
+#: tools/theme-options.php:45
+msgid "Enter a number of posts displayed in the featured articles (default = 3)"
+msgstr ""
+
+#: tools/theme-options.php:47
+msgid "3"
+msgstr ""
+
+#: tools/theme-options.php:54
+msgid ""
+"<h3>Setup the homepage middle column</h3>\n"
+"\t\t\t\t<p>In the middle column of the homepage all other categories are displayed. Always the most recent article from the categories defined here will be displayed</p>"
+msgstr ""
+
+#: tools/theme-options.php:58
+msgid "Homepage categories"
+msgstr ""
+
+#: tools/theme-options.php:59
+msgid "Enter the IDs of the categories separated by a comma (e.g. 3,5,7,8,9)"
+msgstr ""
+
+#: tools/theme-options.php:64
+msgid "Homepage categories number of posts per category"
+msgstr ""
+
+#: tools/theme-options.php:65
+msgid "Enter a number of posts per category displayed in the in the middle column of the homepage (default = 1)"
+msgstr ""
+
+#: tools/theme-options.php:74
+msgid ""
+"<h3>Setup the Sidebar</h3>\n"
+"\t\t\t\t<p>Here you can define how many newsheadlines are displayed on the homepage sidebar and which categories should NOT appear in the list of categories. It makes sense not to display the \"featured\" and also the \"news\" category. But it´s up to you. If you use widgets in the sidebar then you don´t need to care about this section. Widgets will completely replace the default stuff.</p>"
+msgstr ""
+
+#: tools/theme-options.php:78
+msgid "Number of news in the homepage sidebar"
+msgstr ""
+
+#: tools/theme-options.php:79
+msgid "Enter the number of news you want to display (default = 5)"
+msgstr ""
+
+#: tools/theme-options.php:81
+#: tools/theme-options.php:101
+msgid "5"
+msgstr ""
+
+#: tools/theme-options.php:84
+msgid "Sidebar categories to exclude"
+msgstr ""
+
+#: tools/theme-options.php:85
+msgid "Enter the IDs of the categories separated by a comma (e.g. 4,6)"
+msgstr ""
+
+#: tools/theme-options.php:87
+msgid "4,6"
+msgstr ""
+
+#: tools/theme-options.php:94
+msgid ""
+"<h3>Setup the 3-column page template</h3>\n"
+"\t\t\t\t<p>The 3-column page is a special template to display content from three different categories in a very prominent way.</p>"
+msgstr ""
+
+#: tools/theme-options.php:98
+msgid "3 column page left side category"
+msgstr ""
+
+#: tools/theme-options.php:99
+msgid "Enter the ID of the category that will be used in the left column of the 3-column page"
+msgstr ""
+
+#: tools/theme-options.php:104
+msgid "3-column page left number of posts per category"
+msgstr ""
+
+#: tools/theme-options.php:105
+msgid "Enter a number of posts displayed in the in the left column of the 3-column page (default = 1)"
+msgstr ""
+
+#: tools/theme-options.php:110
+msgid "3 column page middle category"
+msgstr ""
+
+#: tools/theme-options.php:111
+msgid "Enter the ID of the category that will be used in the middle column of the 3-column page"
+msgstr ""
+
+#: tools/theme-options.php:113
+msgid "6"
+msgstr ""
+
+#: tools/theme-options.php:116
+msgid "3-column page middle number of posts per category"
+msgstr ""
+
+#: tools/theme-options.php:117
+msgid "Enter a number of posts displayed in the in the middle column of the 3-column page (default = 1)"
+msgstr ""
+
+#: tools/theme-options.php:122
+msgid "3 column page right side category"
+msgstr ""
+
+#: tools/theme-options.php:123
+msgid "Enter the ID of the category that will be used in the right column of the 3-column page"
+msgstr ""
+
+#: tools/theme-options.php:125
+msgid "8"
+msgstr ""
+
+#: tools/theme-options.php:128
+msgid "3-column page right number of posts per category"
+msgstr ""
+
+#: tools/theme-options.php:129
+msgid "Enter a number of posts displayed in the in the right column of the 3-column page (default = 1)"
+msgstr ""
+
+#: tools/theme-options.php:165
+#@ branfordmagazine
+msgid "settings saved."
+msgstr "Einstellungen gespeichert."
+
+#: tools/theme-options.php:166
+#@ branfordmagazine
+msgid "settings reset."
+msgstr "Einstellungen zurückgesetzt."
+
+#: tools/theme-options.php:167
+#@ branfordmagazine
+msgid "widgets reset."
+msgstr "Widgets zurückgesetzt."
+
+#: tools/theme-options.php:179
+#: tools/theme-options.php:191
+#: tools/theme-options.php:212
+#: tools/theme-options.php:238
+#@ branfordmagazine
+msgid "name"
+msgstr ""
+
+#: tools/theme-options.php:182
+#: tools/theme-options.php:197
+#: tools/theme-options.php:205
+#: tools/theme-options.php:248
+#@ branfordmagazine
+msgid "desc"
+msgstr ""
+
+#: tools/theme-options.php:196
+#@ branfordmagazine
+msgid "std"
+msgstr ""
+
+#: tools/theme-options.php:260
+#@ branfordmagazine
+msgid "Save changes"
+msgstr ""
+
+#: tools/theme-options.php:266
+#@ branfordmagazine
+msgid "Reset"
+msgstr ""
+

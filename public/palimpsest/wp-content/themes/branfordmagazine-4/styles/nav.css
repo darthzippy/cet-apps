@@ -1,0 +1,91 @@
+/******************************************
+*   Main or page navigation styles                       
+******************************************/
+
+
+/*Main Navbar */
+
+#nav {
+	background:#666;
+	font-size:1em;
+	}
+	
+#nav, #nav ul {
+	list-style:none;
+	line-height:1;
+	}
+
+#nav a, #nav a:hover {
+	display: block;
+	text-decoration: none;
+	border:none;
+	}
+
+#nav li {
+	float: left;
+	list-style:none;
+	border-right:1px solid #fff;
+	}
+
+#nav a, #nav a:visited {
+	display:block;
+	font-weight:bold;
+	color: #eee;
+	padding:6px 12px;
+	}
+
+#nav a:hover, #nav a:active {
+	background:#333;
+	text-decoration:none;
+	}	
+
+.current_page_item	a, #home .on  {background:#333;}
+	
+	
+	
+/* Dropdown Menus for child pages */		
+
+#nav li ul {/*first level dropdown*/
+	position: absolute;
+	z-index: 10;
+	left: -999em;
+	height: auto;
+	width: 174px;
+	border-bottom: 1px solid #666;
+	}
+	
+#nav li ul ul {/*second level dropdown*/
+	margin: -2em 0 0 172px;
+	}
+
+#nav li:hover ul ul, #nav li.sfhover ul ul {
+	left: -999em;
+	}
+
+#nav li li {
+	width: 172px;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	background:#999;
+	}
+
+#nav li li a, #nav li li a:visited {
+	font-weight:normal;
+	font-size:0.9em;
+	color:#FFF;
+	}
+
+#nav li li a:hover, #nav li li a:active {background:#840000;}	
+	
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul {left: auto;}
+
+a.main:hover {background:none;}
+
+
+
+
+
+	
+
+		
