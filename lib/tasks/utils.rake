@@ -1,5 +1,6 @@
 #require 'config/environment'
 
+
 namespace :utils do
 
   folder = "/Volumes/cet"
@@ -18,6 +19,15 @@ namespace :utils do
       Dir.mkdir "/Volumes/cet"
       sh "mount_smbfs //#{user}:#{pass}@#{nas1} #{folder}"
     end
+  end
+  
+  desc "Upload daily db backup to NAS1"
+  task :upload_backup => :nas_login do
+    src = "/Library/WebServer/apps/current/db/backup/."
+    dest = "#{folder}/CETSERV/CET Apps Daily DB backup"
+    
+    FileUtils.cp_r(src, dest)
+    puts "Daily database backup file uploaded to NAS1"
   end
   
   namespace :bb do
