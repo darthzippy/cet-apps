@@ -47,7 +47,7 @@ namespace :deploy do
 end
 
 after "deploy", "deploy:cleanup"
-after "deploy:cleanup", "deploy:update_crontab"
+#after "deploy:cleanup", "deploy:update_crontab"
 
 Dir[File.join(File.dirname(__FILE__), '..', 'vendor', 'gems', 'hoptoad_notifier-*')].each do |vendored_notifier|
   $: << File.join(vendored_notifier, 'lib')
