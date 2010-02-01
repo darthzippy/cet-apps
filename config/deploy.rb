@@ -42,7 +42,10 @@ namespace :deploy do
   
   desc "Update the crontab file"
   task :update_crontab, :roles => :db do
-    run "cd #{current_path} && whenever"
+    Whenever::CommandLine.execute(
+       :update => true,
+       :set => "environment=#{RAILS_ENV}"
+     )
   end
 end
 
