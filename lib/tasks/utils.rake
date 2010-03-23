@@ -113,7 +113,7 @@ namespace :utils do
       src = "#{lib}/bb/Blackboard_Summer_Export_Roles_Students.csv"
       dest = "#{folder}/Blackboard/Blackboard_Summer_Export_Roles_Students-COMBINED.csv"
       
-      @courses = Course.all
+      @courses = Course.summer
       
       File.open(src, "r+") do |file|  
         lines = file.readlines
