@@ -7,4 +7,6 @@ class Course < ActiveRecord::Base
              :conditions => ['source like ?', "%#{search}%"],
              :order => 'destination ASC'
   end
+  
+  named_scope :summer, :conditions => ["destination LIKE ? OR destination LIKE ?", '%SST%', '%2009MA%']
 end

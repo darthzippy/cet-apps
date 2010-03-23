@@ -23,5 +23,6 @@ every 1.day, :at => '7:00 am' do
   rake "db:backup"
   rake "utils:upload_backup"
   rake "utils:bb:course_combine"
+  rake "utils:bb:course_combine_summer"
   rake "utils:wco:update_users"
 end
