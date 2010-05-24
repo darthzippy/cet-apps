@@ -2,6 +2,15 @@
 
 
 namespace :utils do
+  
+  desc "Move Status to CStatus"
+  task :move_cstatus => :environment do
+    s = Computer.all
+    s.each do |v|
+      v.update_attribute(:cstatus,v.status)
+      puts "Computer #{v.control} status changed to #{v.cstatus}"
+    end
+  end
 
   folder = "/Volumes/cet"
   lib = "/Library/WebServer/apps/current/lib"
