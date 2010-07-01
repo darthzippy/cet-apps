@@ -11,9 +11,38 @@ class DepartmentsController < ApplicationController
   # GET /departments.xml
   def index
     @departments = Department.search(params[:search], params[:page])
+    @all_departments = Department.all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @departments }
+      format.csv do
+        @outfile = "departments_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+
+        csv_data = FasterCSV.generate do |csv|
+          csv << [
+          "Account Number",
+          "...",
+          "Account",
+          "Total"
+          ]
+          @all_departments.each do |dept|
+            #unless dept.nil?
+              csv << [
+              dept.try(:maintenance_account),
+              '“CET Computer Maintenance Charge”',
+              dept.maintenance_fee_total,
+              '“2010/2011 CET Maintenance Charge”'
+              ]
+            #end
+          end
+        end
+
+        send_data csv_data,
+          :type => 'text/csv; charset=iso-8859-1; header=present',
+          :disposition => "attachment; filename=#{@outfile}"
+
+        flash[:notice] = "Export complete!"
+      end
     end
   end
 

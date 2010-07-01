@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100521182947) do
+ActiveRecord::Schema.define(:version => 20091022165339) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -17,19 +17,6 @@ ActiveRecord::Schema.define(:version => 20100521182947) do
     t.string   "display_name"
     t.string   "given_name"
     t.datetime "last_login_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "cetroles", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "cetroles_users", :id => false, :force => true do |t|
-    t.integer  "cetrole_id"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -99,24 +86,9 @@ ActiveRecord::Schema.define(:version => 20100521182947) do
     t.string   "cameron_id"
   end
 
-  create_table "corrections", :force => true do |t|
-    t.string   "status"
-    t.text     "description"
-    t.integer  "computer_id"
-    t.string   "updated_by"
-    t.boolean  "resolved"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "courses", :force => true do |t|
     t.string   "source"
     t.string   "destination"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "dashboards", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -211,12 +183,7 @@ ActiveRecord::Schema.define(:version => 20100521182947) do
     t.datetime "updated_at"
     t.integer  "gordon_id"
     t.string   "on_campus"
-    t.string   "state",      :limit => 11
-    t.string   "country",    :limit => 11
-    t.string   "zip",        :limit => 11
-    t.string   "blank1",     :limit => 11
-    t.string   "blank2",     :limit => 11
-    t.string   "login"
+    t.integer  "hub_id"
   end
 
 end

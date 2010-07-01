@@ -24,4 +24,5 @@
 <%= will_paginate @departments %>	
 </div>
 <br />
-<%= link_to 'New department', new_department_path %>
+<%= link_to 'New department', new_department_path %><br />
+<%= link_to 'Generate list as CSV', departments_path(@all_departments, :format => :csv) %>

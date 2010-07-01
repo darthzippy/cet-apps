@@ -6,6 +6,18 @@ jQuery.noConflict();
 
 
 jQuery(document).ready(function($){
+	
+  function hasAutofocus() {
+	var element = document.createElement('input');
+	return 'autofocus in element;'
+  }
+
+  $(function(){
+    if(!hasAutofocus()){
+	  $('input[autofocus=true]').focus();
+    }	
+  });
+
   $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#twitter-balloon").hide();
 
   $("#os_add").click(function () {
