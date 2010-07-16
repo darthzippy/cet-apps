@@ -15,28 +15,28 @@ namespace :utils do
   folder = "/Volumes/cet"
   lib = "/Library/WebServer/apps/current/lib"
   
-  desc "Create a connection to NAS1"
+  desc "Create a connection to NAS2"
   task :nas_login => :environment do
     user = "eric.givens"
     pass = "Winifred1"
-    nas1 = "nas1/cet"
+    nas2 = "nas2/departments/cet"
     
     if File.exists?(folder)
       puts "#{folder} already mounted"
     else
-      puts "Connecting to #{nas1} as #{user}"
+      puts "Connecting to #{nas2} as #{user}"
       Dir.mkdir "/Volumes/cet"
-      sh "mount_smbfs //#{user}:#{pass}@#{nas1} #{folder}"
+      sh "mount_smbfs //#{user}:#{pass}@#{nas2} #{folder}"
     end
   end
   
-  desc "Upload daily db backup to NAS1"
+  desc "Upload daily db backup to NAS2"
   task :upload_backup => :nas_login do
     src = "/Library/WebServer/apps/current/db/backup/."
     dest = "#{folder}/CETSERV/CET Apps Daily DB backup"
     
     FileUtils.cp_r(src, dest)
-    puts "Daily database backup file uploaded to NAS1"
+    puts "Daily database backup file uploaded to NAS2"
   end
   
   namespace :bb do
@@ -72,7 +72,7 @@ namespace :utils do
       end
       
       File.cp(src, dest)
-      puts "Combined Bb enrollment file uploaded to NAS1"
+      puts "Combined Bb enrollment file uploaded to NAS2"
     end
     
     desc "Download Blackboard files"
@@ -106,7 +106,7 @@ namespace :utils do
       end
       
       File.cp(src, dest)
-      puts "Combined Bb enrollment file uploaded to NAS1"
+      puts "Combined Bb enrollment file uploaded to NAS2"
     end
  
     desc "Download Blackboard files"
@@ -140,7 +140,7 @@ namespace :utils do
       end
       
       File.cp(src, dest)
-      puts "Combined Bb summer enrollment file uploaded to NAS1"
+      puts "Combined Bb summer enrollment file uploaded to NAS2"
     end
   end #namespace :bb
   
