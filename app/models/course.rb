@@ -9,4 +9,5 @@ class Course < ActiveRecord::Base
   end
   
   named_scope :summer, :conditions => ["destination LIKE ? OR destination LIKE ?", '%SST%', '%2009MA%']
+  named_scope :fall, :conditions => ["destination LIKE ?", '%2010FA%']
 end

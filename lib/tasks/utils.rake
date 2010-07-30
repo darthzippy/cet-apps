@@ -54,7 +54,7 @@ namespace :utils do
       src = "#{lib}/bb/Blackboard_Export_Roles_Students.csv"
       dest = "#{folder}/Blackboard/Blackboard_Export_Roles_Students-COMBINED.csv"
       
-      @courses = Course.all
+      @courses = Course.fall
       
       File.open(src, "r+") do |file|  
         lines = file.readlines
