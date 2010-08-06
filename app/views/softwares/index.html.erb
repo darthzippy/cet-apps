@@ -26,7 +26,7 @@
 
 <h2>Stats</h2>
 
-<h3>Software Sales This Semester (Fall 2009)</h3>
+<h3>Software Sales This Semester (Fall 2010)</h3>
 
 <p>Total Software Sales: <%= @software.this_semester.count %></p>
 
@@ -45,15 +45,17 @@
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
-							 :size   => '300x120',
-							 :data   => @software.this_semester.office.chart_data,
-							 :labels => @software.this_semester.office.chart_label) %>
+<%= image_tag ( Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
+							   :size   => '500x200',
+							   :data   => @software.this_semester.office.chart_data,
+							   :labels => @software.this_semester.office.chart_label),
+							   :class => "chart" ) %>
 
-<%= image_tag Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
-							 :size   => '300x120',
-							 :data   => @software.this_semester.os.chart_data,
-							 :labels => @software.this_semester.os.chart_label) %>
+<%= image_tag ( Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
+							   :size   => '500x200',
+							   :data   => @software.this_semester.os.chart_data,
+							   :labels => @software.this_semester.os.chart_label),
+							   :class => "chart" ) %>
 
 <h3>Software Sales This Year (2009)</h3>
 
@@ -74,15 +76,17 @@
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
-							 :size   => '300x120',
-							 :data   => @software.this_year.office.chart_data,
-							 :labels => @software.this_year.office.chart_label) %>
+<%= image_tag ( Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
+							   :size   => '500x200',
+							   :data   => @software.this_year.office.chart_data,
+							   :labels => @software.this_year.office.chart_label),
+							   :class => "chart" ) %>
 
-<%= image_tag Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
-							 :size   => '300x120',
-							 :data   => @software.this_year.os.chart_data,
-							 :labels => @software.this_year.os.chart_label) %>
+<%= image_tag ( Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
+							   :size   => '500x200',
+							   :data   => @software.this_year.os.chart_data,
+							   :labels => @software.this_year.os.chart_label),
+							   :class => "chart" ) %>
 
 
 <h3>Software Sales - All-Time</h3>
@@ -104,13 +108,15 @@
 	</tr>
 </table>
 
-<%= image_tag Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
-							 :size   => '300x120',
-							 :data   => @software.office.chart_data,
-							 :labels => @software.office.chart_label) %>
+<%= image_tag ( Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
+							   :size   => '500x200',
+							   :data   => @software.office.chart_data,
+							   :labels => @software.office.chart_label),
+							   :class => "chart" ) %>
 
-<%= image_tag Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
-							 :size   => '300x120',
-							 :data   => @software.os.chart_data,
-							 :labels => @software.os.chart_label) %>
+<%= image_tag ( Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
+							   :size   => '500x200',
+							   :data   => @software.os.chart_data,
+							   :labels => @software.os.chart_label),
+							   :class => "chart" ) %>
 
