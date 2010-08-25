@@ -54,7 +54,7 @@ namespace :utils do
       src = "#{lib}/bb/BBDelta_Export_Add_Participation.csv"
       dest = "#{folder}/Blackboard/Delta/BBDelta_Export_Add_Participation-COMBINED.csv"
       
-      @courses = Course.fall
+      @courses = Course.all
       
       File.open(src, "r+") do |file|  
         lines = file.readlines
