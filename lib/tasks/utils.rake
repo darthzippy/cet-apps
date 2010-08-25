@@ -43,7 +43,7 @@ namespace :utils do
     
     desc "Download Blackboard files"
     task :download => :nas_login do
-      src = "#{folder}/Blackboard/Blackboard_Export_Roles_Students.csv"
+      src = "#{folder}/Blackboard/Delta/BBDelta_Export_Add_Participation.csv"
       dest = "#{lib}/bb"
       File.cp(src, dest)
       puts "Blackboard files copied to lib/bb folder"
@@ -51,8 +51,8 @@ namespace :utils do
     
     desc "Run course combine script"
     task :course_combine => :download do
-      src = "#{lib}/bb/Blackboard_Export_Roles_Students.csv"
-      dest = "#{folder}/Blackboard/Blackboard_Export_Roles_Students-COMBINED.csv"
+      src = "#{lib}/bb/BBDelta_Export_Add_Participation.csv"
+      dest = "#{folder}/Blackboard/Delta/BBDelta_Export_Add_Participation-COMBINED.csv"
       
       @courses = Course.fall
       
