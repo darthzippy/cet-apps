@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :software_type %><br />
-    <%= f.text_field :software_type %>
+    <%= f.select(:software_type, %w{ OS OFFICE },{:prompt => "Select a Software Type"}) %>
   </p>
   <p>
 	<%= f.label :Active %><br />
