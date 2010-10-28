@@ -5,6 +5,8 @@
 <h2>COMPUTERS</h2>
 <%= render 'departments/filter' %>
 
+<%= link_to 'New computer', new_computer_path %>
+
 <table cellspacing="0">
   <tr>
     <th>Control</th>
@@ -24,4 +26,29 @@
 <%= will_paginate @computers %>	
 </div>
 <br />
-<%= link_to 'New computer', new_computer_path %>
+
+<div id="computer_stats">
+	<h3>Current Faculty/Staff Computer Stats</h3>
+	<p>Compiled at <%= Time.now.to_formatted_s(:long) %></p>
+	
+	<ul>
+	  <li><strong>TOTAL: <%= @computers_in_use.count %></strong></li>
+	  <li>Macs (Intel): <%= @computers_in_use.macs.count %> (<%= @computers_in_use.macs.intel.count %>)</li>
+	  <li>PCs: <%= @computers_in_use.pcs.count %></li>
+	</ul>
+	
+	<p>Excludes all computers marked as 'off inventory' or 'unassigned'</p>
+</div>
+
+<div id="computer_stats_chart1">
+  <%= image_tag (Gchart.pie_3d ( :size => '500x200',
+						         :data => [ (@computers_in_use.macs.count - @computers_in_use.macs.intel.count),@computers_in_use.macs.intel.count, @computers_in_use.pcs.count, ],
+							     :labels => ['Macs', 'Intel Macs', 'PCs'] )
+  ) %>
+</div>
+<div id="computer_stats_chart2">
+<%= image_tag (Gchart.pie_3d ( :size => '500x200',
+						       :data => [ @computers_in_use.macs.laptops.count, @computers_in_use.macs.desktops.count, @computers_in_use.pcs.laptops.count, @computers_in_use.pcs.desktops.count ],
+							   :labels => ['Mac Laptops', 'Mac Desktops', 'PC Laptops', 'PC Desktops'] )
+  ) %>
+</div>

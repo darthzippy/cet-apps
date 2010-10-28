@@ -9,11 +9,13 @@ class ComputersController < ApplicationController
   def index
     @computers = Computer.search(params[:search], params[:page])
     case params[:filter]
-    when 'pcs' then @computers = Computer.pcs.search(params[:search], params[:page])
-    when 'macs' then @computers = Computer.macs.search(params[:search], params[:page])
-    when 'printers' then @computers = Computer.printers.search(params[:search], params[:page])
-    else @computers = Computer.search(params[:search], params[:page])
+      when 'pcs' then @computers = Computer.pcs.search(params[:search], params[:page])
+      when 'macs' then @computers = Computer.macs.search(params[:search], params[:page])
+      when 'printers' then @computers = Computer.printers.search(params[:search], params[:page])
+      else @computers = Computer.search(params[:search], params[:page])
     end
+    @computers_in_use = Computer.in_use
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @computers }

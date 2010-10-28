@@ -27,7 +27,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'mislav-will_paginate', :version => '~> 2.3.11', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem "googlecharts", :lib => "gchart"
-  config.gem 'prawn'
+  #config.gem 'prawn'
   config.gem 'fastercsv'
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   config.gem "justinfrench-formtastic", :lib => 'formtastic', :source => 'http://gems.github.com'

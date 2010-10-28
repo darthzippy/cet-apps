@@ -225,6 +225,10 @@ div.content ul li a:hover {
 	font: 200%;
 }
 
+#computer_stats, #computer_stats_chart1 {
+	float: left;
+}
+
 #computer_show_content {
 	padding: 10px;
 	margin: 20px auto;
