@@ -290,6 +290,10 @@ span.login_tips {
 .index-row td a:hover {
 	text-decoration: underline;
 }
+
+tr.true {
+    background-color: green;
+}
 /*==COMMENTS===*/
 
 a#add_comment {

@@ -14,7 +14,7 @@
     <th>Manufacturer</th>
 	<th>Department</th>
 	<th>User</th>
-	<th>Fee</th>
+	<th>Assignment</th>
 	<th>Options</th>
   </tr>
 
@@ -39,7 +39,7 @@
 	
 	<p>Excludes all computers marked as 'off inventory' or 'unassigned'</p>
 </div>
-
+<br />
 <div id="computer_stats_chart1">
   <%= image_tag (Gchart.pie_3d ( :size => '500x200',
 						         :data => [ (@computers_in_use.macs.count - @computers_in_use.macs.intel.count),@computers_in_use.macs.intel.count, @computers_in_use.pcs.count, ],

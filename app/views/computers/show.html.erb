@@ -115,6 +115,29 @@
 		  <b>User:</b>
 		  <%=h @computer.user.fullname unless @computer.user.nil? %>
 		</p>
+		<p>
+		  <b>Assignment Type:</b>
+		  <%=h @computer.hardware_assignments.first.assignment_type unless @computer.hardware_assignments.first.nil? %>
+		</p>
+
+	    <% if @computer.hardware_assignments.first.special? %>
+	    <p>
+		  <b>Special:</b> 
+	      <%= h @computer.hardware_assignments.first.special %>
+	    </p>
+	    <% end %>
+		
+		<% if @computer.hardware_assignments.first.inventory2010?%>
+		<p>
+		  <b>Included in 2010-2011 Inventory</b>
+		</p>
+		<% end %>
+		
+		<% if @computer.hardware_assignments.first.updated_by %>
+		<p>
+		  <span class="comment_user_info">Last updated by <%= h @computer.hardware_assignments.first.updated_by %> on <%= h @computer.hardware_assignments.first.updated_at.to_formatted_s(:long) unless @computer.hardware_assignments.first.nil?  %></span>
+		</p>
+		<% end %>
 	</div>
 	
 	<div class="clear"></div>
@@ -129,6 +152,7 @@
 	<br />
 	<br />
 	<%= link_to 'Edit', edit_computer_path(@computer) %> |
-	<%= link_to 'Back', computers_path %>	
+	<%= link_to 'Back to Computers', computers_path %> |
+	<%= link_to 'Back To Department', department_path(@computer.departments.first.id) %>	
 </div>
 

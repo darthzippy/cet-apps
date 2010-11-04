@@ -26,15 +26,17 @@
 	  	    <th>Name</th>
 		    <th>Type</th>
 		    <th>Model</th>
+		    <th>Assignment</th>
 			<th>Fee</th>
 		  </tr>
 
 		<% for computer in @computers.has_control_number %>
-		  <tr class="index-row">
+		  <tr class="index-row <%= computer.hardware_assignments.first.inventory2010 %>">
 			<td><%= link_to computer.control, computer_path([computer.id]) %></td>
   			<td><%= computer.hardware_assignments.first.user.fullname unless computer.hardware_assignments.first.user.nil? %></td>
   			<td><%= computer.computer_type %></td>
   			<td><%= computer.model %></td>
+			<td><%= computer.hardware_assignments.first.assignment_type %></td>
  			<td><%=h number_to_currency(computer.maintenance_fee, :precision => 0) unless computer.maintenance_fee.nil? %></td>
 		  </tr>
 	  <% end %>

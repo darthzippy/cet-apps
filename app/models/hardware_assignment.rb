@@ -16,4 +16,12 @@ class HardwareAssignment < ActiveRecord::Base
   belongs_to :computer
   belongs_to :department
   belongs_to :user
+  
+  def assignment_type
+    if fullorpart?
+      [fullorpart,' ',dedicated,' ',standard,' ',special].join
+    else
+      "TBD"
+    end
+  end
 end

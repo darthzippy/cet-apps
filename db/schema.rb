@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091022165339) do
+ActiveRecord::Schema.define(:version => 20101104141011) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -128,6 +128,12 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.boolean  "primary_computer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fullorpart"
+    t.string   "dedicated"
+    t.string   "standard"
+    t.string   "special"
+    t.boolean  "inventory2010"
+    t.string   "updated_by"
   end
 
   create_table "licenses", :force => true do |t|
@@ -183,7 +189,11 @@ ActiveRecord::Schema.define(:version => 20091022165339) do
     t.datetime "updated_at"
     t.integer  "gordon_id"
     t.string   "on_campus"
-    t.integer  "hub_id"
+    t.string   "state",      :limit => 11
+    t.string   "country",    :limit => 11
+    t.string   "zip",        :limit => 11
+    t.string   "blank1",     :limit => 11
+    t.string   "blank2",     :limit => 11
   end
 
 end

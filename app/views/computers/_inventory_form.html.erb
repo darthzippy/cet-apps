@@ -1,0 +1,34 @@
+	  <p>
+	  	<%= hw.label :id, 'Department' %>
+		<%= hw.collection_select(:department_id, Department.all, :id, :name, {:prompt => "Select a Department"}) %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'User' %>
+		<%= hw.collection_select(:user_id, User.ordered, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Primary Computer' %>
+		<%= hw.check_box :primary_computer %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Full or Part Time' %>
+	    <%= hw.select :fullorpart, ['Full Time', 'Part Time'] %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Dedicated or Shared' %>
+	    <%= hw.select :dedicated, ['Dedicated', 'Shared'] %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Standard or Non-Standard' %>
+	    <%= hw.select :standard, ['Standard', 'Non-Standard'] %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Special' %>
+	    <%= hw.select :special, ['Special', 'Lab', 'Kiosk'] %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Full or Part Time' %>
+	    <%= hw.check_box :inventory2010 %>
+	  </p>
+	
+	  <%= hw.hidden_field :updated_by, :value => current_cet_user.display_name %>

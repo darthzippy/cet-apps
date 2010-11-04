@@ -279,6 +279,10 @@ div.content ul li a:hover {
 	margin: 20px;	
 }
 
+tr.true {
+    background-color: #CCFFCC;
+}
+
 
 /*==COMMENTS===*/
 

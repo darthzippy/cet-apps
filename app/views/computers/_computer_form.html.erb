@@ -85,7 +85,7 @@
 
 <div id="hardware_assignments" class="clear">
 	
-	<h3>User Information</h3>
+	<h3>Inventory Information</h3>
 	<% f.fields_for :hardware_assignments do |hw| %>
 	  <p>
 	  	<%= hw.label :id, 'Department' %>
@@ -95,10 +95,37 @@
 	  	<%= hw.label :id, 'User' %>
 		<%= hw.collection_select(:user_id, User.ordered, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
 	  </p>
+	  <br />
+	  <h4>Assignment Type</h4>
+	  <br />
 	  <p>
-	  	<%= hw.label :id, 'Primary Computer' %>
-		<%= hw.check_box :primary_computer %>
+	  	<%= hw.label :id, 'Full-Time' %>
+	    <%= hw.radio_button(:fullorpart, 'Full-Time') %>
+	    <%= hw.label :id, 'Part-Time' %>    
+	    <%= hw.radio_button(:fullorpart, 'Part-Time') %>
 	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Dedicated' %>
+	    <%= hw.radio_button(:dedicated, 'Dedicated') %>
+    	<%= hw.label :id, 'Shared' %>
+	    <%= hw.radio_button(:dedicated, 'Shared') %>
+	  <p>
+	  	<%= hw.label :id, 'Standard' %>
+	    <%= hw.radio_button(:standard, 'Standard') %>
+	    <%= hw.label :id, 'Non-Standard' %>
+	    <%= hw.radio_button(:standard, 'Non-standard') %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Special' %>
+	    <%= hw.select :special, ['Special', 'Lab', 'Kiosk'], {:include_blank => true} %>
+	  </p>
+	  <p>
+	  	<%= hw.label :id, 'Inventory Check 2010-2011' %>
+	    <%= hw.check_box :inventory2010 %>
+	  </p>
+	
+	  <%= hw.hidden_field :updated_by, :value => current_cet_user.display_name %>	
+	
 	<% end %>
 </div>
 
