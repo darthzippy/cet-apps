@@ -132,8 +132,15 @@
 		  <b>Included in 2010-2011 Inventory</b>
 		</p>
 		<% end %>
+		<br />
+		<p>
+		  <b>Needs for Next Year:</b>
+		  <%=h @computer.hardware_assignments.first.nextneed_macpc %> <%=h @computer.hardware_assignments.first.nextneed_laptopdesktop %>
+		  <br />
+		  <b>Note: </b> - <%=h @computer.hardware_assignments.first.nextneed_note %>
+		</p>
 		
-		<% if @computer.hardware_assignments.first.updated_by %>
+		<% if @computer.hardware_assignments.first.updated_by? %>
 		<p>
 		  <span class="comment_user_info">Last updated by <%= h @computer.hardware_assignments.first.updated_by %> on <%= h @computer.hardware_assignments.first.updated_at.to_formatted_s(:long) unless @computer.hardware_assignments.first.nil?  %></span>
 		</p>
