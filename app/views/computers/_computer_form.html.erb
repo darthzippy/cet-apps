@@ -123,6 +123,29 @@
 	  	<%= hw.label :id, 'Inventory Check 2010-2011' %>
 	    <%= hw.check_box :inventory2010 %>
 	  </p>
+	  <br />
+	  <div id="next-inventory">
+		<p>
+		  <b>NEEDS FOR NEXT YEAR</b><br />
+		  <b>CURRENT:</b> <%= @computer.computer_type %>
+		</p>		
+  	    <p>
+	  	  <%= hw.label :id, 'Mac' %>
+	      <%= hw.radio_button(:nextneed_macpc, 'Mac') %>
+	      <%= hw.label :id, 'PC' %>    
+	      <%= hw.radio_button(:nextneed_macpc, 'PC') %>
+	    </p>
+		<p>
+	  	  <%= hw.label :id, 'Laptop' %>
+	      <%= hw.radio_button(:nextneed_laptopdesktop, 'Mac') %>
+	      <%= hw.label :id, 'Desktop' %>    
+	      <%= hw.radio_button(:nextneed_laptopdesktop, 'PC') %>
+	    </p>
+		<p>
+		  <b>NOTES:</b><br />
+		  <%= hw.text_area(:nextneed_note, options = { "cols" => 40, "rows" => 10 }) %>
+		</p>
+	  </div>
 	
 	  <%= hw.hidden_field :updated_by, :value => current_cet_user.display_name %>	
 	
