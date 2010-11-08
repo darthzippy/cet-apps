@@ -20,18 +20,16 @@ class DepartmentsController < ApplicationController
 
         csv_data = FasterCSV.generate do |csv|
           csv << [
+          "Name",
           "Account Number",
-          "...",
-          "Account",
-          "Total"
+          "Maintenance Total"
           ]
           @all_departments.each do |dept|
             #unless dept.nil?
               csv << [
+              dept.name,
               dept.try(:maintenance_account),
-              '“CET Computer Maintenance Charge”',
-              dept.maintenance_fee_total,
-              '“2010/2011 CET Maintenance Charge”'
+              dept.maintenance_fee_total
               ]
             #end
           end

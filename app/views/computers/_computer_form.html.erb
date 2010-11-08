@@ -96,9 +96,14 @@
 		<%= hw.collection_select(:user_id, User.ordered, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
 	  </p>
 	  <br />
-	  <h4>Assignment Type</h4>
+	  <p>
+	  	<%= hw.label :id, 'Inventory Check 2010-2011' %>
+	    <%= hw.check_box :inventory2010 %>
+	  </p>
 	  <br />
 	  <p>
+		<b>Assignment Type</b>
+		<br />
 	  	<%= hw.label :id, 'Full-Time' %>
 	    <%= hw.radio_button(:fullorpart, 'Full-Time') %>
 	    <%= hw.label :id, 'Part-Time' %>    
@@ -107,7 +112,7 @@
 	  <p>
 	  	<%= hw.label :id, 'Dedicated' %>
 	    <%= hw.radio_button(:dedicated, 'Dedicated') %>
-    	<%= hw.label :id, 'Shared' %>
+		<%= hw.label :id, 'Shared' %>
 	    <%= hw.radio_button(:dedicated, 'Shared') %>
 	  <p>
 	  	<%= hw.label :id, 'Standard' %>
@@ -119,17 +124,15 @@
 	  	<%= hw.label :id, 'Special' %>
 	    <%= hw.select :special, ['Special', 'Lab', 'Kiosk'], {:include_blank => true} %>
 	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Inventory Check 2010-2011' %>
-	    <%= hw.check_box :inventory2010 %>
-	  </p>
+
 	  <br />
 	  <div id="next-inventory">
 		<p>
-		  <b>NEEDS FOR NEXT YEAR</b><br />
+		  <b>NEEDS FOR NEXT UPGRADE</b><br />
+		  <br />
 		  <b>CURRENT:</b> <%= @computer.computer_type %>
 		</p>		
-  	    <p>
+	    <p>
 	  	  <%= hw.label :id, 'Mac' %>
 	      <%= hw.radio_button(:nextneed_macpc, 'Mac') %>
 	      <%= hw.label :id, 'PC' %>    
@@ -141,12 +144,13 @@
 	      <%= hw.label :id, 'Desktop' %>    
 	      <%= hw.radio_button(:nextneed_laptopdesktop, 'Desktop') %>
 	    </p>
+	    <br />
 		<p>
-		  <b>NOTES:</b><br />
+		  <b>UPGRADE NOTES:</b><br />
 		  <%= hw.text_area(:nextneed_note, options = { "cols" => 40, "rows" => 10 }) %>
 		</p>
 	  </div>
-	
+
 	  <%= hw.hidden_field :updated_by, :value => current_cet_user.display_name %>	
 	
 	<% end %>

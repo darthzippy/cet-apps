@@ -1,34 +1,65 @@
-	  <p>
-	  	<%= hw.label :id, 'Department' %>
-		<%= hw.collection_select(:department_id, Department.all, :id, :name, {:prompt => "Select a Department"}) %>
-	  </p>
-	  <p>
-	  	<%= hw.label :id, 'User' %>
-		<%= hw.collection_select(:user_id, User.ordered, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
-	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Primary Computer' %>
-		<%= hw.check_box :primary_computer %>
-	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Full or Part Time' %>
-	    <%= hw.select :fullorpart, ['Full Time', 'Part Time'] %>
-	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Dedicated or Shared' %>
-	    <%= hw.select :dedicated, ['Dedicated', 'Shared'] %>
-	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Standard or Non-Standard' %>
-	    <%= hw.select :standard, ['Standard', 'Non-Standard'] %>
-	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Special' %>
-	    <%= hw.select :special, ['Special', 'Lab', 'Kiosk'] %>
-	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Full or Part Time' %>
-	    <%= hw.check_box :inventory2010 %>
-	  </p>
-	
-	  <%= hw.hidden_field :updated_by, :value => current_cet_user.display_name %>
+<p>
+  	<%= hw.label :id, 'Department' %>
+	<%= hw.collection_select(:department_id, Department.all, :id, :name, {:prompt => "Select a Department"}) %>
+  </p>
+  <p>
+  	<%= hw.label :id, 'User' %>
+	<%= hw.collection_select(:user_id, User.ordered, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
+  </p>
+  <br />
+  <p>
+  	<%= hw.label :id, 'Inventory Check 2010-2011' %>
+    <%= hw.check_box :inventory2010 %>
+  </p>
+  <br />
+  <p>
+	<b>Assignment Type</b>
+	<br />
+  	<%= hw.label :id, 'Full-Time' %>
+    <%= hw.radio_button(:fullorpart, 'Full-Time') %>
+    <%= hw.label :id, 'Part-Time' %>    
+    <%= hw.radio_button(:fullorpart, 'Part-Time') %>
+  </p>
+  <p>
+  	<%= hw.label :id, 'Dedicated' %>
+    <%= hw.radio_button(:dedicated, 'Dedicated') %>
+	<%= hw.label :id, 'Shared' %>
+    <%= hw.radio_button(:dedicated, 'Shared') %>
+  <p>
+  	<%= hw.label :id, 'Standard' %>
+    <%= hw.radio_button(:standard, 'Standard') %>
+    <%= hw.label :id, 'Non-Standard' %>
+    <%= hw.radio_button(:standard, 'Non-standard') %>
+  </p>
+  <p>
+  	<%= hw.label :id, 'Special' %>
+    <%= hw.select :special, ['Special', 'Lab', 'Kiosk'], {:include_blank => true} %>
+  </p>
+
+  <br />
+  <div id="next-inventory">
+	<p>
+	  <b>NEEDS FOR NEXT UPGRADE</b><br />
+	  <br />
+	  <b>CURRENT:</b> <%= @computer.computer_type %>
+	</p>		
+    <p>
+  	  <%= hw.label :id, 'Mac' %>
+      <%= hw.radio_button(:nextneed_macpc, 'Mac') %>
+      <%= hw.label :id, 'PC' %>    
+      <%= hw.radio_button(:nextneed_macpc, 'PC') %>
+    </p>
+	<p>
+  	  <%= hw.label :id, 'Laptop' %>
+      <%= hw.radio_button(:nextneed_laptopdesktop, 'Laptop') %>
+      <%= hw.label :id, 'Desktop' %>    
+      <%= hw.radio_button(:nextneed_laptopdesktop, 'Desktop') %>
+    </p>
+    <br />
+	<p>
+	  <b>UPGRADE NOTES:</b><br />
+	  <%= hw.text_area(:nextneed_note, options = { "cols" => 40, "rows" => 10 }) %>
+	</p>
+  </div>
+
+  <%= hw.hidden_field :updated_by, :value => current_cet_user.display_name %>	
