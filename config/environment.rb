@@ -33,6 +33,7 @@ Rails::Initializer.run do |config|
   config.gem "justinfrench-formtastic", :lib => 'formtastic', :source => 'http://gems.github.com'
   config.gem 'haml'
   config.gem 'hoptoad_notifier'
+  config.gem 'pdfkit'
   #config.gem 'activeldap'
   #config.gem "binarylogic-searchlogic"
   
@@ -74,6 +75,8 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+  
+  config.middleware.use "PDFKit::Middleware", :print_media_type => true
 
   
 end

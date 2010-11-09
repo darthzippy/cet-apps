@@ -379,7 +379,7 @@ a#dvds_csv {
 	color: gray;
 }
 
-/*===SOFTWARE===*/
+/*===SOFTWARE===*/	
 
 
 /*===FORM VALIDATION===*/
@@ -391,6 +391,41 @@ label.error {
 	vertical-align: top;
 	font-weight: bold;
 }
+
+/*===PRINT VIEWS===*/
+
+@media print {
+	body.departments {
+		background: #FFF;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.content, #sub-content, #footer { display: none; }
+	
+	#page, #yield {
+		margin: 0;
+		padding: 0;
+	}
+	
+	#content {
+		border: 0px; 
+		padding-top: 0;
+		margin-top: 0;
+	}
+	
+	a { text-decoration: none; }
+	
+	table { padding-left: 50px; }
+		
+	#departments_show_users table { padding-left: 50px; }
+	
+	#departments_show_users table td { padding-bottom: 10px; }
+	
+	#pdf_link { display: none; }
+}
+
+
 /*==========*/
 
 
