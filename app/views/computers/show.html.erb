@@ -119,13 +119,6 @@
 		  <b>Assignment Type:</b>
 		  <%=h @computer.hardware_assignments.first.assignment_type unless @computer.hardware_assignments.first.nil? %>
 		</p>
-
-	    <% if @computer.hardware_assignments.first.special? %>
-	    <p>
-		  <b>Special:</b> 
-	      <%= h @computer.hardware_assignments.first.special %>
-	    </p>
-	    <% end %>
 		
 		<% if @computer.hardware_assignments.first.inventory2010?%>
 		<p>

@@ -101,49 +101,133 @@
 	    <%= hw.check_box :inventory2010 %>
 	  </p>
 	  <br />
+	  <div id="assignment_type">
+		<p>
+		  <b>ASSIGNMENT TYPE</b>	
+		</p>
+		
+		<div class="radio_b">
+	  	  <p>
+	        <%= hw.label :id, 'Full-Time' %>
+	        <%= hw.radio_button(:fullorpart, 'Full-Time') %>
+	      </p>
+	    </div>
+	    <div class="radio_b">
+	      <p>
+	        <%= hw.label :id, 'Part-Time' %>    
+	        <%= hw.radio_button(:fullorpart, 'Part-Time') %>
+		  </p>
+		</div>
+		<div class="radio_b">
+		  <p>
+	 	    <%= hw.label :id, 'Special' %>    
+	        <%= hw.radio_button(:fullorpart, 'Special') %>
+		  </p>
+		</div>
+		<div class="radio_b">
+		  <p>
+		    <%= hw.label :id, 'Lab' %>    
+	        <%= hw.radio_button(:fullorpart, 'Lab') %>
+		  </p>
+		</div>
+		<div class="radio_b">
+		  <p>
+		    <%= hw.label :id, 'Kiosk' %>    
+	        <%= hw.radio_button(:fullorpart, 'Kiosk') %>
+		  </p>
+		</div>
+		<div class="radio_b">
+		  <p>
+		    <%= hw.label :id, 'Printer' %>    
+	        <%= hw.radio_button(:fullorpart, 'Printer') %>
+	      </p>
+	    </div>
+	  </div>
+	  <br />
 	  <p>
-		<b>Assignment Type</b>
-		<br />
-	  	<%= hw.label :id, 'Full-Time' %>
-	    <%= hw.radio_button(:fullorpart, 'Full-Time') %>
-	    <%= hw.label :id, 'Part-Time' %>    
-	    <%= hw.radio_button(:fullorpart, 'Part-Time') %>
+		<b>DEDICATED OR SHARED</b>
 	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Dedicated' %>
-	    <%= hw.radio_button(:dedicated, 'Dedicated') %>
-		<%= hw.label :id, 'Shared' %>
-	    <%= hw.radio_button(:dedicated, 'Shared') %>
-	  <p>
-	  	<%= hw.label :id, 'Standard' %>
-	    <%= hw.radio_button(:standard, 'Standard') %>
-	    <%= hw.label :id, 'Non-Standard' %>
-	    <%= hw.radio_button(:standard, 'Non-standard') %>
-	  </p>
-	  <p>
-	  	<%= hw.label :id, 'Special' %>
-	    <%= hw.select :special, ['Special', 'Lab', 'Kiosk'], {:include_blank => true} %>
-	  </p>
+	  <div class="radio_b">
+	    <p>
+		  <%= hw.label :id, 'Dedicated' %>
+	      <%= hw.radio_button(:dedicated, 'Dedicated') %>
+	    </p>
+	  </div>
+	  <div class="radio_b">
+	    <p>
+	      <%= hw.label :id, 'Shared' %>
+	      <%= hw.radio_button(:dedicated, 'Shared') %>
+	    </p>
+	  </div>
 
 	  <br />
+	  <p>
+		<b>STANDARD OR NON-STANDARD</b>
+	  </p>
+	  <div class="radio_b">
+	    <p>
+	      <%= hw.label :id, 'Standard' %>
+	      <%= hw.radio_button(:standard, 'Standard') %>
+	    </p>
+	  </div>
+	  <div class="radio_b">
+	    <p>
+	      <%= hw.label :id, 'Non-Standard' %>
+	      <%= hw.radio_button(:standard, 'Non-standard') %>
+	    </p>
+	  </div>
+
+	  <br /><br />
+	  
 	  <div id="next-inventory">
 		<p>
 		  <b>NEEDS FOR NEXT UPGRADE</b><br />
 		  <br />
 		  <b>CURRENT:</b> <%= @computer.computer_type %>
 		</p>		
-	    <p>
-	  	  <%= hw.label :id, 'Mac' %>
-	      <%= hw.radio_button(:nextneed_macpc, 'Mac') %>
-	      <%= hw.label :id, 'PC' %>    
-	      <%= hw.radio_button(:nextneed_macpc, 'PC') %>
-	    </p>
-		<p>
-	  	  <%= hw.label :id, 'Laptop' %>
-	      <%= hw.radio_button(:nextneed_laptopdesktop, 'Laptop') %>
-	      <%= hw.label :id, 'Desktop' %>    
-	      <%= hw.radio_button(:nextneed_laptopdesktop, 'Desktop') %>
-	    </p>
+	    
+	    <div id="nextupgrade_macpc">
+		  <p><b>Mac or PC</b></p>
+	  	  <div class="radio_b">
+		    <p>
+		      <%= hw.label :id, 'Mac' %>
+	          <%= hw.radio_button(:nextneed_macpc, 'Mac') %>
+	        </p>
+		  </div>
+	      <div class="radio_b">
+		  <p>
+		    <%= hw.label :id, 'PC' %>    
+	        <%= hw.radio_button(:nextneed_macpc, 'PC') %></p>
+		  </div>
+		  <div class="radio_b">
+		    <p>
+		      <%= hw.label :id, 'N/A' %>    
+	          <%= hw.radio_button(:nextneed_macpc, 'N/A') %>
+	        </p>
+		  </div>
+		</div>
+        
+        <div id="nextupgrade_laptopdesktop">
+		  <p><b>Laptop or Desktop</b></p>
+		  <div class="radio_b">
+			  <p>
+			    <%= hw.label :id, 'Laptop' %>
+		        <%= hw.radio_button(:nextneed_laptopdesktop, 'Laptop') %>
+		      </p>
+			</div>
+		  <div class="radio_b">
+			  <p>
+			    <%= hw.label :id, 'Desktop' %>    
+		        <%= hw.radio_button(:nextneed_laptopdesktop, 'Desktop') %>
+		      </p>
+			</div>
+		  <div class="radio_b">
+			  <p>
+			    <%= hw.label :id, 'N/A' %>    
+		        <%= hw.radio_button(:nextneed_laptopdesktop, 'N/A') %>
+		      </p>
+			</div>
+		</div>
 	    <br />
 		<p>
 		  <b>UPGRADE NOTES:</b><br />

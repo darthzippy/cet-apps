@@ -19,7 +19,7 @@ class HardwareAssignment < ActiveRecord::Base
   
   def assignment_type
     if fullorpart?
-      [fullorpart,' ',dedicated,' ',standard,' ',special].join
+      [fullorpart,' ',dedicated,' ',standard].join
     else
       "TBD"
     end
