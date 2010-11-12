@@ -95,6 +95,8 @@ class Computer < ActiveRecord::Base
   named_scope :intel_old, :conditions => ["model LIKE ? OR model LIKE ? OR model LIKE ? OR model LIKE ? OR model LIKE ? OR model LIKE ?", "%intel%", "%core 2%", "%c2d%", "%macbook pro%", "%mac book pro%", "%xeon%"]
   named_scope :intel, :conditions => ["intel = ?", 1]
   
+  named_scope :in_inventory, :include => :hardware_assignments, :conditions => ["hardware_assignments.inventory2010 = ?", 1]
+  
   named_scope :ordered, lambda { |*order|
     { :include => :user, :order => order.flatten.first || 'users.last ASC' }
   }
