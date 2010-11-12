@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
     }	
   });
 
-  $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#twitter-balloon").hide();
+  $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#twitter-balloon,#intel").hide();
 
   $("#os_add").click(function () {
     $("#add_os").toggle("slow");
@@ -96,5 +96,30 @@ jQuery(document).ready(function($){
 	}
   
   );
+
+	var cpu_type = $("#computer_computer_type").val();
+	  if (cpu_type == 'Mac Laptop') {
+	    $("#intel").show();	
+	  }
+	  if (cpu_type == 'Mac Desktop') {
+	    $("#intel").show();	
+	  }
+	
+	$("#computer_computer_type").change(function()
+	{
+		switch($(this).val())
+		{
+			case 'Mac Laptop':
+				$("#intel").show("slow");
+			break;
+		
+			case 'Mac Desktop':
+				$("#intel").show("slow");
+			break;
+			default:
+					$("#intel").hide();
+		}
+
+	});
 	
 });

@@ -22,18 +22,31 @@
   </div>
 
   <div id="computer_edit_type_info" class="span-9 last">
-	  <p>
-		  <%= f.label :computer_type %><br />
-		  <%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other},{:prompt => "Select a Computer Type"}) %>
-	  </p>
-	  <p>
+	  <div id="computer_type_block">
+		<div id="computer_type">
+	  	  <p>
+			<%= f.label :computer_type %><br />
+			<%= f.select(:computer_type, %w{ PC\ Desktop PC\ Laptop Mac\ Desktop Mac\ Laptop Printer\ -\ B&W Printer\ -\ Color Media\ Equipment Other},{:prompt => "Select a Computer Type"}) %>
+		  </p>	
+	    </div>  
+	    <div id="intel">
+		  <p>
+		    <%= f.label :intel %><br />
+		    <%= f.check_box :intel %>
+		  </p>	  	
+	    </div>
+	  </div>
+	  <div id="warranty_type">
+	  	<p>
 		  <%= f.label :warranty_type %><br />
 		  <%= f.select(:warranty_type, %w{ None AppleCare Standard Accidental HP\ Standard HP\ Accidental Greenpages\ Accidental Printer\ CPC\ Contract Other-Standard },{:prompt => "Select a Warranty Type"}) %>
-	  </p>
-	  <p>
+	    </p>
+	    <p>
 		  <%= f.label :warranty_length %><br />
 		  <%= f.select(:warranty_length, [ ['none',0],['1',1], ['2',2], ['3',3], ['4',4]]) %>
-	  </p>
+	    </p>
+	  </div>
+	  
 	  <p>
 		<% if @computer.is_printer? %>
 		  <%= f.label :cameron_id_id %><br />

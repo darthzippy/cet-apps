@@ -108,6 +108,14 @@ class Computer < ActiveRecord::Base
              :include => {:hardware_assignments => :user}
   end
   
+  def is_intel?
+    if self.intel
+      "Yes"
+    else
+      "No"
+    end
+  end
+  
   def warranty_end_date
     if purchase_date.nil?
     else

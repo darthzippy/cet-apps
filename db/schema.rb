@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101105142104) do
+ActiveRecord::Schema.define(:version => 20101112143814) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20101105142104) do
     t.string   "computer_type"
     t.string   "part_number"
     t.string   "cameron_id"
+    t.boolean  "intel"
   end
 
   create_table "courses", :force => true do |t|
