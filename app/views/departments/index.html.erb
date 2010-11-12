@@ -5,6 +5,7 @@
 <table cellspacing="0">
   <tr>
     <th>Name</th>
+	<th>Inventory Progress</th>
     <th>Maintenance account</th>
 	<th></th>
 	<th></th>
@@ -13,6 +14,7 @@
 <% for department in @departments %>
   <tr id="<%= dom_id(department) %>" class="index-row">
     <td><%= link_to department.name, department %></td>
+	<td id="department_inventory"><%=h department.computers.in_inventory.count %> of <%=h department.computers.count %> computers inventoried</td>
     <td><%=h department.maintenance_account %></td>
     <td><%= link_to 'Edit', edit_department_path(department) %></td>
     <td><%= link_to 'Destroy', department, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -22,6 +24,11 @@
 
 <div id="paginate">
 <%= will_paginate @departments %>	
+</div>
+
+<div id="inventory_percent">
+	2010 INVENTORY IS <span><%= number_to_percentage(inventory_percent, :precision => 4) %> COMPLETE</span>
+	<%= inventory_test %>
 </div>
 <br />
 <%= link_to 'New department', new_department_path %><br />

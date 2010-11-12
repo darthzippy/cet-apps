@@ -12,6 +12,7 @@ class DepartmentsController < ApplicationController
   def index
     @departments = Department.search(params[:search], params[:page])
     @all_departments = Department.all
+    @computers = Computer.in_use
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @departments }

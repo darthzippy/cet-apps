@@ -360,6 +360,11 @@ a#add_comment {
 	background: #fff;
 }
 
+#department_inventory {
+	font-size: 100%;
+	color: #777;
+}
+
 /*===DVDS===*/
 
 #dvd_address_form p {

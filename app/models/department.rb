@@ -21,6 +21,7 @@ class Department < ActiveRecord::Base
   }
   named_scope :controllers_office, :joins => :users, :conditions => [ 'users.department = ?' => "Controller's Office" ]
   
+  
   named_scope :ordered1, lambda { |*order|
     { :order => order.flatten.first || 'created_at DESC' }
   }
