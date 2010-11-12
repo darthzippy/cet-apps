@@ -41,13 +41,13 @@
 </div>
 <br />
 <div id="computer_stats_chart1">
-  <%= image_tag (Gchart.pie_3d ( :size => '500x200',
+  <%= image_tag(Gchart.pie_3d ( :size => '500x200',
 						         :data => [ (@computers_in_use.macs.count - @computers_in_use.macs.intel.count),@computers_in_use.macs.intel.count, @computers_in_use.pcs.count, ],
 							     :labels => ['Macs', 'Intel Macs', 'PCs'] )
   ) %>
 </div>
 <div id="computer_stats_chart2">
-<%= image_tag (Gchart.pie_3d ( :size => '500x200',
+<%= image_tag(Gchart.pie_3d ( :size => '500x200',
 						       :data => [ @computers_in_use.macs.laptops.count, @computers_in_use.macs.desktops.count, @computers_in_use.pcs.laptops.count, @computers_in_use.pcs.desktops.count ],
 							   :labels => ['Mac Laptops', 'Mac Desktops', 'PC Laptops', 'PC Desktops'] )
   ) %>

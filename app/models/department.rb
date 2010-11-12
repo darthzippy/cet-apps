@@ -19,11 +19,13 @@ class Department < ActiveRecord::Base
   named_scope :dept_name, lambda { |dept_name|
      { :conditions => { :name => dept_name } }
   }
-  named_scope :controllers_office, :joins => :users, :conditions => { 'users.department = ?' => "Controller's Office" }
+  named_scope :controllers_office, :joins => :users, :conditions => [ 'users.department = ?' => "Controller's Office" ]
   
   named_scope :ordered1, lambda { |*order|
     { :order => order.flatten.first || 'created_at DESC' }
   }
+  
+  named_scope: in_inventory, :include => :hardware_assignments, :conditions => [ 'hardware_assignments.inventory2010 = ?', 1]
   
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
