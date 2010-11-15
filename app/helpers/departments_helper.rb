@@ -1,10 +1,7 @@
 module DepartmentsHelper
   
   def inventory_percent
-    50/51
+    (Float(@computers.in_inventory.count)/Float(@computers.count))*100
   end
-  
-  def inventory_test
-    @computers.in_inventory.count
-  end
+
 end

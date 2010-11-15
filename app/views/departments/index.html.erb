@@ -12,7 +12,7 @@
   </tr>
 
 <% for department in @departments %>
-  <tr id="<%= dom_id(department) %>" class="index-row">
+  <tr id="<%= dom_id(department) %>" class="index-row <%= department.inventory_complete? %>">
     <td><%= link_to department.name, department %></td>
 	<td id="department_inventory"><%=h department.computers.in_inventory.count %> of <%=h department.computers.count %> computers inventoried</td>
     <td><%=h department.maintenance_account %></td>
@@ -27,8 +27,7 @@
 </div>
 
 <div id="inventory_percent">
-	2010 INVENTORY IS <span><%= number_to_percentage(inventory_percent, :precision => 4) %> COMPLETE</span>
-	<%= inventory_test %>
+	2010 INVENTORY IS <span><%= number_to_percentage(inventory_percent, :precision => 0) %></span> COMPLETE
 </div>
 <br />
 <%= link_to 'New department', new_department_path %><br />

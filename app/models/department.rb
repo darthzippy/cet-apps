@@ -26,7 +26,7 @@ class Department < ActiveRecord::Base
     { :order => order.flatten.first || 'created_at DESC' }
   }
   
-  named_scope: in_inventory, :include => :hardware_assignments, :conditions => [ 'hardware_assignments.inventory2010 = ?', 1]
+  named_scope :in_inventory, :include => :hardware_assignments, :conditions => [ 'hardware_assignments.inventory2010 = ?', 1]
   
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
@@ -43,5 +43,13 @@ class Department < ActiveRecord::Base
     total
   end
 
-  
+  def inventory_complete?
+    if self.computers.in_inventory.count == 0
+      "inventory_incomplete"
+    elsif self.computers.count == self.computers.in_inventory.count
+      "inventory_complete"
+    else
+      "inventory_incomplete"
+    end
+  end
 end
