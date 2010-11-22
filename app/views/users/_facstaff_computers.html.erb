@@ -10,7 +10,7 @@
 		  </tr>
 
 		<% for computer in @user.computers.ordered('purchase_date DESC') %>
-		  <tr>
+		  <tr class="index-row <%= computer.hardware_assignments.first.inventory2010 %>">
   			<td><%= link_to computer.control, computer_path([computer.id]) %></td>
 			<td><%= computer.serial %></td>
   			<td><%= computer.computer_type %></td>
