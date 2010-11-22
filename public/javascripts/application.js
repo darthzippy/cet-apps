@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
     }	
   });
 
-  $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#twitter-balloon,#intel").hide();
+  $("#add_os,#add_office,#hub_checkout,#computer_show_comments_add,#twitter-balloon,#intel,#ip_address").hide();
 
   $("#os_add").click(function () {
     $("#add_os").toggle("slow");
@@ -104,6 +104,12 @@ jQuery(document).ready(function($){
 	  if (cpu_type == 'Mac Desktop') {
 	    $("#intel").show();	
 	  }
+	  if (cpu_type == 'Printer - B&W') {
+	    $("#ip_address").show();	
+	  }
+	if (cpu_type == 'Printer - Color') {
+	    $("#ip_address").show();	
+	  }
 	
 	$("#computer_computer_type").change(function()
 	{
@@ -116,8 +122,17 @@ jQuery(document).ready(function($){
 			case 'Mac Desktop':
 				$("#intel").show("slow");
 			break;
+			
+			case 'Printer - B&W':
+				$("#ip_address").show("slow");
+			break;
+			
+			case 'Printer - Color':
+				$("#ip_address").show("slow");
+			break;
+			
 			default:
-					$("#intel").hide();
+					$("#intel,#ip_address").hide();
 		}
 
 	});

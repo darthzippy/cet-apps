@@ -21,8 +21,10 @@
 		</p>
 		
 		<p>
-		  <b>Intel:</b>
-		  <%=h @computer.is_intel? %>
+		  <% if @computer.is_apple? %>
+		    <b>Intel:</b>
+		    <%=h @computer.is_intel? %>
+		  <% end %>
 		</p>
 
 		<p>
@@ -42,6 +44,12 @@
 		  <b>Type:</b>
 		  <%=h @computer.computer_type %>
 		</p>
+		<p>
+		<% if @computer.is_printer? %>
+		  <b>IP Address:</b>
+		  <%=h @computer.ip_address %>
+		<% end %>
+	    </p>
 	</div>
 
 	<div id="computer_show_computer_info2" class="span-9 last">

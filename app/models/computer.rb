@@ -131,6 +131,12 @@ class Computer < ActiveRecord::Base
     end
   end
   
+  def is_apple?
+    if self.computer_type =~ /(m|M)ac/
+      true
+    end
+  end
+  
   def new_charge
     if computer_type =~ /(l|L)aptop/
       100
