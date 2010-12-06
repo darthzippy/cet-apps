@@ -91,7 +91,7 @@ class Computer < ActiveRecord::Base
   
   named_scope :has_control_number, :conditions => ["NOT (control = ?)", " "]
   named_scope :off_inventory, :include => :departments, :conditions => ["departments.name LIKE ?", "%inventory%"]
-  named_scope :in_use, :include => :departments, :conditions => ["NOT (departments.name LIKE ?) AND NOT (departments.name LIKE ?) AND (computer_type LIKE ? OR computer_type LIKE ?)", "%inventory%", "%unassigned%", "%mac%", "%pc%"]
+  named_scope :in_use, :include => :departments, :conditions => ["NOT (departments.name LIKE ?) AND NOT (departments.name LIKE ?) AND NOT (departments.name LIKE ?) AND (computer_type LIKE ? OR computer_type LIKE ?)", "%inventory%", "%unassigned%", "System", "%mac%", "%pc%"]
   named_scope :intel_old, :conditions => ["model LIKE ? OR model LIKE ? OR model LIKE ? OR model LIKE ? OR model LIKE ? OR model LIKE ?", "%intel%", "%core 2%", "%c2d%", "%macbook pro%", "%mac book pro%", "%xeon%"]
   named_scope :intel, :conditions => ["intel = ?", 1]
   
