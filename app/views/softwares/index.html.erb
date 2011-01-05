@@ -26,7 +26,7 @@
 
 <h2>Stats</h2>
 
-<h3>Software Sales This Semester (Fall 2010)</h3>
+<h3>Software Sales This Semester (Spring 2010)</h3>
 
 <p>Total Software Sales: <%= @software.this_semester.count %></p>
 
@@ -91,32 +91,20 @@
 
 <h3>Software Sales - All-Time</h3>
 
-<p>Total Software Sales: <%= @software.count %></p>
+<p>Total Software Sales: <%= @softwares.count %></p>
 
 <table cellspacing="0">
 	<tr>
-		<% @software.each do |software| %>
+		<% @softwares.each do |software| %>
 		  <th><%= software.name %></th>
 		<% end %>
 	</tr>
 	<tr>
 
-		<% @software.each do |software| %>
+		<% @softwares.each do |software| %>
 	      <td><%= software.licenses_count %></td>
 	    <% end %>
 
 	</tr>
 </table>
-
-<%= image_tag ( Gchart.pie_3d( :title  => 'Office Sales - Mac vs. PC',
-							   :size   => '500x200',
-							   :data   => @software.office.chart_data,
-							   :labels => @software.office.chart_label),
-							   :class => "chart" ) %>
-
-<%= image_tag ( Gchart.pie_3d( :title  => 'OS Sales - Mac vs. PC',
-							   :size   => '500x200',
-							   :data   => @software.os.chart_data,
-							   :labels => @software.os.chart_label),
-							   :class => "chart" ) %>
 

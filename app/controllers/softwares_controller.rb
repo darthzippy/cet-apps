@@ -9,7 +9,7 @@ class SoftwaresController < ApplicationController
   # GET /softwares
   # GET /softwares.xml
   def index
-    @softwares = Software.find(:all, :include => :licenses, :order => "software_type DESC, name ASC")
+    @softwares = Software.total_licenses
     @software = Software.total_licenses.active
     @licenses = License
 

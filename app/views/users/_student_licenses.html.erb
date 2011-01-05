@@ -22,7 +22,7 @@ NOTE: Each student gets ONE Operating System and ONE Office Suite
 		<% form_for [@user, @license] do |f| -%>
 			<p>
 			  <label>OPERATING SYSTEM</label>
-			  <%= f.collection_select :software_id, Software.os, :id, :name %>
+			  <%= f.collection_select :software_id, Software.active.os, :id, :name %>
 			</p>
 			<%= f.submit 'Add this license' %>
 		<% end -%>
@@ -35,7 +35,7 @@ NOTE: Each student gets ONE Operating System and ONE Office Suite
 		<% form_for [@user, @license] do |f| -%>
 			<p>
 			  <label>OFFICE SUITE</label>
-			  <%= f.collection_select :software_id, Software.office, :id, :name %>
+			  <%= f.collection_select :software_id, Software.active.office, :id, :name %>
 			</p>
 			<%= f.submit 'Add this license' %>
 		<% end -%>

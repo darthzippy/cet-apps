@@ -106,7 +106,7 @@ class Computer < ActiveRecord::Base
   def self.search(search, page)
     paginate :per_page => 15, :page => page,
              :conditions => ['control like ? OR serial like ? OR cameron_id like ?', "%#{search}%", "%#{search}%", "%#{search}%"],
-             :order => 'purchase_date',
+             :order => 'purchase_date DESC',
              :include => {:hardware_assignments => :user}
   end
   

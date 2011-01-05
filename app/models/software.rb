@@ -24,7 +24,7 @@ class Software < ActiveRecord::Base
                                :order  => "software_type DESC, name ASC"
                                
   named_scope :this_year, lambda { { :conditions => [ "licenses.created_at BETWEEN ? AND ?", "2010-08-14 01:00:00", Time.now.utc ] } }
-  named_scope :this_semester, lambda { { :conditions => [ "licenses.created_at BETWEEN ? AND ?", "2010-08-14 01:00:00", Time.now.utc ] } }
+  named_scope :this_semester, lambda { { :conditions => [ "licenses.created_at BETWEEN ? AND ?", "2011-01-01 01:00:00", Time.now.utc ] } }
   
   named_scope :individual_software, lambda { |name| { :conditions => ["name LIKE ?", name] } }
   
