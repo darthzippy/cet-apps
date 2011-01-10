@@ -18,6 +18,7 @@
 </p>
 
 <p id="pdf_link"><%= link_to "Download list(PDF)", department_path(@department, :format => "pdf") %></p>
+<p id="csv_link"><%= link_to 'Generate list as CSV', department_path(@department, :format => :csv) %></p>
 
 <div id="departments_show_users">
 	<%= render 'filter' %>
@@ -48,3 +49,4 @@
 <br \>
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', departments_path %>
+

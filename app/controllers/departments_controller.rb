@@ -50,8 +50,7 @@ class DepartmentsController < ApplicationController
   def show
     @department = Department.find(params[:id], :include => {:computers => :hardware_assignments})
     @computers = @department.computers.ordered
-    #@users = @department.users.ordered('last')
-    #@computers = @department.computers.all
+
     case params[:filter]
     when 'pcs' then @computers = @department.computers.ordered.pcs
     when 'macs' then @computers = @department.computers.ordered.macs
@@ -62,6 +61,62 @@ class DepartmentsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @department }
+      format.csv do
+        @outfile = "dept_computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+
+        csv_data = FasterCSV.generate do |csv|
+          csv << [
+          "Control",
+          "Serial",
+          "Model",
+          "Manufacturer",
+          "Computer Type",
+          "Purchase Date",
+          "Purchase Price",
+          "Account Number",
+          "Warranty Type",
+          "Warranty End Date",
+          "Part Number",
+          "Cameron ID",
+          "Status",
+          "Department",
+          "Maintenance Account",
+          "User",
+          "Email",
+          "Maintenance Fee"
+          ]
+          @department.computers.each do |computer|
+            #unless computer.department.nil?
+              csv << [
+              computer.control,
+              computer.serial,
+              computer.model,
+              computer.manufacturer,
+              computer.computer_type,
+              computer.purchase_date,
+              computer.purchase_price,
+              computer.purchase_acct, 
+              computer.warranty_type,
+              computer.warranty_end,
+              computer.part_number,
+              computer.cameron_id,
+              computer.status,
+              computer.departments.first.try(:name),
+              computer.departments.first.try(:maintenance_account),
+              computer.user.try(:fullname),
+              computer.user.try(:email),
+              computer.try(:maintenance_fee)
+              ]
+            #end
+          end
+        end
+
+        send_data csv_data,
+          :type => 'text/csv; charset=iso-8859-1; header=present',
+          :disposition => "attachment; filename=#{@outfile}"
+
+        flash[:notice] = "Export complete!"
+      end  
     end
   end
 
