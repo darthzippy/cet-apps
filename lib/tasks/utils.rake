@@ -42,40 +42,6 @@ namespace :utils do
   namespace :bb do
     
     desc "Download Blackboard files"
-    task :download => :nas_login do
-      src = "#{folder}/Blackboard/Delta/BBDelta_Export_Add_Participation.csv"
-      dest = "#{lib}/bb"
-      File.cp(src, dest)
-      puts "Blackboard files copied to lib/bb folder"
-    end
-    
-    desc "Run course combine script"
-    task :course_combine => :download do
-      src = "#{lib}/bb/BBDelta_Export_Add_Participation.csv"
-      dest = "#{folder}/Blackboard/Delta/BBDelta_Export_Add_Participation-COMBINED.csv"
-      
-      @courses = Course.all
-      
-      File.open(src, "r+") do |file|  
-        lines = file.readlines
-        
-        @courses.each do |course|
-          puts "Substituting #{course.destination} for #{course.source}..."
-          lines.each do |line|
-            line.gsub!(/#{course.source.upcase}/, course.destination.upcase)
-          end
-        end
-        
-        file.pos = 0
-        file.print lines
-        file.truncate(file.pos)
-      end
-      
-      File.cp(src, dest)
-      puts "Combined Bb enrollment file uploaded to NAS2"
-    end
-    
-    desc "Download Blackboard files"
     task :download_next => :nas_login do
       src = "#{folder}/Blackboard/Blackboard_NextSession_Export_Roles_Students.csv"
       dest = "#{lib}/bb"
@@ -107,40 +73,6 @@ namespace :utils do
       
       File.cp(src, dest)
       puts "Combined Bb enrollment file uploaded to NAS2"
-    end
- 
-    desc "Download Blackboard files"
-    task :download_summer => :nas_login do
-      src = "#{folder}/Blackboard/Blackboard_Summer_Export_Roles_Students.csv"
-      dest = "#{lib}/bb"
-      File.cp(src, dest)
-      puts "Blackboard files copied to lib/bb folder"
-    end
-    
-    desc "Run course combine script"
-    task :course_combine_summer => :download_summer do
-      src = "#{lib}/bb/Blackboard_Summer_Export_Roles_Students.csv"
-      dest = "#{folder}/Blackboard/Blackboard_Summer_Export_Roles_Students-COMBINED.csv"
-      
-      @courses = Course.summer
-      
-      File.open(src, "r+") do |file|  
-        lines = file.readlines
-        
-        @courses.each do |course|
-          puts "Substituting #{course.destination} for #{course.source}..."
-          lines.each do |line|
-            line.gsub!(/#{course.source.upcase}/, course.destination.upcase)
-          end
-        end
-        
-        file.pos = 0
-        file.print lines
-        file.truncate(file.pos)
-      end
-      
-      File.cp(src, dest)
-      puts "Combined Bb summer enrollment file uploaded to NAS2"
     end
   end #namespace :bb
   

@@ -83,7 +83,15 @@ class DepartmentsController < ApplicationController
           "Maintenance Account",
           "User",
           "Email",
-          "Maintenance Fee"
+          "Maintenance Fee,",
+          "Inventory 2010",
+          "Full or Part Time",
+          "Dedicated",
+          "Standard",
+          "Special",
+          "Next - Mac or PC",
+          "Next - Laptop or Desktop",
+          "Next - Note"
           ]
           @department.computers.each do |computer|
             #unless computer.department.nil?
@@ -105,7 +113,15 @@ class DepartmentsController < ApplicationController
               computer.departments.first.try(:maintenance_account),
               computer.user.try(:fullname),
               computer.user.try(:email),
-              computer.try(:maintenance_fee)
+              computer.try(:maintenance_fee),
+              computer.hardware_assignments.first.try(:inventory2010),
+              computer.hardware_assignments.first.try(:fullorpart),
+              computer.hardware_assignments.first.try(:dedicated),
+              computer.hardware_assignments.first.try(:standard),
+              computer.hardware_assignments.first.try(:special),
+              computer.hardware_assignments.first.try(:nextneed_macpc),
+              computer.hardware_assignments.first.try(:nextneed_laptopdesktop),
+              computer.hardware_assignments.first.try(:nextneed_note)
               ]
             #end
           end
