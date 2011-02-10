@@ -5,7 +5,8 @@
 <h2>COMPUTERS</h2>
 <%= render 'departments/filter' %>
 
-<%= link_to 'New computer', new_computer_path %>
+<%= link_to 'New computer', new_computer_path %><br />
+<%= link_to 'Generate list as CSV', computers_path(@all_computers, :format => :csv) %>
 
 <table cellspacing="0">
   <tr>

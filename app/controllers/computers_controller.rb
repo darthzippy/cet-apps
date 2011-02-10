@@ -15,10 +15,83 @@ class ComputersController < ApplicationController
       else @computers = Computer.search(params[:search], params[:page])
     end
     @computers_in_use = Computer.in_use
+    @all_computers = Computer.all
     
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @computers }
+      format.csv do
+        @outfile = "computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
+
+        csv_data = FasterCSV.generate do |csv|
+          csv << [
+          "Control",
+          "Serial",
+          "Model",
+          "Manufacturer",
+          "Computer Type",
+          "Purchase Date",
+          "Purchase Price",
+          "Account Number",
+          "Warranty Type",
+          "Warranty End Date",
+          "Part Number",
+          "Cameron ID",
+          "Status",
+          "Department",
+          "Maintenance Account",
+          "User",
+          "Email",
+          "Maintenance Fee,",
+          "Inventory 2010",
+          "Full or Part Time",
+          "Dedicated",
+          "Standard",
+          "Special",
+          "Next - Mac or PC",
+          "Next - Laptop or Desktop",
+          "Next - Note"
+          ]
+          @all_computers.each do |computer|
+            #unless computer.department.nil?
+              csv << [
+              computer.control,
+              computer.serial,
+              computer.model,
+              computer.manufacturer,
+              computer.computer_type,
+              computer.purchase_date,
+              computer.purchase_price,
+              computer.purchase_acct, 
+              computer.warranty_type,
+              computer.warranty_end,
+              computer.part_number,
+              computer.cameron_id,
+              computer.status,
+              computer.departments.first.try(:name),
+              computer.departments.first.try(:maintenance_account),
+              computer.user.try(:fullname),
+              computer.user.try(:email),
+              computer.try(:maintenance_fee),
+              computer.hardware_assignments.first.try(:inventory2010),
+              computer.hardware_assignments.first.try(:fullorpart),
+              computer.hardware_assignments.first.try(:dedicated),
+              computer.hardware_assignments.first.try(:standard),
+              computer.hardware_assignments.first.try(:special),
+              computer.hardware_assignments.first.try(:nextneed_macpc),
+              computer.hardware_assignments.first.try(:nextneed_laptopdesktop),
+              computer.hardware_assignments.first.try(:nextneed_note)
+              ]
+            #end
+          end
+        end
+
+        send_data csv_data,
+          :type => 'text/csv; charset=iso-8859-1; header=present',
+          :disposition => "attachment; filename=#{@outfile}"
+
+        flash[:notice] = "Export complete!"
+      end
     end
   end
 
