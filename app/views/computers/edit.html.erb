@@ -4,5 +4,8 @@
 
 <%= render 'computer_form', :button_name => "Update" %>
 
-<%= link_to 'Show', @computer %> |
-<%= link_to 'Back', computers_path %>
+<div class="button-group">
+  <%= link_to 'Show', @computer, :class => "button"  %>
+  <%= link_to 'Back', computers_path, :class => "button" %>	
+</div>
+

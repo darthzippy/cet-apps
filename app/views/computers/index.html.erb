@@ -5,8 +5,8 @@
 <h2>COMPUTERS</h2>
 <%= render 'departments/filter' %>
 
-<%= link_to 'New computer', new_computer_path %><br />
-<%= link_to 'Generate list as CSV', computers_path(@all_computers, :format => :csv) %>
+<%= link_to 'New computer', new_computer_path, :class => "button big icon add" %><br />
+<%= link_to 'Generate list as CSV', computers_path(@all_computers, :format => :csv), :class => "button" %>
 
 <table cellspacing="0">
   <tr>
@@ -24,7 +24,7 @@
 <% end %>
 </table>
 <div id="paginate">
-<%= will_paginate @computers %>	
+<%= will_paginate @computers, :class => "button-group" %>	
 </div>
 <br />
 

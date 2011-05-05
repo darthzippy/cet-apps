@@ -1,7 +1,7 @@
 <div class="filter">
-	<p>
-	  <%= link_to_unless_current "Show All", :filter => 'all' %>
-	  <%= link_to_unless_current "To Be Delivered", :filter => 'to_be_delivered' %>
+	<p class="button-group">
+	  <%= link_to "Show All", { :filter => 'all' }, :class => "button pill" %>
+	  <%= link_to "To Be Delivered", { :filter => 'to_be_delivered' }, :class => "button pill" %>
 	</p>	
 </div>
 <div class="clear">

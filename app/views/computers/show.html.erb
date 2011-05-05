@@ -156,7 +156,7 @@
 	<div class="clear"></div>
 
 	<div id="computer_show_comments_list">
-	  <%= link_to 'Add Comment', nil, :id => "add_comment" %>
+	  <%= link_to 'Add Comment', nil, :id => "add_comment", :class => "button icon add" %>
 	  <div id="comments_list">
 	    <%= render 'comments/comments', :computer => @computer %>	  	
 	  </div>
@@ -164,8 +164,10 @@
 
 	<br />
 	<br />
-	<%= link_to 'Edit', edit_computer_path(@computer) %> |
-	<%= link_to 'Back to Computers', computers_path %> |
-	<%= link_to 'Back To Department', department_path(@computer.departments.first.id) %>	
+	<div class="button-group">
+	  <%= link_to 'Edit', edit_computer_path(@computer), :class => "button" %>
+	  <%= link_to 'Back to Computers', computers_path, :class => "button" %>
+	  <%= link_to 'Back To Department', department_path(@computer.departments.first.id), :class => "button" %>
+	</div>	
 </div>
 

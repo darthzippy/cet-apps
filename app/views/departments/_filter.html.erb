@@ -1,9 +1,9 @@
 	<div class="filter">
-		<p>
-		  <%= link_to_unless_current "All", :filter => 'all' %>
-		  <%= link_to_unless_current "PCs", :filter => 'pcs' %>
-		  <%= link_to_unless_current "Macs", :filter => 'macs' %>
-		  <%= link_to_unless_current "Printers", :filter => 'printers' %>
+		<p class="button-group">
+		  <%= link_to "All", { :filter => 'all' }, :class => "button primary pill" %>
+		  <%= link_to "PCs", { :filter => 'pcs' }, :class => "button pill" %>
+		  <%= link_to "Macs", { :filter => 'macs' }, :class => "button pill" %>
+		  <%= link_to "Printers", { :filter => 'printers' }, :class => "button pill" %>
 		</p>	
 	</div>
 	<div class="clear">

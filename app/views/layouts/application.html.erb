@@ -5,6 +5,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>CET Apps: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag("gh-buttons", :media => "screen") %>
   <%= stylesheet_link_tag("scaffold", :media => "screen") %>
   <%= stylesheet_link_tag("application", :media => "all") %> 
   <%= stylesheet_link_tag("/stylesheets/smoothness/jquery-ui-1.7.1.custom.css", :media => "screen") %>
@@ -45,7 +46,7 @@
 		<div id="login">
 			<% if logged_in? %>
 			  <h1>
-			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %> | <%= link_to 'logout', :controller => 'session', :action => 'logout' %></h1>
+			  <span id="logged_in">Logged in as</span> <%= current_cet_user.display_name %> <%= link_to 'LOGOUT', { :controller => 'session', :action => 'logout' }, :class => "button icon settings" %></h1>
 			<% end %>	
 		</div>
 		<br />

@@ -1,13 +1,15 @@
-<h1>Search Results</h1>
+<h2>Search Results</h2><br />
 <% if @search.computers.first.nil? %>
 <h2>NO RESULTS FOUND</h2>
 
-<%= link_to 'New Search', new_search_path %>
+<%= link_to 'New Search', new_search_path, :class => "button" %>
 
 <% else %>
-	<%= link_to 'Export as PDF', search_path(@search, :format => :pdf) %><br />
-	<%= link_to 'Export as CSV', search_path(@search, :format => :csv) %><br />
-	<%= link_to 'New Search', new_search_path %>
+	<div class="button-group">
+	  <%= link_to 'New Search', new_search_path, :class => "button primary pill" %>
+	  <%= link_to 'Export as PDF', search_path(@search, :format => :pdf), :class => "button pill" %>
+	  <%= link_to 'Export as CSV', search_path(@search, :format => :csv), :class => "button pill" %>
+	</div>	
 
 	<% form_tag edit_multiple_searches_path do %>
 	<table cellspacing="0">
@@ -31,7 +33,7 @@
 	  <td><%=h computer.departments.first.name unless computer.departments.first.nil? %></td>
 	  <td><%=h computer.user.fullname unless computer.user.nil? %></td>
 	  <td><%=h number_to_currency(computer.maintenance_fee, :precision => 0) unless computer.maintenance_fee.nil? %></td>
-	  <td class="hide_for_printing"><%= link_to 'Edit', edit_computer_path(computer) %></td>
+	  <td class="hide_for_printing"><%= link_to 'Edit', edit_computer_path(computer), :class => "button icon edit" %></td>
 	</tr>
 	<% end %>
 

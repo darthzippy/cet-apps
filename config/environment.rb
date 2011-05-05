@@ -77,6 +77,5 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
   
   config.middleware.use "PDFKit::Middleware", :print_media_type => true
-
   
 end

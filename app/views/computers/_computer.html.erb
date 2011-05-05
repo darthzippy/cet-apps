@@ -5,5 +5,5 @@
   <td><%=h computer.departments.first.name unless computer.departments.first.nil? %></td>
   <td><%=h computer.user.fullname unless computer.user.nil? %></td>
   <td><%= computer.hardware_assignments.first.assignment_type %></td>
-  <td class="hide_for_printing"><%= link_to 'Edit', edit_computer_path(computer) %></td>
+  <td class="hide_for_printing"><%= link_to 'Edit', edit_computer_path(computer), :class => "button icon edit" %></td>
 </tr>

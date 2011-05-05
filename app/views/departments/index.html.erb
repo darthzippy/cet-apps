@@ -1,6 +1,9 @@
 <%= render 'search_by_department' %>
 
 <h2>DEPARTMENTS</h2>
+<br />
+<%= link_to 'New department', new_department_path, :class => "button big icon add" %><br />
+<%= link_to 'Generate list as CSV', departments_path(@all_departments, :format => :csv), :class => "button" %>
 
 <table cellspacing="0">
   <tr>
@@ -29,6 +32,3 @@
 <div id="inventory_percent">
 	2010 INVENTORY IS <span><%= number_to_percentage(inventory_percent, :precision => 0) %></span> COMPLETE
 </div>
-<br />
-<%= link_to 'New department', new_department_path %><br />
-<%= link_to 'Generate list as CSV', departments_path(@all_departments, :format => :csv) %>

@@ -16,9 +16,13 @@
     CURRENT YEARLY MAINTENANCE TOTAL: <b><%=h number_to_currency(@department.maintenance_fee_total) %></b>
   </h3>
 </p>
-
-<p id="pdf_link"><%= link_to "Download list(PDF)", department_path(@department, :format => "pdf") %></p>
-<p id="csv_link"><%= link_to 'Generate list as CSV', department_path(@department, :format => :csv) %></p>
+<br />
+<div class="button-group">
+  <%= link_to 'Edit Department', edit_department_path(@department), :class => "button primary" %>
+  <%= link_to "Download list(PDF)", department_path(@department, :format => "pdf"), :class => "button" %>
+  <%= link_to 'Generate list as CSV', department_path(@department, :format => :csv), :class => "button" %>
+  <%= link_to 'Back', departments_path, :class => "button" %>
+</div>
 
 <div id="departments_show_users">
 	<%= render 'filter' %>
@@ -45,8 +49,3 @@
 	  <% end %>
 	  </table>	
 </div>
-
-<br \>
-<%= link_to 'Edit', edit_department_path(@department) %> |
-<%= link_to 'Back', departments_path %>
-

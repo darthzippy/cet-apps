@@ -3,9 +3,11 @@
 </div>
 
 <%= render 'search_dvds_by_name' %>
-<%= link_to 'Export as CSV', dvds_path(@dvds, :format => :csv), :id => 'dvds_csv' %><br />
-<h2><%= link_to 'New DVD sale', new_dvd_path %></h2><br />
+
 <h2>DVD Sales</h2>
+<%= link_to 'Export as CSV', dvds_path(@dvds, :format => :csv), :id => 'dvds_csv', :class => "button" %><br />
+<h2><%= link_to 'New DVD sale', new_dvd_path, :class => "button big icon add" %></h2><br />
+
 <%= render 'dvds/filter' %>
 
 <table cellspacing="0">
@@ -31,9 +33,9 @@
     <td><%=h dvd.paid_date.to_s(:long) unless dvd.paid_date.nil? %></td>
     <td><%=h dvd.paid_with %></td>
     <td><%=h dvd.delivered %></td>
-    <td><%= link_to 'Show', dvd %></td>
-    <td><%= link_to 'Edit', edit_dvd_path(dvd) %></td>
-    <td><%= link_to 'Destroy', dvd, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', dvd, :class => "button" %></td>
+    <td><%= link_to 'Edit', edit_dvd_path(dvd), :class => "button icon edit" %></td>
+    <td><%= link_to 'Destroy', dvd, :confirm => 'Are you sure?', :method => :delete, :class => "button icon trash" %></td>
   </tr>
 <% end %>
 </table>

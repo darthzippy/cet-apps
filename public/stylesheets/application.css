@@ -1157,50 +1157,7 @@ padding: 7px 26px 7px 0;
   margin: 7px auto;
 }
  
-.pagination {
-  float: left;
-  font-size: 1em;
-  text-align: left;
-  padding: 3px;
-  margin-left: 60px;
-}
- 
-.pagination span.current,
-.pagination span.disabled,
-.pagination a {
-  background: #EFC;
-  color: #240;
-  -moz-border-radius: .25em;
-  -webkit-border-radius: .25em;
-  border: .1em solid #9C6;
-  font-family: 'Arial Black';
-  font-weight: bold;
-  padding: .25em .5em; 
-  text-decoration: none;
-}
- 
-.pagination a {
-  background-color: white;
-}
-.pagination span.current,
-.pagination a:hover {
-  color: #020;
-  background: #9C6;
-}
- 
-.pagination a.prev_page,
-.pagination a.next_page {
-  border: 0;
-  background: white;
-  font: black;
-}
- 
-.pagination span.disabled {
-  border: 0;
-  background: white;
-  color: #888;
-  font-weight: normal;
-}
+
  
 p.action {
   float: right;
