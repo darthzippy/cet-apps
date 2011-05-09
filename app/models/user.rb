@@ -1,26 +1,3 @@
-# == Schema Information
-# Schema version: 20090227181628
-#
-# Table name: users
-#
-#  id         :integer(4)      not null, primary key
-#  first      :string(255)
-#  middle     :string(255)
-#  last       :string(255)
-#  role       :string(255)
-#  building   :string(255)
-#  room       :integer(4)
-#  email      :string(255)
-#  phone      :string(255)
-#  barcode    :string(255)
-#  department :string(255)
-#  active     :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#  gordon_id  :integer(4)
-#  on_campus  :string(255)
-#
-
 class User < ActiveRecord::Base
   
   has_many :licenses
@@ -44,7 +21,10 @@ class User < ActiveRecord::Base
   named_scope :by_department, lambda { |department|
     { :conditions => { :department => department } }
   }
-
+  
+  def to_s
+    "#{last}, #{first} #{middle}"  
+  end
   
   def fullname
     "#{last}, #{first} #{middle}"

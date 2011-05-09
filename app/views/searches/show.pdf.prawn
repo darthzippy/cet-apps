@@ -11,7 +11,7 @@ items = @search.computers.map do |item|
 	item.serial,
 	item.model,
 	item.departments.first.try(:name),
-	item.user.try(:fullname),
+	item.user.try(:to_s),
 	item.status,
 	item.try(:maintenance_fee)
   ]

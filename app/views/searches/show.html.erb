@@ -31,7 +31,7 @@
 	  <td><%=h computer.model %></td>
 	  <td><%=h computer.manufacturer %></td>
 	  <td><%=h computer.departments.first.name unless computer.departments.first.nil? %></td>
-	  <td><%=h computer.user.fullname unless computer.user.nil? %></td>
+	  <td><%=h computer.user unless computer.user.nil? %></td>
 	  <td><%=h number_to_currency(computer.maintenance_fee, :precision => 0) unless computer.maintenance_fee.nil? %></td>
 	  <td class="hide_for_printing"><%= link_to 'Edit', edit_computer_path(computer), :class => "button icon edit" %></td>
 	</tr>

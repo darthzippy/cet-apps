@@ -70,7 +70,7 @@ class ComputersController < ApplicationController
               computer.status,
               computer.departments.first.try(:name),
               computer.departments.first.try(:maintenance_account),
-              computer.user.try(:fullname),
+              computer.user.try(:to_s),
               computer.user.try(:email),
               computer.try(:maintenance_fee),
               computer.hardware_assignments.first.try(:inventory2010),

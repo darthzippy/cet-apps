@@ -112,7 +112,7 @@
 	  </p>
 	  <p>
 	  	<%= hw.label :id, 'User' %>
-		<%= hw.collection_select(:user_id, User.ordered, :id, :fullname, {:prompt => "Select a User", :include_blank => true}) %>
+		<%= hw.collection_select(:user_id, User.ordered, :id, :to_s, {:prompt => "Select a User", :include_blank => true}) %>
 	  </p>
 	  <br />
 	  <p>
