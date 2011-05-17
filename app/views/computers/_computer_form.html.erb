@@ -79,7 +79,11 @@
 	  <p>
 	    <%= f.label :purchase_acct %><br />
 	    <%= f.text_field :purchase_acct %>
-	  </p>	
+	  </p>
+	  <p>
+	    <%= f.label :replacement_year %><br />
+	    <%= f.select(:replacement_year, Time.now.year..2020, :selected=>(:replacement_year || Time.now.year)) %>
+	  </p>
   </div>
 
   <div id="computer_edit_status_info"class="span-9 last">
