@@ -42,7 +42,7 @@ class ComputersController < ApplicationController
           "Maintenance Account",
           "User",
           "Email",
-          "Maintenance Fee,",
+          "Maintenance Fee",
           "Replacement Year",
           "Inventory 2010",
           "Full or Part Time",
