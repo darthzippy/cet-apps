@@ -52,7 +52,8 @@ class ComputersController < ApplicationController
           "Next - Mac or PC",
           "Next - Laptop or Desktop",
           "Next - Note",
-          "Replace with Recycled"
+          "Replace with Recycled",
+          "Most Recent Comment"
           ]
           @computers_in_use.each do |computer|
             #unless computer.department.nil?
@@ -84,7 +85,8 @@ class ComputersController < ApplicationController
               computer.hardware_assignments.first.try(:nextneed_macpc),
               computer.hardware_assignments.first.try(:nextneed_laptopdesktop),
               computer.hardware_assignments.first.try(:nextneed_note),
-              computer.hardware_assignments.first.try(:replace_with_recycled?)
+              computer.hardware_assignments.first.try(:replace_with_recycled?),
+              computer.comments.last.try(:body)
               ]
             #end
           end
