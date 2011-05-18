@@ -24,4 +24,12 @@ class HardwareAssignment < ActiveRecord::Base
       "TBD"
     end
   end
+  
+  def replace_with_recycled?
+    if self.replace_with_recycled
+      "Yes"
+    else
+      nil
+    end
+  end
 end

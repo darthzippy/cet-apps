@@ -51,9 +51,10 @@ class ComputersController < ApplicationController
           "Special",
           "Next - Mac or PC",
           "Next - Laptop or Desktop",
-          "Next - Note"
+          "Next - Note",
+          "Replace with Recycled"
           ]
-          @all_computers.each do |computer|
+          @computers_in_use.each do |computer|
             #unless computer.department.nil?
               csv << [
               computer.control,
@@ -82,7 +83,8 @@ class ComputersController < ApplicationController
               computer.hardware_assignments.first.try(:special),
               computer.hardware_assignments.first.try(:nextneed_macpc),
               computer.hardware_assignments.first.try(:nextneed_laptopdesktop),
-              computer.hardware_assignments.first.try(:nextneed_note)
+              computer.hardware_assignments.first.try(:nextneed_note),
+              computer.hardware_assignments.first.try(:replace_with_recycled?)
               ]
             #end
           end

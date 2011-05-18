@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110517183125) do
+ActiveRecord::Schema.define(:version => 20110518144820) do
 
   create_table "cet_users", :force => true do |t|
     t.string   "login"
@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(:version => 20110517183125) do
     t.string   "nextneed_macpc"
     t.string   "nextneed_laptopdesktop"
     t.text     "nextneed_note"
+    t.boolean  "replace_with_recylced"
   end
 
   create_table "licenses", :force => true do |t|
