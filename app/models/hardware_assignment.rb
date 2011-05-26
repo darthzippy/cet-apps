@@ -25,11 +25,19 @@ class HardwareAssignment < ActiveRecord::Base
     end
   end
   
+  def nextneed_type
+    if self.nextneed_macpc?
+      [nextneed_macpc,' ',nextneed_laptopdesktop].join
+    else
+      "TBD"
+    end
+  end
+  
   def replace_with_recycled?
     if self.replace_with_recycled
       "Yes"
     else
-      nil
+      "No"
     end
   end
 end

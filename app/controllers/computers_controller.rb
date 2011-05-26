@@ -25,6 +25,12 @@ class ComputersController < ApplicationController
 
         csv_data = FasterCSV.generate do |csv|
           csv << [
+          "Department",
+          "User",
+          "Next - Note",
+          "Most Recent Comment",
+          "Next Need - Type",
+          "Replace with Recycled",
           "Control",
           "Serial",
           "Model",
@@ -38,9 +44,7 @@ class ComputersController < ApplicationController
           "Part Number",
           "Cameron ID",
           "Status",
-          "Department",
           "Maintenance Account",
-          "User",
           "Email",
           "Maintenance Fee",
           "Replacement Year",
@@ -48,16 +52,17 @@ class ComputersController < ApplicationController
           "Full or Part Time",
           "Dedicated",
           "Standard",
-          "Special",
-          "Next - Mac or PC",
-          "Next - Laptop or Desktop",
-          "Next - Note",
-          "Replace with Recycled",
-          "Most Recent Comment"
+          "Special"
           ]
           @computers_in_use.each do |computer|
             #unless computer.department.nil?
               csv << [
+              computer.departments.first.try(:name),
+              computer.user.try(:to_s),
+              computer.hardware_assignments.first.try(:nextneed_note),
+              computer.comments.last.try(:body),
+              computer.hardware_assignments.first.try(:nextneed_type),
+              computer.hardware_assignments.first.try(:replace_with_recycled?),
               computer.control,
               computer.serial,
               computer.model,
@@ -73,7 +78,6 @@ class ComputersController < ApplicationController
               computer.status,
               computer.departments.first.try(:name),
               computer.departments.first.try(:maintenance_account),
-              computer.user.try(:to_s),
               computer.user.try(:email),
               computer.try(:maintenance_fee),
               computer.try(:replacement_year),
@@ -81,12 +85,7 @@ class ComputersController < ApplicationController
               computer.hardware_assignments.first.try(:fullorpart),
               computer.hardware_assignments.first.try(:dedicated),
               computer.hardware_assignments.first.try(:standard),
-              computer.hardware_assignments.first.try(:special),
-              computer.hardware_assignments.first.try(:nextneed_macpc),
-              computer.hardware_assignments.first.try(:nextneed_laptopdesktop),
-              computer.hardware_assignments.first.try(:nextneed_note),
-              computer.hardware_assignments.first.try(:replace_with_recycled?),
-              computer.comments.last.try(:body)
+              computer.hardware_assignments.first.try(:special)
               ]
             #end
           end

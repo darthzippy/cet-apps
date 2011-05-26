@@ -122,6 +122,11 @@
 		  <b>Year for Replacement:</b>
 		  <%=h @computer.replacement_year  %>	
 		</p>
+		<br />
+		<p>
+		  <b>Replace with Recycled:</b>
+		  <%=h @computer.hardware_assignments.first.try(:replace_with_recycled?)  %>	
+		</p>
 	</div>
 
 	<div id="computer_show_user_info" class="span-9 last">
@@ -146,7 +151,7 @@
 		<br />
 		<p>
 		  <b>Needs for Next Year:</b>
-		  <%=h @computer.hardware_assignments.first.nextneed_macpc %> <%=h @computer.hardware_assignments.first.nextneed_laptopdesktop %>
+		  <%=h @computer.hardware_assignments.first.nextneed_type unless @computer.hardware_assignments.first.nil? %>
 		  <br />
 		  <b>Note: </b> - <%=h @computer.hardware_assignments.first.nextneed_note %>
 		</p>
