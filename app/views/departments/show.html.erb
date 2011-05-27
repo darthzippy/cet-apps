@@ -35,6 +35,7 @@
 		    <th>Model</th>
 		    <th>Assignment</th>
 			<th>Replacement Year</th>
+			<th>Recycled?</th>
 		  </tr>
 
 		<% for computer in @computers.has_control_number %>
@@ -45,6 +46,7 @@
   			<td><%= computer.model %></td>
 			<td><%= computer.hardware_assignments.first.assignment_type %></td>
  			<td><%=h computer.replacement_year %></td>
+ 			<td><%=h computer.hardware_assignments.first.replace_with_recycled? unless computer.hardware_assignments.first.user.nil?%></td>
 		  </tr>
 	  <% end %>
 	  </table>	
