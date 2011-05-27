@@ -46,7 +46,7 @@
   			<td><%= computer.model %></td>
 			<td><%= computer.hardware_assignments.first.assignment_type %></td>
  			<td><%=h computer.replacement_year %></td>
- 			<td><%=h computer.hardware_assignments.first.replace_with_recycled? unless computer.hardware_assignments.first.user.nil?%></td>
+ 			<td><%=h computer.hardware_assignments.first.replace_with_recycled? %></td>
 		  </tr>
 	  <% end %>
 	  </table>	
