@@ -76,7 +76,6 @@ class ComputersController < ApplicationController
               computer.part_number,
               computer.cameron_id,
               computer.status,
-              computer.departments.first.try(:name),
               computer.departments.first.try(:maintenance_account),
               computer.user.try(:email),
               computer.try(:maintenance_fee),
