@@ -61,6 +61,7 @@ class DepartmentsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @department }
+      format.pdf { render :layout => false }
       format.csv do
         @outfile = "dept_computers_" + Time.now.strftime("%m-%d-%Y") + ".csv"
 

@@ -19,7 +19,7 @@
 <br />
 <div class="button-group">
   <%= link_to 'Edit Department', edit_department_path(@department), :class => "button primary" %>
-  <%= link_to "Download list(PDF)", department_path(@department, :format => "pdf"), :class => "button" %>
+  <%= link_to "Download list(PDF)", department_path(@department, :format => :pdf), :class => "button" %>
   <%= link_to 'Generate list as CSV', department_path(@department, :format => :csv), :class => "button" %>
   <%= link_to 'Back', departments_path, :class => "button" %>
 </div>
